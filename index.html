@@ -533,6 +533,15 @@ body{color:#22302a}
 .precio .note{color:#effcf5}
 #hdr,#hdr.home{background:radial-gradient(120% 90% at 50% 0,#17a574 0,rgba(23,165,116,0) 70%),#08805a}
 #nav button{color:#4a5851}#nav button.on{color:#066a48}
+
+/* barra de abajo compacta y espacio suficiente al final de cada pantalla (iPhone con barra inferior) */
+#app{padding-bottom:calc(118px + env(safe-area-inset-bottom)*.5)}
+#nav{padding:5px 4px;bottom:calc(8px + env(safe-area-inset-bottom)*.45);-webkit-backdrop-filter:none;backdrop-filter:none;background:#fbfcf9}
+#nav button{padding:4px 2px;gap:1px;font-size:10.5px}
+#nav button svg.ri{width:30px;height:30px}
+#nav button.on::after{margin-top:0}
+label.btn{display:block;text-align:center;cursor:pointer}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -849,20 +858,15 @@ function vRep(){
  <button class="btn noprint" data-a="print">Exportar PDF</button><button class="btn sec noprint" data-a="csvw">Descargar Excel de la semana</button>`;
 }
 function vSettings(){
- live=()=>{const n=$('pNote');if(n){const own=Number(W().price)>0,pp=prevPrice();n.textContent=own?'Precio de esta semana guardado.':(pp?'Vacío: se usa el de la semana anterior ('+fmt(pp)+').':'Aún no hay precio para esta semana.')}};
  const last=db.meta.lastBackup?new Date(db.meta.lastBackup).toLocaleDateString('es-CO'):'nunca';
- return ` <div class="card"><b>Mis fincas</b>
-  <button class="btn sec sm" data-a="goto" data-tab="home" data-sub="farms" style="margin-top:12px">${IC.leaf} Mis fincas: ${esc(farmName())} ›</button></div>
- <div class="card"><b>Pasar mis datos a otro celular</b>
-  <p class="cfline" style="font-size:16px">1. En este celular, toque el botón y envíese el archivo por WhatsApp.</p>
+ return `<button class="btn sec" data-a="goto" data-tab="home" data-sub="farms">${IC.leaf} Mis fincas: ${esc(farmName())} ›</button>
+ <div class="card"><b>Mis datos</b><div class="sub">Último respaldo: ${last}</div>
   <button class="btn sm" data-a="${canShareFiles?'share':'backup'}">Enviar mis datos por WhatsApp</button>
-  <p class="cfline" style="font-size:16px">2. En el celular nuevo, abra OALE, toque <b>"Ya usaba OALE"</b> y escoja ese archivo.</p></div>
- <div class="card"><b>Copia de seguridad</b><div class="sub">Última: ${last}</div>
   <button class="btn sec sm" data-a="backup">Descargar respaldo</button>
-  <label class="l" for="importFile">Restaurar respaldo</label><input class="f" type="file" id="importFile" accept="application/json,.json">
-  <p class="note">Los datos viven solo en este dispositivo y no se sincronizan con otros celulares. Descarga un respaldo cada semana.</p></div>
+  <label class="btn sec sm">Restaurar respaldo<input type="file" id="importFile" accept="application/json,.json" hidden></label>
+  <p class="note">Los datos viven solo en este celular. Para pasarlos a otro, envíese el archivo por WhatsApp y, en el celular nuevo, toque <b>"Ya usaba OALE"</b>.</p></div>
  <div class="card"><b>Exportar a Excel</b><button class="btn sec sm" data-a="csvw">Esta semana</button><button class="btn sec sm" data-a="csva">Todas las semanas</button></div>
- ${regCard()}<div class="card"><b>Cerrar sesión</b><div class="sub">Guarda tus datos y pide la clave la próxima vez</div><button class="btn dng sm" data-a="exit">⏻ Cerrar sesión</button></div>`;
+ ${regCard()}`;
 }
 
 /* ===== archivos ===== */
@@ -1328,7 +1332,7 @@ function regShow(edit){
 }
 function regCard(){
  const u=db.meta.user;if(!u)return '';
- return `<div class="card"><b>Mi registro</b><div class="sub">${esc(u.nombre)} · ${esc(u.celular)}<br>${esc(u.municipio)}<br>${REG.url?(u.sent?'Registro enviado ✓':'Pendiente de enviar (falta internet)'):'Guardado en este celular'}</div><button class="btn sec sm" data-c="regedit">Cambiar mis datos</button></div>\n `;
+ return `<div class="card"><b>Mi registro</b><div class="sub">${esc(u.nombre)} · ${esc(u.celular)}<br>${esc(u.municipio)}${REG.url?'<br>'+(u.sent?'Registro enviado ✓':'Pendiente de enviar (falta internet)'):''}</div><button class="btn sec sm" data-c="regedit">Cambiar mis datos</button><button class="btn dng sm" data-a="exit">⏻ Cerrar sesión</button></div>`;
 }
 function regSend(){
  const u=db.meta.user;if(!u||u.sent||!REG.url||!navigator.onLine||regSend.busy)return;regSend.busy=true;
