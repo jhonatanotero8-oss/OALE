@@ -1,0 +1,20 @@
+name: Actualizar precio del café
+on:
+  schedule:
+    - cron: '0 14,22 * * 1-6'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  precio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer el precio de la Federación
+        run: python3 actualizar_precio.py
+      - name: Guardar si cambió
+        run: |
+          git config user.name "OALE precio"
+          git config user.email "actions@users.noreply.github.com"
+          git add precio.json
+          git diff --cached --quiet || (git commit -m "Precio del café" && git push)
