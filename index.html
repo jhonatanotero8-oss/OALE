@@ -1411,6 +1411,16 @@ async function precioFetch(){
 }
 window.addEventListener('online',precioFetch);setTimeout(precioFetch,1500);
 
+/* ================= CONTADOR DE CELULARES (anónimo: solo suma uno la primera vez) ================= */
+function contarInstalacion(){
+ if(db.meta.contado||contarInstalacion.busy||!navigator.onLine)return;
+ contarInstalacion.busy=true;
+ fetch('https://abacus.jasoncameron.dev/hit/oale-cafe-colombia/instalaciones',{cache:'no-store'})
+  .then(r=>{if(r.ok){db.meta.contado=true;save(true)}})
+  .catch(()=>{}).finally(()=>{contarInstalacion.busy=false});
+}
+window.addEventListener('online',contarInstalacion);setTimeout(contarInstalacion,2500);
+
 render();
 </script>
 </body>
