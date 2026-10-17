@@ -788,6 +788,7 @@ textarea.f{width:100%;font-family:inherit;font-size:17px;padding:12px;resize:ver
 .pvcard.osm{border-left:6px solid #7ec8e3}
 .pvprods{font-size:13px;color:#52615a;margin-top:5px;line-height:1.35}
 .pvnh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:12px}
+.gmaps{display:block;text-align:center;text-decoration:none;margin-top:12px}
 </style>
 </head>
 <body>
@@ -2375,12 +2376,14 @@ function pvNearHTML(){
  const c=CLM();
  if(!c||c.lat==null||S.clchg)return lugarPickHTML('Tiendas cerca de su finca','Escoja su municipio y le mostramos las tiendas de abonos, semillas y herramientas que aparecen en el mapa.');
  const nom=esc(String(c.nombre).split(',')[0].trim()),d=osmData();
+ const gq=encodeURIComponent('tienda agropecuaria insumos agrícolas '+(c.nombre&&c.nombre!=='Mi ubicación'?'cerca de '+c.nombre:'cerca de mí')),
+  gm=`<a class="btn sec gmaps" href="https://www.google.com/maps/search/?api=1&query=${gq}" target="_blank" rel="noopener">Buscar también en Google Maps</a>`;
  const cab=`<div class="pvnh"><h2 class="t" style="margin:0">Cerca de ${nom}</h2><button type="button" class="link" data-c="clchg">Cambiar lugar</button></div>`;
- if(!d)return cab+`<div class="cfhint">Todavía no hay datos del mapa en este celular. Se descargan solos cuando hay internet.</div>`;
+ if(!d)return cab+`<div class="cfhint">Todavía no hay datos del mapa en este celular. Se descargan solos cuando hay internet.</div>`+gm;
  const rad=S.pvr||40,arr=osmCerca();
  const chips=`<div class="pchips" style="margin:8px 0 2px">${[15,40,100].map(r=>`<button type="button" class="pchip ${rad===r?'on':''}" data-c="pvrad" data-v="${r}">Hasta ${r} km</button>`).join('')}</div>`;
  const lista=arr.length?arr.map(osmCard).join(''):`<div class="cfhint">No aparece ninguna tienda en el mapa a menos de ${rad} km${S.pvq||S.pvc?' con esa búsqueda':''}. En zonas del campo el mapa todavía no tiene todos los negocios: pruebe con más kilómetros o agregue las que usted conozca.</div>`;
- return cab+chips+lista+`<p class="note">Datos del mapa abierto <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:#066a48;font-weight:700">© OpenStreetMap</a>${d.actualizado?' · bajados el '+pvFecha(d.actualizado):''}. Pueden estar incompletos o viejos: llame antes de ir.</p>`;
+ return cab+chips+lista+gm+`<p class="note">Datos del mapa abierto <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:#066a48;font-weight:700">© OpenStreetMap</a>${d.actualizado?' · bajados el '+pvFecha(d.actualizado):''}. Pueden estar incompletos o viejos: llame antes de ir.</p>`;
 }
 function pvRefresh(){const n=$('pvNear');if(n)n.innerHTML=pvNearHTML();const l=$('pvList');if(l)l.innerHTML=pvListHTML()}
 document.addEventListener('click',e=>{
