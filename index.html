@@ -760,6 +760,34 @@ textarea.f{width:100%;font-family:inherit;font-size:17px;padding:12px;resize:ver
 .anb.sel{outline:3px solid #066a48;outline-offset:2px}
 .anb.l{background:#fbfcf9;color:#066a48;border-color:#8fcfa8;box-shadow:none}.anb.l i{background:#e3f3ea}
 .dn{white-space:nowrap}.dr{grid-template-columns:78px 44px 34px 1fr 34px!important}
+
+/* ===== Mis cogidas: pantalla más llamativa ===== */
+.cgform{background:linear-gradient(180deg,#ffffff,#fcf6e4);border:2px solid #f2b134;border-radius:24px;padding:14px;box-shadow:var(--shadow)}
+.cght{display:flex;gap:12px;align-items:center;margin-bottom:2px}.cgi svg{width:58px;height:58px;display:block}
+.cght b{display:block;font-family:var(--serif);font-size:23px;color:#066a48;font-weight:600;line-height:1.15}.cght small{display:block;color:#52615a;font-size:14px;margin-top:2px}
+.cgn{display:flex;align-items:center;gap:10px;font-weight:800;color:#066a48;margin:18px 2px 8px;font-size:17px}
+.cgn i{font-style:normal;width:28px;height:28px;border-radius:50%;background:#f2b134;color:#3a2a00;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.cgw{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cgbx{display:block;border-radius:20px;padding:10px 10px 8px;border:2px solid;cursor:text}
+.cgbx.cher{background:#fdeceb;border-color:#e57373}.cgbx.bean{background:#fff3cf;border-color:#f2b134}
+.cgbx span{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:#3a2a1e}
+.cgbx input{width:100%;border:0;background:transparent;font-size:36px;font-weight:700;text-align:center;font-family:var(--serif);padding:6px 0 2px;outline:none;color:#22302a;min-width:0}
+.cgbx input::placeholder{color:#c9b9a8;font-weight:400}
+.cgbx:focus-within{box-shadow:0 0 0 3px rgba(6,106,72,.25)}
+.cgbx em{display:block;text-align:center;font-style:normal;font-size:12px;color:#52615a}
+.cgform .res{border-radius:20px;padding:14px 16px}.cgform .res b{font-size:42px}
+.cgsave{margin-top:12px;font-size:19px;padding:16px}
+.cgcard{background:#fbfcf9;border:1.5px solid var(--line);border-left:7px solid #7cc59a;border-radius:18px;padding:10px 12px;margin-top:10px;box-shadow:var(--shadow)}
+.cgcard.warn{border-left-color:#f2b134}.cgcard.bad{border-left-color:#e57373}
+.cgt{display:flex;align-items:center;gap:8px}.cgt b{font-size:17px}.cgl2{background:#fff1bf;color:#5a3a00;border-radius:99px;padding:2px 10px;font-size:13px;font-weight:700}
+.cgp{margin-left:auto;font-style:normal;font-weight:800;font-size:18px;border-radius:12px;padding:4px 10px;background:#dff2e6;color:#066a48}
+.cgcard.warn .cgp{background:#fff0c4;color:#6b4a00}.cgcard.bad .cgp{background:#fbe4e2;color:#b32a24}
+.cgb2{display:flex;align-items:center;gap:12px;margin-top:6px;font-size:14px;color:#52615a;flex-wrap:wrap}.cgb2 b{color:#22302a}.cgb2 .chip{margin-left:auto}
+.cgbx span{min-height:36px}
+
+.pvcard.osm{border-left:6px solid #7ec8e3}
+.pvprods{font-size:13px;color:#52615a;margin-top:5px;line-height:1.35}
+.pvnh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:12px}
 </style>
 </head>
 <body>
@@ -884,7 +912,7 @@ function go(tab,sub=null,pid=null){S.warnPaid=0;S.tab=tab;S.sub=sub;S.pid=pid;re
 const MARK=`<svg xmlns='http://www.w3.org/2000/svg' viewBox='10 28 180 158'><defs><linearGradient id='sg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffd600'/><stop offset='1' stop-color='#ffb000'/></linearGradient></defs><polygon points='152.98,68.70 173.97,65.88 153.50,70.55' fill='#ffd600'/><polygon points='153.50,70.55 173.97,65.88 153.84,72.44' fill='#f0a800'/><polygon points='151.10,64.64 163.73,60.68 152.02,66.32' fill='#ffd600'/><polygon points='152.02,66.32 163.73,60.68 152.77,68.09' fill='#f0a800'/><polygon points='148.37,61.09 166.06,49.44 149.64,62.53' fill='#ffd600'/><polygon points='149.64,62.53 166.06,49.44 150.76,64.09' fill='#f0a800'/><polygon points='144.91,58.24 154.58,49.20 146.47,59.36' fill='#ffd600'/><polygon points='146.47,59.36 154.58,49.20 147.91,60.63' fill='#f0a800'/><polygon points='140.91,56.23 151.79,38.06 142.68,56.98' fill='#ffd600'/><polygon points='142.68,56.98 151.79,38.06 144.36,57.90' fill='#f0a800'/><polygon points='136.56,55.16 141.34,42.83 138.45,55.50' fill='#ffd600'/><polygon points='138.45,55.50 141.34,42.83 140.30,56.02' fill='#f0a800'/><polygon points='132.08,55.09 134.00,34.00 134.00,55.00' fill='#ffd600'/><polygon points='134.00,55.00 134.00,34.00 135.92,55.09' fill='#f0a800'/><polygon points='127.70,56.02 126.66,42.83 129.55,55.50' fill='#ffd600'/><polygon points='129.55,55.50 126.66,42.83 131.44,55.16' fill='#f0a800'/><polygon points='123.64,57.90 116.21,38.06 125.32,56.98' fill='#ffd600'/><polygon points='125.32,56.98 116.21,38.06 127.09,56.23' fill='#f0a800'/><polygon points='120.09,60.63 113.42,49.20 121.53,59.36' fill='#ffd600'/><polygon points='121.53,59.36 113.42,49.20 123.09,58.24' fill='#f0a800'/><polygon points='117.24,64.09 101.94,49.44 118.36,62.53' fill='#ffd600'/><polygon points='118.36,62.53 101.94,49.44 119.63,61.09' fill='#f0a800'/><polygon points='115.23,68.09 104.27,60.68 115.98,66.32' fill='#ffd600'/><polygon points='115.98,66.32 104.27,60.68 116.90,64.64' fill='#f0a800'/><polygon points='114.16,72.44 94.03,65.88 114.50,70.55' fill='#ffd600'/><polygon points='114.50,70.55 94.03,65.88 115.02,68.70' fill='#f0a800'/><path d='M117.3 75A16.7 16.7 0 0 1 150.7 75' fill='none' stroke='#f6efdc' stroke-width='2'/><path d='M120.5 75A13.5 13.5 0 0 1 147.5 75Z' fill='url(#sg)'/><path d='M80 94C100 74 140 68 182 80C182 86 182 90 182 94C150 94 110 94 80 94Z' fill='#7fcf5a'/><path d='M108 94C126 82 154 80 182 88C182 90 182 92 182 94C160 94 130 94 108 94Z' fill='#a8e070'/><path d='M40.5 100C24.5 98 16.5 88 20.5 74C34.5 76 42.5 88 40.5 100Z' fill='#9bbd4e'/><path d='M42.5 98C32.5 86 34.5 70 46.5 62C56.5 72 54.5 88 42.5 98Z' fill='#a8e070'/><path d='M44.5 100C48.5 86 58.5 78 72.5 78C70.5 90 58.5 100 44.5 100Z' fill='#8fb04a'/><g fill='none' stroke='#f6efdc' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'><circle cx='40.5' cy='126' r='17'/><path d='M74.5 144L95 106L115.5 144'/><path d='M79.5 137L110.5 137'/><path d='M134.5 108L134.5 144L145.5 144'/><path d='M176.5 108L162.5 108L162.5 144L176.5 144'/><path d='M162.5 126L173.5 126'/></g><path d='M41.5 116L41.5 120' stroke='#f6efdc' stroke-width='1.6'/><circle cx='36.3' cy='126' r='4.6' fill='#c0392b'/><circle cx='45.3' cy='125' r='4.6' fill='#c0392b'/><path d='M26 172C74 158 140 160 178 174C134 170 76 174 26 172Z' fill='#7fcf5a'/><path d='M60 182C104 172 146 174 178 181C146 180 100 183 60 182Z' fill='#ffc83d'/></svg>`;
 const ICO_BACK=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M19 12H5M11.5 5.5L5 12l6.5 6.5'/></svg>`,ICO_PLUS=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5v14M5 12h14'/></svg>`,ICO_EDIT=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M17 3.5a2.6 2.6 0 0 1 3.7 3.7L8 19.9l-4.7 1.2 1.2-4.7Z'/></svg>`;
 const GEAR=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><polygon points='10.21,4.82 10.37,1.73 13.63,1.73 13.79,4.82 15.81,5.66 18.11,3.59 20.41,5.89 18.34,8.19 19.18,10.21 22.27,10.37 22.27,13.63 19.18,13.79 18.34,15.81 20.41,18.11 18.11,20.41 15.81,18.34 13.79,19.18 13.63,22.27 10.37,22.27 10.21,19.18 8.19,18.34 5.89,20.41 3.59,18.11 5.66,15.81 4.82,13.79 1.73,13.63 1.73,10.37 4.82,10.21 5.66,8.19 3.59,5.89 5.89,3.59 8.19,5.66'/><circle cx='12' cy='12' r='3.1'/></svg>`;
-const TITLES={farms:'Mis fincas',people:'Cosechadores',pay:'Pagos',rep:'Informes',register:'Registrar cosecha',settings:'Configuración',addperson:'Nuevo cosechador',cafe:'Mi café',jor:'Jornales',cog:'Cogidas y rendimiento',luna:'Abonado y luna',prob:'Problemas de la finca',conv:'Tabla de conversión',clima:'Clima',prov:'Proveedores',provd:'Proveedor',provf:'Datos del proveedor'};
+const TITLES={farms:'Mis fincas',people:'Cosechadores',pay:'Pagos',rep:'Informes',register:'Registrar cosecha',settings:'Configuración',addperson:'Nuevo cosechador',cafe:'Mi café',jor:'Jornales',cog:'Mi cosecha de café',luna:'Abonado y luna',prob:'Problemas de la finca',conv:'Tabla de conversión',clima:'Clima',prov:'Proveedores',provd:'Proveedor',provf:'Datos del proveedor'};
 function header(){
  const h=$('hdr');
  if(!S.sub&&S.tab==='home'){h.className='home';h.innerHTML=`<span style="padding-left:14px"><i class="dotc ${navigator.onLine?'':'off'}" title="${navigator.onLine?'En línea':'Sin conexión'}"></i></span><h1><span class="mk">${MARK}</span></h1><button class="ib" data-a="goto" data-tab="home" data-sub="settings" aria-label="Configuración">${GEAR}</button>`;return}
@@ -1240,24 +1268,30 @@ function cogRemind(o){
 }
 function vCog(){
  live=cogLive;const c=CFd(),p=S.pre||{};S.pre=null;
- const st=cogStats(),lotes=[...new Set(c.cog.map(x=>x.lote))];
- const rows=[...c.cog].sort((a,b)=>a.f<b.f?1:a.f>b.f?-1:b.id-a.id).map(x=>`<div class="cgrow"><div><b>${fDia(x.f)} · ${esc(x.lote)}</b><small>Maduro ${c2(x.m)} kg · Lavado ${c2(x.l)} kg</small></div><div class="cgr">${c2(x.l/x.m*100)} %</div><button class="chip" data-c="cogdel" data-id="${x.id}" aria-label="Borrar">Borrar</button></div>`).join('');
- return `<div class="cafe"><div class="card">
- <label class="l" for="cf">Fecha</label><input class="f big" type="date" id="cf" value="${esc(p.f||todayStr())}">
- <label class="l" for="cx">Lote</label><input class="f big" id="cx" list="lotesL" autocomplete="off" placeholder="Ej. La Loma" value="${esc(p.lote||'')}"><datalist id="lotesL">${lotes.map(l=>`<option value="${esc(l)}">`).join('')}</datalist>
+ const st=cogStats(),lotes=[...new Set(c.cog.map(x=>x.lote))],ds=p.f||todayStr();
+ const rows=[...c.cog].sort((a,b)=>a.f<b.f?1:a.f>b.f?-1:b.id-a.id).map(x=>{const r=x.l/x.m*100,k=rendMsg(r).k;return `<div class="cgcard ${k}"><div class="cgt"><b>${fDia(x.f)}</b><span class="cgl2">${esc(x.lote)}</span><i class="cgp">${c2(r)} %</i></div><div class="cgb2"><span>Maduro <b>${c2(x.m)} kg</b></span><span>Lavado <b>${c2(x.l)} kg</b></span><button class="chip" data-c="cogdel" data-id="${x.id}" aria-label="Borrar">Borrar</button></div></div>`}).join('');
+ return `<div class="cafe"><div class="cgform">
+ <div class="cght"><span class="cgi">${MENUIC.cog}</span><div><b>Anotar una cogida</b><small>Escriba lo que pesó y vea cuánto rinde</small></div></div>
+ <label class="cgn"><i>1</i>¿Qué día cogió?</label>
+ <div class="rdate"><button type="button" class="rdb" data-c="cfprev" aria-label="Día anterior">‹</button><label class="rdlbl"><b id="cfText">${dayLong(ds)}</b><small>Toque aquí para otra fecha</small><input type="date" id="cf" value="${esc(ds)}"></label><button type="button" class="rdb" data-c="cfnext" aria-label="Día siguiente">›</button></div>
+ <label class="cgn" for="cx"><i>2</i>¿En qué lote?</label>
+ <input class="f big" id="cx" list="lotesL" autocomplete="off" placeholder="Ej. La Loma" value="${esc(p.lote||'')}"><datalist id="lotesL">${lotes.map(l=>`<option value="${esc(l)}">`).join('')}</datalist>
  ${lotes.length?`<div class="pchips" style="margin-top:8px">${lotes.map(l=>`<button type="button" class="pchip" data-c="pickl" data-v="${esc(l)}">${esc(l)}</button>`).join('')}</div>`:''}
- <label class="l" for="cm">Kilos de café maduro</label><input class="f big" id="cm" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="Ej. 250">
- <label class="l" for="cl">Kilos de pergamino lavado</label><input class="f big" id="cl" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="Ej. 100">
- <div id="cogOut" style="margin-top:12px"></div><button class="btn" data-c="cogsave">Guardar cogida</button></div>
+ <label class="cgn"><i>3</i>¿Cuánto pesó?</label>
+ <div class="cgw"><label class="cgbx cher" for="cm"><span><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="8" cy="15" r="5.5" fill="#e63946" stroke="#3a2a1e" stroke-width="1.4"/><circle cx="16" cy="14" r="5.5" fill="#e63946" stroke="#3a2a1e" stroke-width="1.4"/><path d="M8 9.5Q10 4 12 3M16 8.5Q14 4 12 3" fill="none" stroke="#3a2a1e" stroke-width="1.4"/></svg>Café maduro</span><input id="cm" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="250"><em>kilos</em></label>
+ <label class="cgbx bean" for="cl"><span><svg viewBox="0 0 24 24" width="20" height="20"><ellipse cx="12" cy="12" rx="6.5" ry="9" fill="#d9a566" stroke="#3a2a1e" stroke-width="1.4" transform="rotate(25 12 12)"/><path d="M10 4Q15 12 13 20" fill="none" stroke="#3a2a1e" stroke-width="1.4"/></svg>Pergamino lavado</span><input id="cl" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="100"><em>kilos</em></label></div>
+ <div id="cogOut" style="margin-top:14px"></div><button class="btn cgsave" data-c="cogsave">Guardar cogida</button></div>
  <h2 class="t">Cómo va la finca</h2>
  ${c.cog.length?`<div class="card"><div class="res ${rendMsg(st.tl/st.tm*100).k}" style="margin-top:0"><span>Promedio de la finca</span><b>${c2(st.tl/st.tm*100)} %</b></div>
  <div class="cfline"><b>¿En qué momento está la cosecha?</b></div>
  <div class="pchips"><button type="button" class="pchip ${c.etapa==='plena'?'on':''}" data-c="etapa" data-v="plena">Plena cosecha</button><button type="button" class="pchip ${c.etapa!=='plena'?'on':''}" data-c="etapa" data-v="otra">Comienzo, final o mitaca</button></div>
  <p class="note">${c.etapa==='plena'?'En plena cosecha se coge cada 15 a 20 días.':'Al comienzo, al final o en mitaca se coge cada 20 a 30 días.'}</p>
  ${st.lots.map(o=>`<div class="lotbox"><div class="cgrow"><div><b>${esc(o.lote)}</b><small>Maduro ${c2(o.m)} kg · Lavado ${c2(o.l)} kg</small></div><div class="cgr">${c2(o.l/o.m*100)} %</div></div>${cogRemind(o)}</div>`).join('')}</div>
- <h2 class="t">Mis cogidas</h2><div class="card" style="padding:6px 14px">${rows}</div>
+ <h2 class="t">Cogidas guardadas</h2>${rows}
  <button class="btn sec" data-c="cogcsv">Exportar a Excel (CSV)</button>`:'<div class="cfhint">Todavía no hay cogidas guardadas. Guarde la primera arriba.</div>'}</div>`;
 }
+document.addEventListener('click',e=>{const el=e.target.closest('[data-c="cfprev"],[data-c="cfnext"]');if(!el)return;const i=$('cf'),n=addD(i.value||todayStr(),el.dataset.c==='cfprev'?-1:1);i.value=n;$('cfText').textContent=dayLong(n)});
+document.addEventListener('change',e=>{if(e.target.id==='cf'&&e.target.value&&$('cfText'))$('cfText').textContent=dayLong(e.target.value)});
 
 /* ---------- 3. Abonado según la luna (algoritmo de Jean Meeus) ---------- */
 function jdPhase(kk,full){
@@ -1353,7 +1387,7 @@ function vCafe(){
  if(S.sub==='clima')return vClima();if(S.sub==='prov')return vProv();if(S.sub==='provd')return vProvD();if(S.sub==='provf')return vProvF();if(S.sub==='jor')return vJor();if(S.sub==='cog')return vCog();if(S.sub==='luna')return vLuna();if(S.sub==='prob')return vProb();if(S.sub==='conv')return vConv();
  S.jt='anotar';
  const b=(s,e,t,d)=>`<button class="bigbtn" data-a="goto" data-tab="cafe" data-sub="${s}"><span class="e">${e}</span><span><b>${t}</b><small>${d}</small></span></button>`;
- return `<div class="cafe" style="margin-top:-6px">${b('cog',MENUIC.cog,'Cogidas y rendimiento','Guarde cada cogida y vea cuánto rinde')}${b('jor',MENUIC.jor,'Jornales','Guadañar, fumigar y otros trabajos por día')}${b('clima',MENUIC.clima,'Clima','Lluvia y temperatura de su finca')}${b('luna',MENUIC.luna,'Abonado y luna','Cuándo abonar según la luna')}${b('prob',MENUIC.prob,'Problemas de la finca','Broca, roya y más: qué hacer')}${b('prov',MENUIC.prov,'Proveedores','Tiendas de abonos, semillas y herramientas')}${b('conv',MENUIC.conv,'Tabla de conversión','De maduro a pergamino y almendra')}</div>`;
+ return `<div class="cafe" style="margin-top:-6px">${b('cog',MENUIC.cog,'Mi cosecha de café','Pese su café y vea cómo va la finca')}${b('jor',MENUIC.jor,'Jornales','Guadañar, fumigar y otros trabajos por día')}${b('clima',MENUIC.clima,'Clima','Lluvia y temperatura de su finca')}${b('luna',MENUIC.luna,'Abonado y luna','Cuándo abonar según la luna')}${b('prob',MENUIC.prob,'Problemas de la finca','Broca, roya y más: qué hacer')}${b('prov',MENUIC.prov,'Proveedores','Tiendas de abonos, semillas y herramientas')}${b('conv',MENUIC.conv,'Tabla de conversión','De maduro a pergamino y almendra')}</div>`;
 }
 
 /* ---------- eventos de Mi café ---------- */
@@ -2059,27 +2093,30 @@ function pvFecha(f){if(!f)return '';const [y,m,d]=String(f).slice(0,10).split('-
 function pvBadge(p){return p._local?'<em class="tag cal">Anotado por usted</em>':(p.verificado&&p.verificado.fecha?`<em class="tag reg">Verificado ${pvFecha(p.verificado.fecha)}</em>`:'<em class="tag cal">Sin verificar</em>')}
 function pvTexto(p){return nrm([p.nombre,PV_CATS[p.categoria]||'',p.municipio,p.departamento,p.direccion].concat((p.productos||[]).map(x=>x.nombre)).join(' '))}
 function pvCard(p){
- const wa=waNum(p.telefono),tel=telDig(p.telefono);
+ const wa=waNum(p.telefono),tel=telHref(p.telefono);
  return `<div class="pvcard" data-id="${esc(p.id)}"><div class="pvh"><b>${esc(p.nombre)}</b><span class="pvcat">${esc(PV_CATS[p.categoria]||'Otro')}</span></div>
  <small>${esc([p.municipio,p.departamento].filter(Boolean).join(', ')||'Sin municipio')}${p.direccion?' · '+esc(p.direccion):''}</small><div class="pvb">${pvBadge(p)}</div>
  <div class="pvbtns">${tel?`<a class="btn sm" href="tel:${tel}">Llamar</a>`:''}${wa?`<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a>`:''}<button type="button" class="btn sec sm" data-c="pvopen" data-id="${esc(p.id)}">Ver ficha</button></div></div>`;
 }
 function pvListHTML(){
  const q=nrm(S.pvq||''),c=S.pvc||'',all=provAll();
- if(!all.length)return `<div class="card"><b>El directorio todavía está vacío</b><p class="cfline" style="font-size:16px">Aquí van a aparecer las tiendas de abonos, semillas y herramientas con datos verificados. Mientras tanto, puede anotar los proveedores que usted conoce.</p></div>`;
+ if(!all.length)return `<div class="card"><b>Todavía no tiene proveedores anotados</b><p class="cfline" style="font-size:16px">Aquí salen los que usted agregue y los verificados por OALE. Toque "Guardar" en una tienda del mapa, o use el botón de abajo.</p></div>`;
  const arr=all.filter(p=>(!c||p.categoria===c)&&(!q||pvTexto(p).includes(q)));
  return arr.length?arr.map(pvCard).join(''):'<div class="cfhint">No se encontró nada con esa búsqueda.</div>';
 }
 function vProv(){
  live=provLive;
- const d=provDir(),nd=d?d.lista.length:0,nv=d?d.lista.filter(x=>x&&x.verificado&&x.verificado.fecha).length:0,nl=PVL().length;
+ const d=provDir(),nd=d?d.lista.length:0;
  return `<div class="cafe"><input class="f" type="search" id="pvQ" placeholder="Buscar proveedor o producto" value="${esc(S.pvq||'')}" autocomplete="off" style="font-size:18px">
  <div class="pchips" style="margin:10px 0 4px"><button type="button" class="pchip ${!S.pvc?'on':''}" data-c="pvcat" data-v="">Todos</button>${Object.keys(PV_CATS).map(k=>`<button type="button" class="pchip ${S.pvc===k?'on':''}" data-c="pvcat" data-v="${k}">${PV_CATS[k]}</button>`).join('')}</div>
+ <div id="pvNear">${pvNearHTML()}</div>
+ <h2 class="t">Mis proveedores y directorio OALE</h2>
  <div id="pvList">${pvListHTML()}</div>
  <button class="btn" data-c="pvadd">+ Agregar un proveedor</button>
- <p class="note">Directorio OALE: ${nd} ${nd===1?'proveedor':'proveedores'} (${nv} con datos verificados)${d&&d.actualizado?' · actualizado '+pvFecha(d.actualizado):''}. Los suyos: ${nl}.<br>Los precios y horarios solo se muestran cuando fueron confirmados.</p></div>`;
+ <p class="note">${nd?'Directorio OALE: '+nd+(nd===1?' proveedor':' proveedores')+(d&&d.actualizado?' · actualizado '+pvFecha(d.actualizado)+'. ':'. '):''}Los precios y horarios solo se muestran cuando fueron confirmados.</p></div>`;
 }
 async function provLive(){
+ osmLive();
  if(!navigator.onLine)return;
  try{const r=await fetch('proveedores.json?'+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();
   if(!j||!Array.isArray(j.proveedores))return;
@@ -2090,7 +2127,7 @@ async function provLive(){
 function vProvD(){
  const p=provAll().find(x=>x.id===S.pvid);
  if(!p)return `<div class="cafe"><div class="cfhint">No se encontró ese proveedor.</div><button class="btn" data-c="pvback">Volver</button></div>`;
- const wa=waNum(p.telefono),tel=telDig(p.telefono),prods=(p.productos||[]).filter(x=>x&&x.nombre);
+ const wa=waNum(p.telefono),tel=telHref(p.telefono),prods=(p.productos||[]).filter(x=>x&&x.nombre);
  const prod=prods.length?prods.map(x=>{const ok=x.precio!=null&&x.precio!==''&&x.fecha_precio;return `<div class="kv"><span>${esc(x.nombre)}${x.unidad?'<small style="display:block;color:#52615a">'+esc(x.unidad)+'</small>':''}</span><b>${ok?fmt(Number(x.precio)):'Consulte el precio'}${ok?'<small style="display:block;font-weight:400;color:#52615a;font-size:11px">'+(p._local?'Anotado por usted el ':'Verificado el ')+pvFecha(x.fecha_precio)+'</small>':''}</b></div>`}).join(''):'<p class="note">No hay productos anotados.</p>';
  return `<div class="cafe"><div class="card"><div class="pvh"><b style="font-size:21px">${esc(p.nombre)}</b></div><span class="pvcat">${esc(PV_CATS[p.categoria]||'Otro')}</span><div class="pvb" style="margin-top:8px">${pvBadge(p)}</div>
  ${p.verificado&&p.verificado.fuente&&!p._local?`<p class="note">Fuente: ${esc(p.verificado.fuente)}</p>`:''}</div>
@@ -2124,7 +2161,7 @@ function pvParseProds(txt){
 }
 document.addEventListener('click',e=>{
  const el=e.target.closest('[data-c="pvcat"],[data-c="pvadd"],[data-c="pvopen"],[data-c="pvback"],[data-c="pvedit"],[data-c="pvdel"],[data-c="pvsave"],[data-c="fvcat"]');if(!el)return;const c=el.dataset.c,v=el.dataset.v;
- if(c==='pvcat'){S.pvc=v;document.querySelectorAll('.pchip[data-c="pvcat"]').forEach(b=>b.classList.toggle('on',b.dataset.v===v));$('pvList').innerHTML=pvListHTML()}
+ if(c==='pvcat'){S.pvc=v;document.querySelectorAll('.pchip[data-c="pvcat"]').forEach(b=>b.classList.toggle('on',b.dataset.v===v));pvRefresh()}
  else if(c==='pvadd'){S.pvid=null;go('cafe','provf')}
  else if(c==='pvopen'){S.pvid=el.dataset.id;go('cafe','provd')}
  else if(c==='pvback'){go('cafe','prov')}
@@ -2141,7 +2178,7 @@ document.addEventListener('click',e=>{
   save(true);toast('✓ Proveedor guardado');S.pvid=null;go('cafe','prov');
  }
 });
-document.addEventListener('input',e=>{if(e.target.id==='pvQ'){S.pvq=e.target.value;$('pvList').innerHTML=pvListHTML()}});
+document.addEventListener('input',e=>{if(e.target.id==='pvQ'){S.pvq=e.target.value;pvRefresh()}});
 MENUIC.prov=`<svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="44.6" rx="16" ry="2" fill="#000" fill-opacity=".14"/><g stroke="#3a2a1e" stroke-width="2.2"><rect x="8" y="22" width="32" height="21" rx="2" fill="#fff3d6"/><path d="M5 22l3-11h32l3 11z" fill="#fff"/><path d="M11 11l-1 11M19 11l-1 11M27 11l1 11M35 11l2 11" fill="none"/><path d="M8 11h6l-1 11H5z M20 11h7l1 11h-9z M33 11h7l3 11h-9z" fill="#e63946" stroke-width="0"/><path d="M5 22l3-11h32l3 11" fill="none"/><rect x="19" y="30" width="10" height="13" rx="1.5" fill="#a8642a"/><rect x="11" y="27" width="5" height="9" rx="1" fill="#7ec8e3"/><rect x="32" y="27" width="5" height="9" rx="1" fill="#7ec8e3"/></g></svg>`;
 
 /* Preparado para un futuro pago único. HOY NO HAY COBROS: aquí iría la verificación con la pasarela de pagos (hecha desde un servidor, nunca solo en el celular). */
@@ -2294,6 +2331,66 @@ function homeClimaHTML(){
  return wrap(th,`<span class="hsl"><small class="hsk">Hoy en ${nom}</small><span class="hsrow"><b class="hst">${Math.round(k.cur.temp)}°</b><span class="hsc">${txt}</span></span><span class="hchip${alto?' hi':''}">${pr==null?'Lluvia: no disponible':(alto?'Es probable que llueva hoy · ':'Lluvia hoy: ')+pr+' %'}</span></span><span class="hsic">${CLF[iconFor(k.cur.code,k.cur.day)]}</span>`);
 }
 
+
+
+/* ===== TIENDAS CERCA DE LA FINCA (del mapa abierto OpenStreetMap; se descargan aparte una vez por semana) ===== */
+const OSM_KEY='OALE_osm_v1';
+function osmData(){try{const j=JSON.parse(localStorage.getItem(OSM_KEY)||'null');return j&&Array.isArray(j.lugares)&&j.lugares.length?j:null}catch(e){return null}}
+async function osmLive(){
+ if(!navigator.onLine)return;
+ try{
+  const r=await fetch('proveedores_osm.json?'+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)return;
+  const j=await r.json();if(!j||!Array.isArray(j.lugares))return;
+  const cur=osmData();if(cur&&cur.actualizado===j.actualizado&&cur.lugares.length===j.lugares.length)return;
+  try{localStorage.setItem(OSM_KEY,JSON.stringify(j))}catch(e){return}
+  if(S.tab==='cafe'&&S.sub==='prov'&&$('pvNear'))pvRefresh();
+ }catch(e){}
+}
+function telHref(t){const d=telDig(t);return d.length===12&&d.startsWith('57')?'+'+d:d}
+function kmEntre(la1,lo1,la2,lo2){const r=x=>x*Math.PI/180,dl=r(la2-la1),dn=r(lo2-lo1),h=Math.sin(dl/2)**2+Math.cos(r(la1))*Math.cos(r(la2))*Math.sin(dn/2)**2;return 12742*Math.asin(Math.sqrt(h))}
+function kmTxt(k){return k<1?'menos de 1 km':(k<10?num(Math.round(k*10)/10):num(Math.round(k)))+' km'}
+function osmCerca(){
+ const c=CLM(),d=osmData();if(!c||c.lat==null||!d)return null;
+ const q=nrm(S.pvq||''),cat=S.pvc||'',rad=S.pvr||40;
+ return d.lugares.map(x=>Object.assign({},x,{km:kmEntre(c.lat,c.lon,x.lat,x.lon)}))
+  .filter(x=>x.km<=rad&&(!cat||x.categoria===cat)&&(!q||nrm([x.nombre,PV_CATS[x.categoria]||'',x.direccion,x.ciudad].concat(x.productos||[]).join(' ')).includes(q)))
+  .sort((a,b)=>a.km-b.km).slice(0,25);
+}
+function osmCard(x){
+ const wa=waNum(x.telefono),tel=telHref(x.telefono);
+ return `<div class="pvcard osm"><div class="pvh"><b>${esc(x.nombre)}</b><span class="pvcat">${esc(PV_CATS[x.categoria]||'Otro')}</span></div>
+ <small>A ${kmTxt(x.km)}${x.direccion?' · '+esc(x.direccion):''}${x.ciudad?' · '+esc(x.ciudad):''}</small>
+ ${(x.productos||[]).length?`<div class="pvprods">Vende: ${x.productos.map(esc).join(', ')}</div>`:''}
+ <div class="pvb"><em class="tag cal">Del mapa abierto · sin verificar</em></div>
+ <div class="pvbtns">${tel?`<a class="btn sm" href="tel:${tel}">Llamar</a>`:''}${wa?`<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a>`:''}<a class="btn sec sm" href="https://www.google.com/maps/search/?api=1&query=${x.lat},${x.lon}" target="_blank" rel="noopener">Cómo llegar</a><button type="button" class="btn sec sm" data-c="osmsave" data-id="${esc(x.id)}">Guardar</button></div></div>`;
+}
+function lugarPickHTML(titulo,texto){
+ return `<div class="card"><b>${titulo}</b><p class="cfline" style="font-size:16px">${texto}</p>
+ <input class="f big" id="clQ" type="search" autocomplete="off" placeholder="Ej. Pitalito" style="font-size:20px">
+ <button class="btn" data-c="clsearch">Buscar municipio</button><div id="clRes"></div>
+ <button class="btn sec" data-c="clgeo">Usar la ubicación de mi celular</button>
+ <p class="note">Necesita internet para buscar. Su ubicación se queda en este celular.</p>${CLM()&&CLM().lat!=null?'<button class="btn sec" data-c="clback">Cancelar</button>':''}</div>`;
+}
+function pvNearHTML(){
+ const c=CLM();
+ if(!c||c.lat==null||S.clchg)return lugarPickHTML('Tiendas cerca de su finca','Escoja su municipio y le mostramos las tiendas de abonos, semillas y herramientas que aparecen en el mapa.');
+ const nom=esc(String(c.nombre).split(',')[0].trim()),d=osmData();
+ const cab=`<div class="pvnh"><h2 class="t" style="margin:0">Cerca de ${nom}</h2><button type="button" class="link" data-c="clchg">Cambiar lugar</button></div>`;
+ if(!d)return cab+`<div class="cfhint">Todavía no hay datos del mapa en este celular. Se descargan solos cuando hay internet.</div>`;
+ const rad=S.pvr||40,arr=osmCerca();
+ const chips=`<div class="pchips" style="margin:8px 0 2px">${[15,40,100].map(r=>`<button type="button" class="pchip ${rad===r?'on':''}" data-c="pvrad" data-v="${r}">Hasta ${r} km</button>`).join('')}</div>`;
+ const lista=arr.length?arr.map(osmCard).join(''):`<div class="cfhint">No aparece ninguna tienda en el mapa a menos de ${rad} km${S.pvq||S.pvc?' con esa búsqueda':''}. En zonas del campo el mapa todavía no tiene todos los negocios: pruebe con más kilómetros o agregue las que usted conozca.</div>`;
+ return cab+chips+lista+`<p class="note">Datos del mapa abierto <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:#066a48;font-weight:700">© OpenStreetMap</a>${d.actualizado?' · bajados el '+pvFecha(d.actualizado):''}. Pueden estar incompletos o viejos: llame antes de ir.</p>`;
+}
+function pvRefresh(){const n=$('pvNear');if(n)n.innerHTML=pvNearHTML();const l=$('pvList');if(l)l.innerHTML=pvListHTML()}
+document.addEventListener('click',e=>{
+ const el=e.target.closest('[data-c="pvrad"],[data-c="osmsave"]');if(!el)return;
+ if(el.dataset.c==='pvrad'){S.pvr=Number(el.dataset.v);pvRefresh();return}
+ const d=osmData(),x=d&&d.lugares.find(z=>z.id===el.dataset.id);if(!x)return;
+ if(PVL().some(p=>p.osmId===x.id))return toast('Ya lo tiene guardado en sus proveedores');
+ PVL().push({id:Date.now(),osmId:x.id,nombre:x.nombre,categoria:x.categoria,municipio:x.ciudad||'',direccion:x.direccion||'',telefono:x.telefono||'',productos:(x.productos||[]).map(n=>({nombre:n,precio:null,unidad:'',fecha_precio:null})),horario:'',horario_confirmado:false,nota:'Del mapa abierto (OpenStreetMap). Confirme los datos llamando.'});
+ save(true);pvRefresh();toast('✓ Guardado en sus proveedores');
+});
 
 render();
 </script>

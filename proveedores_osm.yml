@@ -1,0 +1,20 @@
+name: Actualizar tiendas del mapa
+on:
+  schedule:
+    - cron: '30 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mapa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar tiendas agrícolas de OpenStreetMap
+        run: python3 actualizar_proveedores_osm.py
+      - name: Guardar si cambió
+        run: |
+          git config user.name "OALE mapa"
+          git config user.email "actions@users.noreply.github.com"
+          git add proveedores_osm.json
+          git diff --cached --quiet || (git commit -m "Tiendas del mapa" && git push)
