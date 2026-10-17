@@ -626,6 +626,140 @@ label.btn{display:block;text-align:center;cursor:pointer}
 .pct b{display:block;font-size:21px;font-family:var(--serif);font-weight:600}
 .pct small{display:block;font-size:14px;color:#effcf5;margin-top:3px;line-height:1.3}
 .pshow{font-size:14px;color:#52615a;margin:4px 2px 2px}
+
+/* ===== informes mensuales ===== */
+.imfil{display:grid;grid-template-columns:48px 1fr 1fr 48px;gap:8px;align-items:center;margin:2px 0 12px}
+.imfil select.f{height:52px;padding:0 10px;font-size:17px;margin:0}
+.rdb.sm{height:52px}
+.mhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 16px;margin-top:0}
+.mhead b{font-family:var(--serif);font-size:21px;color:#066a48}.mhead span{font-weight:700;color:#22302a}
+.mcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 4px}
+.mc{background:#fbfcf9;border:1.5px solid var(--line);border-radius:18px;padding:12px 14px;border-top:3px solid #f2b134}
+.mc span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#52615a}
+.mc b{display:block;font-family:var(--serif);font-size:23px;font-weight:600;color:#066a48;margin:3px 0 1px;word-break:break-word}
+.mc small{display:block;font-size:12px;color:#52615a;line-height:1.3}
+.mc.wide{grid-column:1/-1}.mc.ok{background:#e3f3ea;border-color:#8fcfa8}.mc.bad{background:#fbe4e2;border-color:#e08a85}.mc.bad b{color:#b32a24}
+.dbars{display:flex;align-items:flex-end;gap:2px;height:90px;border-bottom:2px solid #9fb5aa}
+.dbars i{flex:1;background:#0a8a5c;border-radius:3px 3px 0 0;min-height:0}
+.dlab{display:flex;justify-content:space-between;font-size:11px;color:#52615a;margin-top:3px}
+.kv.fil span{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.kv.tot{border-top:1px solid var(--line);font-weight:700}
+.tag{font-style:normal;font-size:11px;font-weight:600;border-radius:99px;padding:2px 8px}
+.tag.reg{background:#dff2e6;color:#066a48}.tag.cal{background:#fff0c4;color:#6b4a00}
+.hrow{display:grid;grid-template-columns:54px 56px 1fr;gap:6px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:baseline}
+.hrow:last-child{border-bottom:0}.hrow em{font-style:normal;font-size:12px;font-weight:700;color:#066a48}
+.mbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.mbtns .btn{margin:0;padding:12px 4px;font-size:14px}
+.mform{border:1.5px solid #066a48;margin-top:12px}
+.printonly{display:none}
+@media print{.printonly{display:block;margin-bottom:10px}.imfil,.mform{display:none!important}}
+
+/* ===== clima ===== */
+.cli{width:52px;height:52px;flex:none}.cld:last-child{border-bottom:0}.cln b{display:block;font-size:17px}.cln small{font-size:13px;color:#52615a}.clr b{display:block;font-size:17px;color:#066a48}.clr small{font-size:12px;color:#52615a}
+.clres{margin-top:10px}
+/* ===== proveedores ===== */
+.pvcard{background:#fbfcf9;border:1.5px solid var(--line);border-radius:18px;padding:12px 14px;margin-top:10px;box-shadow:var(--shadow)}
+.pvh{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.pvh b{font-size:18px;color:#22302a;line-height:1.25}
+.pvcat{display:inline-block;font-size:12px;font-weight:700;background:#fff1bf;color:#5a3a00;border-radius:99px;padding:3px 10px;white-space:nowrap}
+.pvcard small{display:block;color:#52615a;font-size:14px;margin-top:4px}.pvb{margin-top:6px}
+.pvbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pvbtns .btn{flex:1;min-width:96px;margin:0;text-align:center;text-decoration:none;display:block;padding:12px 8px}
+.rgchk2{display:flex;gap:10px;align-items:center;font-size:15px;margin:10px 0;color:#22302a}.rgchk2 input{width:22px;height:22px}
+textarea.f{width:100%;font-family:inherit;font-size:17px;padding:12px;resize:vertical}
+.tabs{flex-wrap:nowrap!important;gap:2px}
+.tabs button{flex:1 1 0;min-width:0;font-size:12.5px;padding:11px 1px;white-space:nowrap;letter-spacing:0}
+.pvh{flex-direction:column;gap:6px;align-items:flex-start}
+.tabs{display:grid!important;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:2px}
+
+/* ===== Inicio más limpio + clima pequeño + anotar arriba ===== */
+.hci{flex:none}.hci .cli{width:46px;height:46px}
+.hct{flex:1;min-width:0;display:block}
+.hct b{font-family:var(--serif);font-size:18px;color:#066a48;font-weight:600}
+.hct small{display:block;font-size:14px;color:#52615a;line-height:1.3}
+.hct small.hl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.hl2{display:block;font-size:16px}.hct1{font-size:30px!important;line-height:1}
+.hrain{color:#1f6fb2;font-size:15px}
+.tiles .tile:last-child:nth-child(odd){grid-column:1/-1}
+.anot{border:1.5px solid #066a48;margin-top:0}
+.mbtns .btn{min-height:58px;line-height:1.2;padding:8px 4px}
+
+/* ===== cielo animado ===== */
+.th-sun{background:linear-gradient(180deg,#2a7ed8 0%,#52a9ee 55%,#9fd8ff 100%)}
+.th-pcloud{background:linear-gradient(180deg,#3d82cc 0%,#7fb6e4 60%,#b6d6ee 100%)}
+.th-cloud{background:linear-gradient(180deg,#5d7a96 0%,#8ea6bb 60%,#b4c3cf 100%)}
+.th-fog{background:linear-gradient(180deg,#7d8b97 0%,#a9b4be 60%,#c9d0d6 100%)}
+.th-rain{background:linear-gradient(180deg,#34465c 0%,#587087 60%,#7b8fa2 100%)}
+.th-storm{background:linear-gradient(180deg,#232c3d 0%,#454f63 60%,#626d80 100%)}
+.th-night{background:linear-gradient(180deg,#070b1f 0%,#121a44 55%,#242d63 100%)}
+.th-pcloudn{background:linear-gradient(180deg,#0a1028 0%,#1a2250 60%,#2d3868 100%)}
+.th-cloudn{background:linear-gradient(180deg,#0e1428 0%,#202842 60%,#323b57 100%)}
+.th-rainn{background:linear-gradient(180deg,#0b1220 0%,#1b2740 60%,#2c3a54 100%)}
+.th-old{background:linear-gradient(180deg,#46515c 0%,#5e6a76 60%,#76828e 100%)}
+.fx{position:absolute;left:0;right:0;top:0;height:100%;max-height:640px;overflow:hidden;pointer-events:none}
+.fx i{position:absolute;display:block}
+.fx .st{width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3.6s ease-in-out infinite}
+.fx .cd{left:-40%;background:rgba(255,255,255,.5);border-radius:60px;filter:blur(7px);animation:drift linear infinite}
+.fx .cd.dk{background:rgba(200,210,235,.2)}
+.fx .rn{top:-24px;width:1.5px;height:18px;background:linear-gradient(rgba(200,225,255,0),rgba(200,225,255,.85));transform:rotate(12deg);animation:fall linear infinite}
+.fx .sunglow{right:-50px;top:-60px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,#fffbe2 0%,#ffe27a 24%,rgba(255,214,80,.35) 48%,rgba(255,214,80,0) 70%);animation:pulse 7s ease-in-out infinite}
+.fx .sunglow.sm{width:190px;height:190px;right:-30px;top:-40px;opacity:.85}
+.fx .moon{right:16%;top:7%;width:44px;height:44px;border-radius:50%;box-shadow:inset -13px 6px 0 0 #f6f2d6;transform:rotate(-18deg);filter:drop-shadow(0 0 9px rgba(255,255,225,.55))}
+.fx .moon.sm{width:34px;height:34px;box-shadow:inset -10px 5px 0 0 #f6f2d6}
+.fx .fogl{left:-10%;right:-10%;top:25%;height:90px;background:rgba(255,255,255,.28);filter:blur(18px);animation:fogm 16s ease-in-out infinite alternate}
+.fx .fogl.f2{top:50%;animation-duration:22s}
+.fx .flash{inset:0;background:#fff;opacity:0;animation:flash 8s infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(170vw)}}
+@keyframes fall{to{transform:translate(-22px,520px) rotate(12deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(1.07);opacity:1}}
+@keyframes fogm{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+@keyframes flash{0%,91%,100%{opacity:0}92%{opacity:.65}93%{opacity:.08}94%{opacity:.8}96%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fx i{animation:none!important}.fx .rn{display:none}}
+.skyw{position:relative;margin:-12px -14px 0;padding:14px 14px 130px;min-height:calc(100vh - 70px);overflow:hidden;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.22)}
+.skyc{position:relative;z-index:1}
+.skybtn{position:absolute;right:0;top:0;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:99px;padding:7px 14px;font-size:14px;font-weight:600;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.skyhero{text-align:center;padding:34px 0 8px}.skyhero.dim{opacity:.85}
+.skyname{font-size:34px;font-weight:400;letter-spacing:.2px;line-height:1.15}
+.skyplace{font-size:14px;opacity:.8;margin-top:2px}
+.skylab{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin-top:8px}
+.skytemp{font-family:-apple-system,'SF Pro Display','Helvetica Neue',system-ui,sans-serif;font-size:112px;font-weight:200;line-height:1;margin:2px 0 2px;letter-spacing:-3px;padding-left:14px}
+.skycond{font-size:20px;font-weight:600}.skysub{font-size:17px;opacity:.82;margin-top:6px}.skysub2{font-size:18px;font-weight:600;margin-top:2px}
+.skystat{text-align:center;font-size:13px;opacity:.85;margin:14px 0 2px}
+.glass{background:rgba(255,255,255,.15);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.24);border-radius:22px;padding:14px 16px;margin-top:12px;color:#fff;font-size:16px;line-height:1.4}
+.th-sun .glass,.th-pcloud .glass,.th-cloud .glass,.th-fog .glass{background:rgba(18,60,110,.26)}
+.glass h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.78;margin:0 0 10px;font-weight:700}
+.glass.warn{background:rgba(255,222,140,.9);color:#4a3000;text-shadow:none;border-color:#f2b134}
+.skyp{margin:0;font-size:17px;line-height:1.45}
+.hscroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;margin:0 -4px}
+.hh{flex:0 0 58px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.hh span{font-size:14px;font-weight:600;white-space:nowrap}.hh .cli{width:36px;height:36px}.hh em{font-style:normal;font-size:12px;font-weight:700;color:#9bd8ff;min-height:15px}.hh b{font-size:19px;font-weight:600}.hh .hev{font-size:13px}
+.dr{display:grid;grid-template-columns:70px 42px 34px 1fr 36px;align-items:center;gap:8px;padding:9px 0;border-top:1px solid rgba(255,255,255,.2)}
+.dn{font-size:18px;font-weight:600}.dic{display:flex;flex-direction:column;align-items:center}.dic .cli{width:32px;height:32px}.dic em{font-style:normal;font-size:11px;font-weight:700;color:#9bd8ff;min-height:13px}
+.tl{font-size:18px;opacity:.65;text-align:right}.th{font-size:18px;font-weight:600}
+.rbar{position:relative;height:6px;border-radius:3px;background:rgba(255,255,255,.24)}
+.rbar i{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#74d6e8,#b9e36f,#ffc857)}
+.rbar u{position:absolute;top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #1b2540;transform:translateX(-50%);box-sizing:border-box;text-decoration:none}
+.skyref{display:block;width:100%;margin-top:14px;padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;font-size:17px;font-weight:700;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.skynote{font-size:13px;opacity:.85;text-align:center;margin:14px 6px 0;line-height:1.5}.skynote a{color:#fff;font-weight:700}
+/* tarjeta del Inicio */
+.hsky{position:relative;overflow:hidden;display:flex;align-items:center;width:100%;margin-top:10px;border:0;border-radius:20px;padding:12px 14px 12px 16px;min-height:104px;color:#fff;text-align:left;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.14);text-shadow:0 1px 3px rgba(0,0,0,.25)}
+.hsky .fx{max-height:none}
+.hsin{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px;flex:1}
+.hsl{display:block;min-width:0}.hsk{display:block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.9}
+.hsrow{display:flex;align-items:baseline;gap:10px;margin:1px 0 4px}.hst{font-family:-apple-system,'SF Pro Display','Helvetica Neue',system-ui,sans-serif;font-size:46px;font-weight:300;line-height:1.05}.hsc{font-size:18px;font-weight:600}
+.hsq{display:block;font-size:20px;font-weight:700;line-height:1.2}.hsl small{display:block;font-size:14px;opacity:.92;margin-top:3px}
+.hchip{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:3px 11px;font-size:14px;font-weight:700}
+.hchip.hi{background:#ffd54a;color:#4a3300;border-color:#ffd54a;text-shadow:none}
+.hsic .cli{width:58px;height:58px;flex:none}.hchev{position:relative;z-index:1;font-size:28px;opacity:.9;margin-left:2px}
+
+.anota{margin:0 0 12px}
+.anbtns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.anb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;border-radius:18px;padding:10px 4px;border:2px solid transparent;font-family:inherit;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.anb i{font-style:normal;font-size:28px;font-weight:700;line-height:1;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.28)}
+.anb b{font-size:15px;line-height:1.15;text-align:center}
+.anb.v{background:linear-gradient(180deg,#0a8a5c,#067a52);color:#fff}
+.anb.g{background:#f2b134;color:#3a2a00}.anb.g i{background:rgba(255,255,255,.45)}
+.anb.sel{outline:3px solid #066a48;outline-offset:2px}
+.anb.l{background:#fbfcf9;color:#066a48;border-color:#8fcfa8;box-shadow:none}.anb.l i{background:#e3f3ea}
+.dn{white-space:nowrap}.dr{grid-template-columns:78px 44px 34px 1fr 34px!important}
 </style>
 </head>
 <body>
@@ -635,7 +769,7 @@ label.btn{display:block;text-align:center;cursor:pointer}
  <button data-a="goto" data-tab="home"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><rect x='33' y='9' width='6' height='12' fill='#a8642a'/><rect x='9' y='22' width='30' height='20' rx='3' fill='#fff3d6'/><path d='M4 25L24 7l20 18z' fill='#e63946'/><rect x='20' y='30' width='8' height='12' rx='2' fill='#ffb703'/><rect x='12' y='27' width='6' height='6' rx='1.5' fill='#7ec8e3'/><rect x='30' y='27' width='6' height='6' rx='1.5' fill='#7ec8e3'/></g><path d='M10 23L22 12' fill='none' stroke='#fff' stroke-opacity='.8' stroke-width='2.2'/></svg>Inicio</button>
  <button data-a="goto" data-tab="people"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(0 0) scale(1)'><g stroke='#3a2a1e' stroke-width='2.2'><path d='M8 43c0-9 6-13 16-13s16 4 16 13z' fill='#2fb344'/><path d='M19 31l5 6 5-6' fill='#fff3d6'/><rect x='20.5' y='25' width='7' height='6' rx='2' fill='#f2b27c'/><ellipse cx='24' cy='20' rx='8.5' ry='9' fill='#f2b27c'/><ellipse cx='24' cy='13' rx='17' ry='4.2' fill='#ffc233'/><path d='M14 12C14 2 34 2 34 12z' fill='#ffd75e'/><path d='M14.2 10.8q9.8 3 19.6 0' fill='none' stroke='#e63946' stroke-width='3'/></g><circle cx='20.5' cy='20.5' r='1.3' fill='#3a2a1e'/><circle cx='27.5' cy='20.5' r='1.3' fill='#3a2a1e'/><path d='M20.5 24q3.5 3 7 0' fill='none' stroke='#3a2a1e' stroke-width='1.8'/></g></svg>Cosechadores</button>
  <button data-a="goto" data-tab="pay"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='rotate(-10 22 22)'><g stroke='#3a2a1e' stroke-width='2.2'><rect x='4' y='11' width='34' height='21' rx='3' fill='#4ad66d'/><circle cx='21' cy='21.5' r='5.6' fill='#fff3d6'/></g><text x='21' y='25' font-size='8.5' font-weight='700' text-anchor='middle' fill='#3a2a1e' font-family='Georgia,serif'>$</text></g><g stroke='#3a2a1e' stroke-width='2.2'><circle cx='35' cy='34' r='10' fill='#ffc233'/><circle cx='35' cy='34' r='6.6' fill='none' stroke-width='1.4'/></g><text x='35' y='38.3' font-size='11' font-weight='700' text-anchor='middle' fill='#3a2a1e' font-family='Georgia,serif'>$</text></svg>Pagos</button>
- <button data-a="goto" data-tab="rep"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><rect x='6' y='27' width='9' height='15' rx='2' fill='#ff8a1f'/><rect x='19.5' y='18' width='9' height='24' rx='2' fill='#ffc233'/><rect x='33' y='8' width='9' height='34' rx='2' fill='#2fb344'/><path d='M4 43h40' fill='none'/></g><path d='M7 20L19 11l8 4 11-9' fill='none' stroke='#e63946' stroke-width='3'/><path d='M31 5.5h7.5V13' fill='none' stroke='#e63946' stroke-width='3'/></svg>Reportes</button>
+ <button data-a="goto" data-tab="rep"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><rect x='6' y='27' width='9' height='15' rx='2' fill='#ff8a1f'/><rect x='19.5' y='18' width='9' height='24' rx='2' fill='#ffc233'/><rect x='33' y='8' width='9' height='34' rx='2' fill='#2fb344'/><path d='M4 43h40' fill='none'/></g><path d='M7 20L19 11l8 4 11-9' fill='none' stroke='#e63946' stroke-width='3'/><path d='M31 5.5h7.5V13' fill='none' stroke='#e63946' stroke-width='3'/></svg>Informes</button>
  <button data-a="goto" data-tab="cafe"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round' class='ri'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(2.4 7) scale(.9)'><path d='M24 6C21 12 15 16 14 24M24 6c1 7 6 12 8 18' fill='none' stroke='#a8642a' stroke-width='2.6'/><g transform='translate(24 7) rotate(-25)'><path d='M0 0C3.4 -6.5 12.8 -6.5 17 0C12.8 6.5 3.4 6.5 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L14.4 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g transform='translate(24 7) rotate(205)'><path d='M0 0C2.8 -6 10.5 -6 14 0C10.5 6 2.8 6 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L11.9 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><circle cx='14' cy='31' r='8' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M9.6 29.8a4.8 4.8 0 0 1 4.0 -4.0' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.4'/><circle cx='33' cy='30' r='8' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M28.6 28.8a4.8 4.8 0 0 1 4.0 -4.0' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.4'/></g></svg>Mi café</button>
 </nav>
 <div id="reg" hidden></div>
@@ -744,13 +878,13 @@ const COLORS=['#1f8a3f','#8a5a2b','#2f7fa8','#b0642a','#6b4fa0','#3a8f7b'];
 const av=(p,big)=>`<span class="av${big?' big':''}" style="background:${COLORS[p.id%COLORS.length]}">${esc((p.name||'?').trim().charAt(0).toUpperCase())}</span>`;
 
 /* ===== estado y navegación ===== */
-const S={tab:'home',sub:null,pid:null,rtab:'prod',q:''};
+const S={tab:'home',sub:null,pid:null,rtab:'mes',q:''};
 let live=null;
 function go(tab,sub=null,pid=null){S.warnPaid=0;S.tab=tab;S.sub=sub;S.pid=pid;render()}
 const MARK=`<svg xmlns='http://www.w3.org/2000/svg' viewBox='10 28 180 158'><defs><linearGradient id='sg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffd600'/><stop offset='1' stop-color='#ffb000'/></linearGradient></defs><polygon points='152.98,68.70 173.97,65.88 153.50,70.55' fill='#ffd600'/><polygon points='153.50,70.55 173.97,65.88 153.84,72.44' fill='#f0a800'/><polygon points='151.10,64.64 163.73,60.68 152.02,66.32' fill='#ffd600'/><polygon points='152.02,66.32 163.73,60.68 152.77,68.09' fill='#f0a800'/><polygon points='148.37,61.09 166.06,49.44 149.64,62.53' fill='#ffd600'/><polygon points='149.64,62.53 166.06,49.44 150.76,64.09' fill='#f0a800'/><polygon points='144.91,58.24 154.58,49.20 146.47,59.36' fill='#ffd600'/><polygon points='146.47,59.36 154.58,49.20 147.91,60.63' fill='#f0a800'/><polygon points='140.91,56.23 151.79,38.06 142.68,56.98' fill='#ffd600'/><polygon points='142.68,56.98 151.79,38.06 144.36,57.90' fill='#f0a800'/><polygon points='136.56,55.16 141.34,42.83 138.45,55.50' fill='#ffd600'/><polygon points='138.45,55.50 141.34,42.83 140.30,56.02' fill='#f0a800'/><polygon points='132.08,55.09 134.00,34.00 134.00,55.00' fill='#ffd600'/><polygon points='134.00,55.00 134.00,34.00 135.92,55.09' fill='#f0a800'/><polygon points='127.70,56.02 126.66,42.83 129.55,55.50' fill='#ffd600'/><polygon points='129.55,55.50 126.66,42.83 131.44,55.16' fill='#f0a800'/><polygon points='123.64,57.90 116.21,38.06 125.32,56.98' fill='#ffd600'/><polygon points='125.32,56.98 116.21,38.06 127.09,56.23' fill='#f0a800'/><polygon points='120.09,60.63 113.42,49.20 121.53,59.36' fill='#ffd600'/><polygon points='121.53,59.36 113.42,49.20 123.09,58.24' fill='#f0a800'/><polygon points='117.24,64.09 101.94,49.44 118.36,62.53' fill='#ffd600'/><polygon points='118.36,62.53 101.94,49.44 119.63,61.09' fill='#f0a800'/><polygon points='115.23,68.09 104.27,60.68 115.98,66.32' fill='#ffd600'/><polygon points='115.98,66.32 104.27,60.68 116.90,64.64' fill='#f0a800'/><polygon points='114.16,72.44 94.03,65.88 114.50,70.55' fill='#ffd600'/><polygon points='114.50,70.55 94.03,65.88 115.02,68.70' fill='#f0a800'/><path d='M117.3 75A16.7 16.7 0 0 1 150.7 75' fill='none' stroke='#f6efdc' stroke-width='2'/><path d='M120.5 75A13.5 13.5 0 0 1 147.5 75Z' fill='url(#sg)'/><path d='M80 94C100 74 140 68 182 80C182 86 182 90 182 94C150 94 110 94 80 94Z' fill='#7fcf5a'/><path d='M108 94C126 82 154 80 182 88C182 90 182 92 182 94C160 94 130 94 108 94Z' fill='#a8e070'/><path d='M40.5 100C24.5 98 16.5 88 20.5 74C34.5 76 42.5 88 40.5 100Z' fill='#9bbd4e'/><path d='M42.5 98C32.5 86 34.5 70 46.5 62C56.5 72 54.5 88 42.5 98Z' fill='#a8e070'/><path d='M44.5 100C48.5 86 58.5 78 72.5 78C70.5 90 58.5 100 44.5 100Z' fill='#8fb04a'/><g fill='none' stroke='#f6efdc' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'><circle cx='40.5' cy='126' r='17'/><path d='M74.5 144L95 106L115.5 144'/><path d='M79.5 137L110.5 137'/><path d='M134.5 108L134.5 144L145.5 144'/><path d='M176.5 108L162.5 108L162.5 144L176.5 144'/><path d='M162.5 126L173.5 126'/></g><path d='M41.5 116L41.5 120' stroke='#f6efdc' stroke-width='1.6'/><circle cx='36.3' cy='126' r='4.6' fill='#c0392b'/><circle cx='45.3' cy='125' r='4.6' fill='#c0392b'/><path d='M26 172C74 158 140 160 178 174C134 170 76 174 26 172Z' fill='#7fcf5a'/><path d='M60 182C104 172 146 174 178 181C146 180 100 183 60 182Z' fill='#ffc83d'/></svg>`;
 const ICO_BACK=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M19 12H5M11.5 5.5L5 12l6.5 6.5'/></svg>`,ICO_PLUS=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5v14M5 12h14'/></svg>`,ICO_EDIT=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M17 3.5a2.6 2.6 0 0 1 3.7 3.7L8 19.9l-4.7 1.2 1.2-4.7Z'/></svg>`;
 const GEAR=`<svg class='hi' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><polygon points='10.21,4.82 10.37,1.73 13.63,1.73 13.79,4.82 15.81,5.66 18.11,3.59 20.41,5.89 18.34,8.19 19.18,10.21 22.27,10.37 22.27,13.63 19.18,13.79 18.34,15.81 20.41,18.11 18.11,20.41 15.81,18.34 13.79,19.18 13.63,22.27 10.37,22.27 10.21,19.18 8.19,18.34 5.89,20.41 3.59,18.11 5.66,15.81 4.82,13.79 1.73,13.63 1.73,10.37 4.82,10.21 5.66,8.19 3.59,5.89 5.89,3.59 8.19,5.66'/><circle cx='12' cy='12' r='3.1'/></svg>`;
-const TITLES={farms:'Mis fincas',people:'Cosechadores',pay:'Pagos',rep:'Reportes',register:'Registrar cosecha',history:'Historial',settings:'Configuración',addperson:'Nuevo cosechador',cafe:'Mi café',jor:'Jornales',cog:'Cogidas y rendimiento',luna:'Abonado y luna',prob:'Problemas de la finca',conv:'Tabla de conversión'};
+const TITLES={farms:'Mis fincas',people:'Cosechadores',pay:'Pagos',rep:'Informes',register:'Registrar cosecha',settings:'Configuración',addperson:'Nuevo cosechador',cafe:'Mi café',jor:'Jornales',cog:'Cogidas y rendimiento',luna:'Abonado y luna',prob:'Problemas de la finca',conv:'Tabla de conversión',clima:'Clima',prov:'Proveedores',provd:'Proveedor',provf:'Datos del proveedor'};
 function header(){
  const h=$('hdr');
  if(!S.sub&&S.tab==='home'){h.className='home';h.innerHTML=`<span style="padding-left:14px"><i class="dotc ${navigator.onLine?'':'off'}" title="${navigator.onLine?'En línea':'Sin conexión'}"></i></span><h1><span class="mk">${MARK}</span></h1><button class="ib" data-a="goto" data-tab="home" data-sub="settings" aria-label="Configuración">${GEAR}</button>`;return}
@@ -777,7 +911,6 @@ function screen(){
  if(S.tab==='cafe')return vCafe();
  if(S.sub==='farms')return vFarms();
  if(S.sub==='register')return vRegister();
- if(S.sub==='history')return vHistory();
  if(S.sub==='settings')return vSettings();
  if(S.sub==='addperson')return vAdd();
  if(S.sub==='detail')return vDetail();
@@ -800,17 +933,17 @@ function backupAlert(){
 /* ===== pantallas ===== */
 function priceNote(){const own=Number(W().price)>0,pp=prevPrice();return own?'Precio de esta semana guardado.':(pp?'Vacío: se usa el de la semana anterior ('+fmt(pp)+').':'Aún no hay precio para esta semana.')}
 function vHome(){
+ live=homeClimaLive;
  const t=totals(),owner=esc(db.meta.owner||(db.meta.user&&db.meta.user.nombre?String(db.meta.user.nombre).split(' ')[0]:''));
- return `${fincaHead()}<div class="hbanner">${bannerBtns()}</div>${fotoRow()}<div class="hello">Hola${owner?', '+owner:''}</div><div class="sub">Aquí tienes el resumen de esta semana</div>
+ return `${fincaHead()}<div class="hbanner">${bannerBtns()}</div>${fotoRow()}<div class="hello">Hola${owner?', '+owner:''}</div>
  ${precioCard()}
+ <div id="hClima">${homeClimaHTML()}</div>
  ${farmAlert()}${priceAlert()}
  <div style="margin-top:12px">${weekBar()}</div>
  <div class="card" style="margin-top:4px"><label class="l" for="hPrice" style="margin-top:0">Pago por kilo recogido · semana ${wkNum(cur)}</label><input class="f" id="hPrice" type="text" inputmode="numeric" autocomplete="off" placeholder="$ 0" data-pricec="1" value="${Number(W().price)>0?esc(fmt(W().price)):''}"><p class="note" id="pNote2">${priceNote()}</p></div>
- <div class="tiles"><div class="tile"><span>Kilos totales</span><b>${num(t.kg)} kg</b></div><div class="tile"><span>Cosechadores</span><b>${activePeople().length}</b></div>
+ <div class="tiles"><div class="tile"><span>Kilos totales</span><b>${num(t.kg)} kg</b></div>
  <div class="tile dark"><span>Total a pagar</span><b>${fmt(t.cos)}</b></div><div class="tile warn"><span>Pendiente por pagar</span><b>${fmt(t.cosPend)}</b></div></div>
- <h2 class="t">Resumen semanal</h2><div class="card">${bars(dayKg(),DAYS,num)}</div>
- <button class="menu" data-a="goto" data-tab="home" data-sub="register"><span class="ic">＋</span><span>Registrar cosecha</span></button>
- <button class="menu" data-a="goto" data-tab="home" data-sub="history"><span class="ic">☰</span><span>Ver registros</span></button>`;
+ <button class="menu" data-a="goto" data-tab="home" data-sub="register"><span class="ic">＋</span><span>Registrar cosecha</span></button>`;
 }
 function vFarms(){
  const tot=root.farms.reduce((a,f)=>{const t=withFarm(f,()=>totals());a.kg+=t.kg;a.net+=t.net;a.pend+=t.pending;return a},{kg:0,net:0,pend:0});
@@ -866,8 +999,8 @@ function listHTML(){
 }
 function retiredHTML(){const a=db.people.filter(p=>p.archived);if(!a.length)return '';return `<h2 class="t">Retirados</h2><div class="card" style="padding:6px 12px"><div class="list">`+a.map(p=>`<div class="item" style="cursor:default">${av(p)}<span class="nm"><b>${esc(p.name)}</b><small>Su historial se conserva</small></span><button type="button" class="chip ok" data-a="restore" data-pid="${p.id}">Reactivar</button></div>`).join('')+`</div></div>`}
 function peopleCount(){
- const a=activePeople(),n=a.length,con=a.filter(p=>calc(p.id).kg>0).length,ret=db.people.length-n;
- return `<div class="pcount"><div class="pcn">${n}</div><div class="pct"><b>${n===1?'cosechador':'cosechadores'}</b><small>${con} con kilos en la semana ${wkNum(cur)}${ret>0?' · '+ret+(ret===1?' retirado':' retirados'):''}</small></div></div>`;
+ const n=activePeople().length;
+ return `<div class="pcount"><div class="pcn">${n}</div><div class="pct"><b>${n===1?'cosechador':'cosechadores'}</b></div></div>`;
 }
 function vPeople(){return `${peopleCount()}${weekBar()}<input class="f" id="q" type="search" placeholder="Buscar cosechador..." value="${esc(S.q)}" autocomplete="off" style="margin:8px 0 12px"><div class="card" id="plist" style="padding:6px 12px">${listHTML()}</div>${retiredHTML()}`}
 function vAdd(){return `<label class="l" for="newName">Nombre del cosechador</label><input class="f" id="newName" type="text" maxlength="80" placeholder="Escribe un nombre" autocomplete="off" autocapitalize="words"><button class="btn" data-a="addsubmit">Agregar cosechador</button><div id="addMsg"></div>`}
@@ -902,19 +1035,10 @@ function vPay(){
  <button class="btn sec noprint" data-a="wa">Enviar resumen por WhatsApp</button>
  <button class="btn sec noprint" data-a="payall">Marcar todos como pagados</button>`;
 }
-function vHistory(){
- const t=totals(),pr=priceFor();
- const rows=inWeek().map(p=>{const c=calc(p.id);return `<tr><td>${pn(p)}</td><td>${num(c.kg)} kg</td><td>${fmt(c.net)}</td></tr>`}).join('');
- const keys=Object.keys(db.weeks).sort().reverse().slice(0,12);
- const past=keys.map(k=>{const tt=totals(k);return `<button class="item" data-a="pickweek" data-k="${k}"><span class="nm"><b>Semana ${wkNum(k)} · ${k.split('-W')[0]}</b><small>${rangeText(k)}</small></span><span style="text-align:right"><b>${num(tt.kg)} kg</b><br><small style="color:var(--muted)">${fmt(tt.net)}</small></span></button>`}).join('');
- return `<div class="sub" style="margin-bottom:6px;font-weight:700;color:var(--ink);font-size:14px">Selecciona una semana</div>${weekBar()}
- <div class="card" style="margin-top:8px;padding:6px"><table class="tbl"><thead><tr><th>Cosechador</th><th>Kilos</th><th>Pago</th></tr></thead><tbody>${rows||'<tr><td colspan="3" class="empty">Sin cosechas registradas esta semana</td></tr>'}<tr class="tot"><td>Total</td><td>${num(t.kg)} kg</td><td>${fmt(t.net)}</td></tr></tbody></table></div>
- <p class="note">Precio por kilo de esta semana: ${pr?fmt(pr):'sin precio'}.</p>
- ${keys.length?`<h2 class="t">Semanas registradas</h2><div class="card" style="padding:6px 12px"><div class="list">${past}</div></div>`:''}`;
-}
 function vRep(){
  const t=totals();
- const tabs=`<div class="tabs noprint">${[['prod','Producción'],['pay','Pagos'],['cmp','Comparativos']].map(([k,l])=>`<button class="${S.rtab===k?'on':''}" data-a="rtab" data-v="${k}">${l}</button>`).join('')}</div>`;
+ const tabs=`<div class="tabs noprint">${[['mes','Del mes'],['prod','Producción'],['cmp','Semanas']].map(([k,l])=>`<button class="${S.rtab===k?'on':''}" data-a="rtab" data-v="${k}">${l}</button>`).join('')}</div>`;
+ if(S.rtab==='mes')return `${tabs}${vInfMes()}`;
  let body='';
  if(S.rtab==='prod'){
   const ranked=wkPeople().map(p=>({p,c:calc(p.id)})).filter(x=>x.c.kg>0).sort((a,b)=>b.c.kg-a.c.kg),mx=ranked.length?ranked[0].c.kg:1;
@@ -929,7 +1053,7 @@ function vRep(){
   <h2 class="t">Detalle</h2><div class="card" style="padding:6px"><table class="tbl"><thead><tr><th>Semana</th><th>Kilos</th><th>Pago</th></tr></thead><tbody>${ks.map((k,i)=>`<tr><td>S${wkNum(k)} <small style="color:var(--muted)">${shortDate(dayDate(k,0))}</small></td><td>${num(kgs[i])} kg</td><td>${fmt(ms[i])}</td></tr>`).join('')}</tbody></table></div>`;
  }
  return `<div class="printonly"><b>OALE · Reporte de la semana ${wkNum(cur)}</b> (${rangeText(cur)})</div>${tabs}<div style="margin-top:12px">${weekBar()}</div>${body}
- <button class="btn noprint" data-a="print">Exportar PDF</button><button class="btn sec noprint" data-a="csvw">Descargar Excel de la semana</button>`;
+ <button class="btn noprint" data-a="print">Exportar PDF</button>`;
 }
 function vSettings(){
  const last=db.meta.lastBackup?new Date(db.meta.lastBackup).toLocaleDateString('es-CO'):'nunca';
@@ -979,7 +1103,7 @@ document.addEventListener('click',e=>{
  const a=el.dataset.a;
  switch(a){
   case 'goto':go(el.dataset.tab||S.tab,el.dataset.sub||null,el.dataset.pid?Number(el.dataset.pid):null);if(el.dataset.tab==='people'&&!el.dataset.sub)S.q='';break;
-  case 'back':if(S.tab==='cafe'&&S.sub)go('cafe');else if(S.tab==='cafe')go('home');else if(S.sub==='detail'||S.sub==='addperson')go('people');else go('home');break;
+  case 'back':if(S.tab==='cafe'&&(S.sub==='provd'||S.sub==='provf'))go('cafe','prov');else if(S.tab==='cafe'&&S.sub)go('cafe');else if(S.tab==='cafe')go('home');else if(S.sub==='detail'||S.sub==='addperson')go('people');else go('home');break;
   case 'prev':cur=shiftKey(cur,-1);render(true);break;
   case 'next':cur=shiftKey(cur,1);render(true);break;
   case 'today':cur=isoKey(new Date());render(true);break;
@@ -1226,10 +1350,10 @@ function vConv(){live=convLive;return `<div class="cafe"><div class="card"><labe
 
 /* ---------- menú ---------- */
 function vCafe(){
- if(S.sub==='jor')return vJor();if(S.sub==='cog')return vCog();if(S.sub==='luna')return vLuna();if(S.sub==='prob')return vProb();if(S.sub==='conv')return vConv();
+ if(S.sub==='clima')return vClima();if(S.sub==='prov')return vProv();if(S.sub==='provd')return vProvD();if(S.sub==='provf')return vProvF();if(S.sub==='jor')return vJor();if(S.sub==='cog')return vCog();if(S.sub==='luna')return vLuna();if(S.sub==='prob')return vProb();if(S.sub==='conv')return vConv();
  S.jt='anotar';
  const b=(s,e,t,d)=>`<button class="bigbtn" data-a="goto" data-tab="cafe" data-sub="${s}"><span class="e">${e}</span><span><b>${t}</b><small>${d}</small></span></button>`;
- return `<div class="cafe" style="margin-top:-6px">${b('cog',MENUIC.cog,'Cogidas y rendimiento','Guarde cada cogida y vea cuánto rinde')}${b('jor',MENUIC.jor,'Jornales','Guadañar, fumigar y otros trabajos por día')}${b('luna',MENUIC.luna,'Abonado y luna','Cuándo abonar según la luna')}${b('prob',MENUIC.prob,'Problemas de la finca','Broca, roya y más: qué hacer')}${b('conv',MENUIC.conv,'Tabla de conversión','De maduro a pergamino y almendra')}</div>`;
+ return `<div class="cafe" style="margin-top:-6px">${b('cog',MENUIC.cog,'Cogidas y rendimiento','Guarde cada cogida y vea cuánto rinde')}${b('jor',MENUIC.jor,'Jornales','Guadañar, fumigar y otros trabajos por día')}${b('clima',MENUIC.clima,'Clima','Lluvia y temperatura de su finca')}${b('luna',MENUIC.luna,'Abonado y luna','Cuándo abonar según la luna')}${b('prob',MENUIC.prob,'Problemas de la finca','Broca, roya y más: qué hacer')}${b('prov',MENUIC.prov,'Proveedores','Tiendas de abonos, semillas y herramientas')}${b('conv',MENUIC.conv,'Tabla de conversión','De maduro a pergamino y almendra')}</div>`;
 }
 
 /* ---------- eventos de Mi café ---------- */
@@ -1504,7 +1628,7 @@ function forgotShow(){
  <label for="lgC">Su número de celular</label><input id="lgC" type="tel" inputmode="numeric" maxlength="10" placeholder="3001234567">${pinFields('Clave nueva (4 números)','Repita la clave')}
  <button class="btn" data-c="lgreset">Cambiar clave</button><button class="btn sec" data-c="lgback">Volver</button></div>`;
 }
-function lgOpen(){S.auth=true;$('reg').hidden=true}
+function lgOpen(){if(!accesoPermitido())return;S.auth=true;$('reg').hidden=true}
 async function lgTry(){
  const u=db.meta.user,f=$('lgP');if(!f)return;
  if(S.lgUntil&&Date.now()<S.lgUntil)return toast('Espere un momento y vuelva a intentar',true);
@@ -1669,6 +1793,507 @@ document.addEventListener('keydown',e=>{
  if(t.classList&&t.classList.contains('qkg')){e.preventDefault();qAdd(Number(t.dataset.id))}
  else if(t.id==='qSearch'){e.preventDefault();const r=[...document.querySelectorAll('.qrow')].find(x=>x.style.display!=='none'&&!x.classList.contains('lock'));if(r)r.querySelector('.qkg').focus()}
 });
+
+/* ================= INFORMES MENSUALES (se arman solos con lo que ya registró) ================= */
+function MOVS(){const f=F();return Array.isArray(f.movs)?f.movs:(f.movs=[])}
+const MV_CATS={
+ venta:['Pergamino seco','Café mojado','Cereza (maduro)','Otra venta'],
+ gasto:['Abonos y fertilizantes','Otros insumos (cal, venenos)','Herramientas y equipos','Transporte','Otros gastos'],
+ labor:['Abonada','Fumigada','Guadañada','Poda o zoqueo','Siembra','Otra labor']
+};
+const MV_NOM={venta:'Venta de café',gasto:'Gasto',labor:'Labor'};
+function pad2(n){return String(n).padStart(2,'0')}
+function infMes(y,m){
+ const last=new Date(y,m+1,0).getDate(),pref=y+'-'+pad2(m+1)+'-';
+ const R={y,m,finca:farmName(),kg:0,dias:0,pesas:0,porDia:[],pickers:{},pagoCos:0,diasSinPrecio:0,jorN:0,jorCosto:0,jor:[],ventas:0,ventaKg:0,gastos:{},gastoIns:0,movs:[],cogs:[],hist:[],abonos:[],mejor:null};
+ for(let d=1;d<=last;d++){
+  const ds=pref+pad2(d),{key,idx}=dateInfo(ds),w=db.weeks[key];let kgd=0;
+  if(w&&w.entries)Object.keys(w.entries).forEach(pid=>{const v=Number((w.entries[pid]||[])[idx])||0;if(v>0){kgd+=v;R.pickers[pid]=(R.pickers[pid]||0)+v;const ps=(w.pesas&&w.pesas[pid]&&w.pesas[pid][idx])||[];R.pesas+=ps.filter(q=>Number(q.k)>0).length||1}});
+  R.porDia.push(Math.round(kgd*100)/100);
+  if(kgd>0){R.kg+=kgd;R.dias++;const pr=priceFor(key);if(pr>0)R.pagoCos+=kgd*pr;else R.diasSinPrecio++;if(!R.mejor||kgd>R.mejor.kg)R.mejor={ds,kg:kgd}}
+ }
+ R.kg=Math.round(R.kg*100)/100;R.nPick=Object.keys(R.pickers).length;
+ JOR().filter(j=>j.f&&j.f.startsWith(pref)).forEach(j=>{R.jor.push(j);R.jorN+=j.dias;R.jorCosto+=j.dias*j.val;const p=person(j.pid);R.hist.push({f:j.f,t:'Jornal',d:j.labor+' · '+(p?p.name:'—')+' · '+jdur(j.dias).toLowerCase()});if(j.labor==='Abonar')R.abonos.push(j.f)});
+ MOVS().filter(x=>x.f&&x.f.startsWith(pref)).forEach(x=>{R.movs.push(x);
+  if(x.tipo==='venta'){R.ventas+=x.monto;R.ventaKg+=x.kg||0;R.hist.push({f:x.f,t:'Venta',d:x.cat+(x.kg?' · '+num(x.kg)+' kg':'')+' · '+fmt(x.monto)+(x.nota?' · '+x.nota:'')})}
+  else if(x.tipo==='gasto'){R.gastos[x.cat]=(R.gastos[x.cat]||0)+x.monto;R.gastoIns+=x.monto;R.hist.push({f:x.f,t:'Gasto',d:x.cat+' · '+fmt(x.monto)+(x.nota?' · '+x.nota:'')});if(x.cat==='Abonos y fertilizantes')R.abonos.push(x.f)}
+  else{R.hist.push({f:x.f,t:'Labor',d:x.cat+(x.nota?' · '+x.nota:'')});if(x.cat==='Abonada')R.abonos.push(x.f)}});
+ (CFd().cog||[]).filter(c=>c.f&&c.f.startsWith(pref)).forEach(c=>R.cogs.push(c));
+ R.hist.sort((a,b)=>a.f<b.f?-1:a.f>b.f?1:0);R.abonos=[...new Set(R.abonos)].sort();
+ R.cogM=R.cogs.reduce((a,c)=>a+c.m,0);R.cogL=R.cogs.reduce((a,c)=>a+c.l,0);
+ R.gastosTot=R.gastoIns+R.jorCosto+R.pagoCos;R.balance=R.ventas-R.gastosTot;
+ const av=[];
+ if(!R.kg)av.push('No hay kilos de cosecha registrados en este mes.');
+ if(R.diasSinPrecio)av.push('En '+R.diasSinPrecio+(R.diasSinPrecio===1?' día':' días')+' con cosecha faltó el pago por kilo. Ese pago no está sumado.');
+ if(!R.ventas)av.push('No hay ventas de café anotadas: el balance solo muestra gastos.');
+ if(!R.gastoIns)av.push('No hay gastos de abonos o insumos anotados.');
+ const hoy=new Date();if(y===hoy.getFullYear()&&m===hoy.getMonth())av.push('Este mes todavía no termina: el informe llega hasta hoy.');
+ R.avisos=av;return R;
+}
+function fDiaC(ds){const [y,m,d]=ds.split('-').map(Number);return d+' '+MES[m-1].slice(0,3)}
+function mbars(vals){
+ const mx=Math.max(...vals,0)||1,n=vals.length;
+ return '<div class="dbars">'+vals.map(v=>`<i style="height:${v?Math.max(3,Math.round(v/mx*100)):0}%" title="${v}"></i>`).join('')+'</div><div class="dlab"><span>1</span><span>'+Math.ceil(n/4)+'</span><span>'+Math.ceil(n/2)+'</span><span>'+Math.ceil(n*3/4)+'</span><span>'+n+'</span></div>';
+}
+function mvFormHTML(){
+ const k=S.mk;if(!k)return '';
+ const cats=MV_CATS[k],c=S.mc&&cats.includes(S.mc)?S.mc:cats[0],ds=S.md||todayStr();
+ return `<div class="card mform noprint"><b>${k==='venta'?'Anotar venta de café':k==='gasto'?'Anotar gasto':'Anotar labor hecha'}</b>
+ <div class="rdate" style="margin-top:10px"><button type="button" class="rdb" data-c="mprev" aria-label="Día anterior">‹</button><label class="rdlbl"><b id="mdText">${dayLong(ds)}</b><small>Toque aquí para otra fecha</small><input type="date" id="mDate" value="${ds}"></label><button type="button" class="rdb" data-c="mnext" aria-label="Día siguiente">›</button></div>
+ <label class="l">${k==='venta'?'¿Qué vendió?':k==='gasto'?'¿En qué gastó?':'¿Qué labor hizo?'}</label><div class="pchips">${cats.map(x=>`<button type="button" class="pchip ${x===c?'on':''}" data-c="mcat" data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
+ ${k!=='labor'?`<label class="l" for="mAmt">${k==='venta'?'Valor recibido':'Valor del gasto'}</label><input class="f big" id="mAmt" inputmode="numeric" autocomplete="off" placeholder="$ 0">`:''}
+ ${k==='venta'?`<label class="l" for="mKg">Kilos vendidos (si quiere anotarlos)</label><input class="f big" id="mKg" inputmode="decimal" autocomplete="off" placeholder="Ej. 125">`:''}
+ <label class="l" for="mNote">Nota (si quiere)</label><input class="f" id="mNote" autocomplete="off" maxlength="80" placeholder="Ej. lote La Loma">
+ <button class="btn" data-c="msave">Guardar</button><button class="btn sec" data-c="mclose">Cancelar</button></div>`;
+}
+function vInfMes(){
+ const now=new Date(),im=S.im||(S.im={y:now.getFullYear(),m:now.getMonth()});
+ const R=infMes(im.y,im.m),per=cUpper(MES[im.m])+' '+im.y;
+ const anios=[];for(let a=now.getFullYear()-3;a<=now.getFullYear()+1;a++)anios.push(a);
+ const filtro=`<div class="imfil noprint"><button type="button" class="rdb sm" data-c="impr" aria-label="Mes anterior">‹</button><select class="f" id="imMes" aria-label="Mes">${MES.map((n,i)=>`<option value="${i}" ${i===im.m?'selected':''}>${cUpper(n)}</option>`).join('')}</select><select class="f" id="imAnio" aria-label="Año">${anios.map(a=>`<option ${a===im.y?'selected':''}>${a}</option>`).join('')}</select><button type="button" class="rdb sm" data-c="imnx" aria-label="Mes siguiente">›</button></div>`;
+ const card=(l,v,s,cl)=>`<div class="mc ${cl||''}"><span>${l}</span><b>${v}</b>${s?`<small>${s}</small>`:''}</div>`;
+ const gl=Object.keys(R.gastos).map(c=>[c,R.gastos[c],'Registrado']);
+ const filas=[['Ventas de café'+(R.ventaKg?' ('+num(R.ventaKg)+' kg)':''),R.ventas,'Registrado',true],...gl.map(x=>[x[0],-x[1],x[2]]),['Jornales ('+jdText(R.jorN)+')',-R.jorCosto,'Registrado'],['Pago de cosecha ('+num(R.kg)+' kg)',-R.pagoCos,'Calculado con sus kilos y su pago por kilo']];
+ const rend=R.cogM>0?c2(R.cogL/R.cogM*100)+' %':'—';
+ const kinds=[['venta','Vendí café'],['gasto','Gasté en la finca'],['labor','Hice una labor']];
+ const lista=R.movs.length&&S.ml?`<div style="margin-top:8px">${[...R.movs].sort((a,b)=>a.f<b.f?1:-1).map(x=>`<div class="jrow2"><span><b>${fDiaC(x.f)}</b> · ${MV_NOM[x.tipo]}<small>${esc(x.cat)}${x.nota?' · '+esc(x.nota):''}</small></span><em>${x.tipo==='labor'?'':fmt(x.monto)}</em><button class="chip" data-c="mdel" data-id="${x.id}">Borrar</button></div>`).join('')}</div>`:'';
+ const anot=`<div class="anota noprint"><h2 class="t" style="margin:2px 0 8px">¿Qué quiere anotar?</h2><div class="anbtns">${kinds.map(([k,l],ix)=>`<button type="button" class="anb ${['v','g','l'][ix]}${S.mk===k?' sel':''}" data-c="mopen" data-v="${k}"><i>${['+','−','✓'][ix]}</i><b>${l}</b></button>`).join('')}</div>${R.movs.length?`<button type="button" class="link" style="margin-top:10px" data-c="mlist">${S.ml?'Ocultar':'Ver'} lo anotado este mes (${R.movs.length})</button>`:''}${lista}</div>${mvFormHTML()}`;
+ return `${filtro}${anot}
+ <div class="printonly"><b>OALE · Informe de ${per}</b> · ${esc(R.finca)}</div>
+ <div class="card mhead"><b>${esc(R.finca)}</b><span>${per}</span></div>
+ ${R.avisos.length?`<div class="cfmsg warn"><b>Tenga en cuenta</b>${R.avisos.map(a=>'<br>• '+esc(a)).join('')}</div>`:''}
+ <div class="mcards">${card('Kilos recogidos',num(R.kg)+' kg',R.dias+(R.dias===1?' día':' días')+' de cosecha')}${card('Jornales',jdText(R.jorN),fmt(R.jorCosto))}${card('Ingresos',fmt(R.ventas),R.ventas?'ventas anotadas':'sin ventas anotadas')}${card('Gastos',fmt(R.gastosTot),'insumos + jornales + cosecha')}${card('Balance',fmt(R.balance),R.ventas?'ingresos menos gastos':'solo gastos: faltan ventas',R.balance>=0?'ok wide':'bad wide')}</div>
+ <h2 class="t">Cosecha del mes</h2><div class="card">
+  <div class="kv"><span>Kilos recogidos</span><b>${num(R.kg)} kg</b></div>
+  <div class="kv"><span>Personas que cogieron</span><b>${R.nPick}${R.nPick?' · promedio '+num(R.kg/R.nPick)+' kg':''}</b></div>
+  ${R.mejor?`<div class="kv"><span>Mejor día</span><b>${fDiaC(R.mejor.ds)} · ${num(R.mejor.kg)} kg</b></div>`:''}
+  ${R.kg?`<div style="margin-top:10px">${mbars(R.porDia)}<p class="note">Kilos por día del mes</p></div>`:''}</div>
+ <h2 class="t">Ingresos y gastos</h2><div class="card">
+  ${filas.map(f=>`<div class="kv fil"><span>${esc(f[0])}<em class="tag ${f[2]==='Registrado'?'reg':'cal'}">${f[2]==='Registrado'?'Registrado':'Calculado'}</em></span><b style="color:${f[1]>=0&&f[3]?'#066a48':'#22302a'}">${f[1]<0?'− ':''}${fmt(Math.abs(f[1]))}</b></div>`).join('')}
+  <div class="kv tot"><span>Total ingresos</span><b>${fmt(R.ventas)}</b></div><div class="kv tot"><span>Total gastos</span><b>${fmt(R.gastosTot)}</b></div><div class="kv tot"><span>Balance</span><b style="color:${R.balance>=0?'#066a48':'#b32a24'}">${R.balance<0?'− ':''}${fmt(Math.abs(R.balance))}</b></div>
+  <p class="note">Registrado = lo que usted anotó. Calculado = salió de sus kilos y su pago por kilo.</p></div>
+ <h2 class="t">Labores y actividades</h2><div class="card">
+  ${R.abonos.length?`<div class="cfline"><b>Abonado:</b> ${R.abonos.map(fDiaC).join(', ')}</div>`:'<div class="cfline" style="color:#52615a">Sin fechas de abonado anotadas este mes.</div>'}
+  ${R.hist.length?R.hist.map(h=>`<div class="hrow"><b>${fDiaC(h.f)}</b><em>${h.t}</em><span>${esc(h.d)}</span></div>`).join(''):'<p class="note">Todavía no hay labores anotadas este mes.</p>'}</div>
+ <div class="noprint" style="margin-top:6px"><button class="btn" data-c="infpdf">Descargar informe en PDF</button><button class="btn sec" data-c="infprint">Imprimir</button></div>`;
+}
+document.addEventListener('click',e=>{
+ const el=e.target.closest('[data-c="impr"],[data-c="imnx"],[data-c="mopen"],[data-c="mclose"],[data-c="msave"],[data-c="mdel"],[data-c="mcat"],[data-c="mprev"],[data-c="mnext"],[data-c="infpdf"],[data-c="infprint"],[data-c="mlist"]');if(!el)return;const c=el.dataset.c,v=el.dataset.v;
+ const im=S.im||(S.im={y:new Date().getFullYear(),m:new Date().getMonth()});
+ if(c==='impr'||c==='imnx'){im.m+=c==='impr'?-1:1;if(im.m<0){im.m=11;im.y--}if(im.m>11){im.m=0;im.y++}render(true)}
+ else if(c==='mopen'){S.mk=v;S.mc=null;S.md=todayStr();render(true);setTimeout(()=>{const f=document.querySelector('.mform');f&&f.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+ else if(c==='mclose'){S.mk=null;render(true)}
+ else if(c==='mcat'){S.mc=v;document.querySelectorAll('.mform .pchip').forEach(b=>b.classList.toggle('on',b.dataset.v===v))}
+ else if(c==='mprev'||c==='mnext'){const i=$('mDate'),n=addD(i.value||todayStr(),c==='mprev'?-1:1);i.value=n;S.md=n;$('mdText').textContent=dayLong(n)}
+ else if(c==='mdel'){if(confirm('¿Borrar este registro?')){const f=F();f.movs=MOVS().filter(x=>String(x.id)!==el.dataset.id);save(true);render(true);toast('Borrado')}}
+ else if(c==='msave'){
+  const k=S.mk,ds=$('mDate').value,cats=MV_CATS[k],cat=S.mc&&cats.includes(S.mc)?S.mc:cats[0],monto=k==='labor'?0:Number(String(($('mAmt')||{}).value||'').replace(/\D/g,''))||0,kg=k==='venta'?pnum(($('mKg')||{}).value):0,nota=$('mNote').value.trim();
+  if(!ds)return toast('Escoja el día',true);
+  if(k!=='labor'&&!(monto>0))return toast('Escriba el valor',true);
+  MOVS().push({id:Date.now(),f:ds,tipo:k,cat,monto,kg:kg>0?kg:0,nota});
+  const d=new Date(ds+'T12:00:00');im.y=d.getFullYear();im.m=d.getMonth();S.mk=null;save(true);render(true);toast('✓ Anotado');
+ }
+ else if(c==='mlist'){S.ml=!S.ml;render(true)}
+ else if(c==='infprint')window.print();
+ else if(c==='infpdf'){try{infPDF(infMes(im.y,im.m))}catch(err){console.error(err);toast('No se pudo crear el PDF',true)}}
+});
+document.addEventListener('change',e=>{
+ const t=e.target,im=S.im||(S.im={y:new Date().getFullYear(),m:new Date().getMonth()});
+ if(t.id==='imMes'){im.m=Number(t.value);render(true)}else if(t.id==='imAnio'){im.y=Number(t.value);render(true)}
+ else if(t.id==='mDate'&&t.value){S.md=t.value;$('mdText').textContent=dayLong(t.value)}
+});
+document.addEventListener('input',e=>{if(e.target.id==='mAmt'){const dg=e.target.value.replace(/\D/g,'').replace(/^0+/,'').slice(0,10);e.target.value=dg?fmt(Number(dg)):''}});
+
+/* ================= PDF del informe (escrito a mano, sin librerías, funciona sin internet) ================= */
+function PDFW(){
+ const PW=595.28,PH=841.89,ML=40,MR=40,MT=40,MB=50;
+ const pages=[];let ops=null;const cv=document.createElement('canvas').getContext('2d');
+ const wid=(t,sz,b)=>{cv.font=(b?'bold ':'')+sz+'px Helvetica, Arial, sans-serif';return cv.measureText(t).width};
+ const SP={8211:150,8212:151,8216:145,8217:146,8220:147,8221:148,8226:149,8364:128,183:183};
+ const enc=t=>{let o='';for(const ch of String(t)){let c=ch.codePointAt(0);if(SP[c])c=SP[c];else if(c>255)c=63;const s=String.fromCharCode(c);o+=(s==='('||s===')'||s==='\\')?'\\'+s:s}return o};
+ const col=h=>{h=h.replace('#','');return [0,2,4].map(i=>(parseInt(h.slice(i,i+2),16)/255).toFixed(3)).join(' ')};
+ const api={PW,PH,ML,MR,MT,MB,y:MT,wid,
+  page(){ops=[];pages.push(ops);api.y=MT},
+  text(x,y,t,sz,o={}){const w=wid(t,sz,o.b);if(o.align==='right')x=x-w;else if(o.align==='center')x=x-w/2;
+   ops.push(`BT /${o.b?'F2':'F1'} ${sz} Tf ${col(o.c||'#22302a')} rg ${x.toFixed(2)} ${(PH-y).toFixed(2)} Td (${enc(t)}) Tj ET`);return w},
+  rect(x,y,w,h,fill,stroke){let s='';if(fill)s+=`${col(fill)} rg `;if(stroke)s+=`${col(stroke)} RG 0.8 w `;
+   ops.push(s+`${x.toFixed(2)} ${(PH-y-h).toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re ${fill&&stroke?'B':fill?'f':'S'}`)},
+  line(x1,y1,x2,y2,c,w){ops.push(`${col(c||'#cccccc')} RG ${w||0.6} w ${x1.toFixed(2)} ${(PH-y1).toFixed(2)} m ${x2.toFixed(2)} ${(PH-y2).toFixed(2)} l S`)},
+  wrap(t,sz,maxw,b){const out=[];String(t).split('\n').forEach(par=>{let line='';par.split(' ').forEach(w=>{const test=line?line+' '+w:w;if(wid(test,sz,b)>maxw&&line){out.push(line);line=w}else line=test});out.push(line)});return out},
+  ensure(h){if(api.y+h>PH-MB)api.page()},
+  count(){return pages.length},
+  addFooters(txt){pages.forEach((p,i)=>{ops=p;api.line(ML,PH-38,PW-MR,PH-38,'#cfd8d2',0.6);api.text(ML,PH-26,txt,8,{c:'#52615a'});api.text(PW-MR,PH-26,'Página '+(i+1)+' de '+pages.length,8,{c:'#52615a',align:'right'})})},
+  build(title){
+   const objs=[];const add=s=>{objs.push(s);return objs.length};
+   add('<< /Type /Catalog /Pages 2 0 R >>');add('PAGES');
+   add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
+   add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
+   const kids=[];
+   pages.forEach(p=>{const st=p.join('\n');const cid=objs.length+2;
+    const pid=add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PW} ${PH}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${cid} 0 R >>`);kids.push(pid+' 0 R');
+    add(`<< /Length ${st.length} >>\nstream\n${st}\nendstream`)});
+   objs[1]=`<< /Type /Pages /Kids [${kids.join(' ')}] /Count ${kids.length} >>`;
+   const info=add(`<< /Title (${enc(title)}) /Producer (OALE) >>`);
+   let out='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n';const offs=[];
+   objs.forEach((o,i)=>{offs.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
+   const xr=out.length;out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+offs.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R /Info ${info} 0 R >>\nstartxref\n${xr}\n%%EOF`;
+   const u=new Uint8Array(out.length);for(let i=0;i<out.length;i++)u[i]=out.charCodeAt(i)&255;return u}
+ };
+ api.page();return api;
+}
+function infPDF(R){
+ const P=PDFW(),G='#0a8a5c',GD='#066a48',INK='#22302a',MUT='#52615a',per=cUpper(MES[R.m])+' '+R.y;
+ const L=P.ML,RT=P.PW-P.MR,CW=RT-L;
+ // encabezado
+ P.rect(0,0,P.PW,86,G);P.text(L,38,'OALE · Informe mensual',20,{b:true,c:'#ffffff'});P.text(L,60,R.finca,13,{c:'#effcf5'});P.text(RT,60,per,13,{b:true,c:'#ffe9a0',align:'right'});
+ P.text(L,76,'Generado el '+new Date().toLocaleDateString('es-CO')+' con los datos registrados por el usuario',8.5,{c:'#d9f5e8'});
+ P.y=108;
+ // tarjetas
+ const cards=[['Kilos recogidos',num(R.kg)+' kg',R.dias+(R.dias===1?' día':' días')+' de cosecha'],['Jornales',jdText(R.jorN),fmt(R.jorCosto)],['Ingresos',fmt(R.ventas),R.ventas?'ventas anotadas':'sin ventas anotadas'],['Gastos',fmt(R.gastosTot),'insumos + jornales + cosecha']];
+ const cw=(CW-12)/2;cards.forEach((c,i)=>{const x=L+(i%2)*(cw+12),y=P.y+Math.floor(i/2)*66;P.rect(x,y,cw,58,'#eef7f1','#bcd9c6');P.text(x+10,y+16,c[0].toUpperCase(),8,{b:true,c:MUT});P.text(x+10,y+38,c[1],17,{b:true,c:GD});P.text(x+10,y+51,c[2],8,{c:MUT})});
+ P.y+=140;
+ const bal=R.balance>=0;P.rect(L,P.y,CW,46,bal?'#dff2e6':'#fbe4e2',bal?'#8fcfa8':'#e08a85');P.text(L+12,P.y+16,'BALANCE (INGRESOS MENOS GASTOS REGISTRADOS)',8.5,{b:true,c:MUT});P.text(L+12,P.y+37,(R.balance<0?'- ':'')+fmt(Math.abs(R.balance)),19,{b:true,c:bal?GD:'#b32a24'});
+ if(!R.ventas)P.text(RT-12,P.y+37,'Faltan ventas: solo muestra gastos',9,{c:MUT,align:'right'});
+ P.y+=64;
+ const H=(t)=>{P.ensure(80);P.text(L,P.y+12,t,13,{b:true,c:GD});P.line(L,P.y+18,RT,P.y+18,'#bcd9c6',0.8);P.y+=30};
+ const KV=(a,b,o={})=>{P.ensure(18);P.text(L,P.y+11,a,10,{b:o.b,c:INK});if(o.tag)P.text(L+P.wid(a,10,o.b)+6,P.y+11,o.tag,7.5,{c:MUT});P.text(RT,P.y+11,b,10,{b:true,c:o.col||INK,align:'right'});P.y+=16};
+ // avisos
+ if(R.avisos.length){const lines=[];R.avisos.forEach(a=>P.wrap('• '+a,9,CW-24).forEach(l=>lines.push(l)));P.ensure(lines.length*12+34);P.rect(L,P.y,CW,lines.length*12+26,'#fff4d1','#f2b134');P.text(L+10,P.y+15,'Tenga en cuenta',9.5,{b:true,c:'#5a3a00'});lines.forEach((l,i)=>P.text(L+10,P.y+28+i*12,l,9,{c:'#5a3a00'}));P.y+=lines.length*12+38}
+ // cosecha
+ H('Cosecha del mes');
+ KV('Kilos recogidos',num(R.kg)+' kg');KV('Personas que cogieron',R.nPick+(R.nPick?' · promedio '+num(R.kg/R.nPick)+' kg':''));
+ if(R.mejor)KV('Mejor día',fDiaC(R.mejor.ds)+' · '+num(R.mejor.kg)+' kg');
+ if(R.kg){P.ensure(110);const bx=L,by=P.y+8,bw=CW,bh=70,mx=Math.max(...R.porDia,1),n=R.porDia.length,step=bw/n;
+  P.line(bx,by+bh,bx+bw,by+bh,'#9fb5aa',0.8);R.porDia.forEach((v,i)=>{if(v>0){const h=Math.max(2,v/mx*bh);P.rect(bx+i*step+1,by+bh-h,step-2,h,G)}});
+  [1,Math.ceil(n/4),Math.ceil(n/2),Math.ceil(n*3/4),n].forEach(d=>P.text(bx+(d-1)*step+step/2,by+bh+11,String(d),7.5,{c:MUT,align:'center'}));P.text(L,by+bh+24,'Kilos recogidos por día (máximo '+num(mx)+' kg)',8,{c:MUT});P.y+=bh+38}
+ else P.y+=6;
+ // ingresos y gastos
+ H('Ingresos y gastos');
+ KV('Ventas de café'+(R.ventaKg?' ('+num(R.ventaKg)+' kg)':''),fmt(R.ventas),{tag:'Registrado',col:GD});
+ Object.keys(R.gastos).forEach(c=>KV(c,'- '+fmt(R.gastos[c]),{tag:'Registrado'}));
+ KV('Jornales ('+jdText(R.jorN)+')','- '+fmt(R.jorCosto),{tag:'Registrado'});
+ KV('Pago de cosecha ('+num(R.kg)+' kg)','- '+fmt(R.pagoCos),{tag:'Calculado con sus kilos y su pago por kilo'});
+ P.line(L,P.y+2,RT,P.y+2,'#cfd8d2',0.6);P.y+=8;
+ KV('Total ingresos',fmt(R.ventas),{b:true});KV('Total gastos',fmt(R.gastosTot),{b:true});KV('Balance',(R.balance<0?'- ':'')+fmt(Math.abs(R.balance)),{b:true,col:bal?GD:'#b32a24'});
+ P.text(L,P.y+10,'Registrado = lo que el usuario anotó. Calculado = salió de los kilos y del pago por kilo registrados.',8,{c:MUT});P.y+=24;
+ // labores
+ H('Labores y actividades');
+ if(R.abonos.length){P.wrap('Abonado: '+R.abonos.map(fDiaC).join(', '),10,CW,true).forEach(l=>{P.ensure(15);P.text(L,P.y+11,l,10,{b:true,c:INK});P.y+=14});P.y+=4}
+ else{P.text(L,P.y+11,'Sin fechas de abonado anotadas este mes.',9.5,{c:MUT});P.y+=18}
+ if(R.hist.length)R.hist.forEach(h=>{const lines=P.wrap(h.d,9.5,CW-110);P.ensure(lines.length*12+6);P.text(L,P.y+10,fDiaC(h.f),9.5,{b:true,c:INK});P.text(L+52,P.y+10,h.t,8.5,{c:G,b:true});lines.forEach((l,i)=>P.text(L+104,P.y+10+i*12,l,9.5,{c:INK}));P.y+=lines.length*12+4});
+ else{P.text(L,P.y+11,'Todavía no hay labores anotadas este mes.',9.5,{c:MUT});P.y+=18}
+ P.addFooters('OALE · '+R.finca+' · Informe de '+per);
+ const bytes=P.build('OALE - Informe '+per+' - '+R.finca);
+ download(new Blob([bytes],{type:'application/pdf'}),'informe-oale-'+R.y+'-'+pad2(R.m+1)+'.pdf');toast('Informe descargado');
+ return bytes;
+}
+
+/* ================= CLIMA (Open-Meteo: servicio documentado, gratuito para uso no comercial, sin clave) ================= */
+function CLM(){return F().clima||null}
+function wmoInfo(c){
+ if(c===0||c===1)return ['Despejado','sol'];if(c===2)return ['Parcialmente nublado','parcial'];if(c===3)return ['Nublado','nube'];
+ if(c===45||c===48)return ['Neblina','niebla'];if(c>=51&&c<=57)return ['Llovizna','lluvia'];if(c>=61&&c<=67)return ['Lluvia','lluvia'];
+ if(c>=80&&c<=82)return ['Aguaceros','lluvia'];if(c>=95)return ['Tormenta eléctrica','tormenta'];return ['Nublado','nube'];
+}
+const CLO="#3a2a1e",CL_CLOUD="<path d='M13 36h23a8.5 8.5 0 0 0 1.2-16.9A12 12 0 0 0 14.5 21 7.5 7.5 0 0 0 13 36z' fill='#f4f7fa' stroke='"+CLO+"' stroke-width='2.2'/>";
+const CLI={
+ sol:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g stroke="${CLO}" stroke-width="2.2"><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2" fill="none"/><circle cx="24" cy="24" r="10" fill="#ffd23f"/></g></svg>`,
+ parcial:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g stroke="${CLO}" stroke-width="2.2"><path d="M16 4v4M5 14h4M8.5 6.5l3 3M26 6.5l-3 3" fill="none"/><circle cx="17" cy="16" r="8" fill="#ffd23f"/></g>${CL_CLOUD}</svg>`,
+ nube:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round">${CL_CLOUD}</svg>`,
+ niebla:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g stroke="#7e8a94" stroke-width="3.2" fill="none"><path d="M8 16h32M12 24h28M8 32h32M14 40h22"/></g></svg>`,
+ lluvia:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 -5)">${CL_CLOUD}</g><g stroke="${CLO}" stroke-width="1.6" fill="#4aa8e8"><path d="M16 36q-3 5 0 7a3.2 3.2 0 0 0 3 0q3-2 0-7z"/><path d="M26 38q-3 5 0 7a3.2 3.2 0 0 0 3 0q3-2 0-7z"/><path d="M36 36q-3 5 0 7a3.2 3.2 0 0 0 3 0q3-2 0-7z"/></g></svg>`,
+ tormenta:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 -5)"><path d="M13 36h23a8.5 8.5 0 0 0 1.2-16.9A12 12 0 0 0 14.5 21 7.5 7.5 0 0 0 13 36z" fill="#aab6c2" stroke="${CLO}" stroke-width="2.2"/></g><path d="M26 28l-6 10h6l-3 8 9-12h-6l4-6z" fill="#ffd23f" stroke="${CLO}" stroke-width="2"/></svg>`
+};
+function haceTxt(ms){const m=Math.round(ms/60000);if(m<2)return 'hace un momento';if(m<60)return 'hace '+m+' minutos';const h=Math.round(m/60);if(h<48)return 'hace '+h+(h===1?' hora':' horas');return 'hace '+Math.round(h/24)+' días'}
+function fCuando(t){const d=new Date(t);let h=d.getHours();const ap=h<12?'a. m.':'p. m.';h=h%12||12;return d.getDate()+' de '+MES[d.getMonth()].slice(0,3)+', '+h+':'+pad2(d.getMinutes())+' '+ap}
+function climaDiaTxt(ds){
+ const t=todayStr();if(ds===t)return 'Hoy';if(ds===addD(t,1))return 'Mañana';
+ const [y,m,d]=ds.split('-').map(Number);return ['dom','lun','mar','mié','jue','vie','sáb'][new Date(y,m-1,d).getDay()]+' '+d+' '+MES[m-1].slice(0,3);
+}
+let climaBusy=false;
+function cacheOk(k){return !!(k&&typeof k.t==='number'&&k.cur&&typeof k.cur.temp==='number'&&k.daily&&['time','code','tmax','tmin','psum','pprob'].every(x=>Array.isArray(k.daily[x])))}
+function climaPickHTML(){
+ return `<div class="card"><b>¿Dónde queda su finca?</b><p class="cfline" style="font-size:16px">Escriba el municipio y escoja de la lista.</p>
+ <input class="f big" id="clQ" type="search" autocomplete="off" placeholder="Ej. Pitalito" style="font-size:20px">
+ <button class="btn" data-c="clsearch">Buscar municipio</button><div id="clRes"></div>
+ <button class="btn sec" data-c="clgeo">Usar la ubicación de mi celular</button>
+ <p class="note">Para buscar necesita internet. Después podrá ver el último clima guardado sin internet.</p></div>${CLM()&&CLM().lat!=null?'<button class="btn sec" data-c="clback">Volver al clima</button>':''}`;
+}
+async function climaBuscar(q){
+ const box=$('clRes');q=String(q||'').trim();if(q.length<2){toast('Escriba el nombre del municipio',true);return}
+ if(!navigator.onLine){box.innerHTML='<div class="cfmsg warn">Necesita internet para buscar el municipio.</div>';return}
+ box.innerHTML='<div class="cfmsg ok">Buscando…</div>';
+ try{
+  const r=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=8&language=es&countryCode=CO&format=json',{cache:'no-store'});
+  if(!r.ok)throw new Error('http');const j=await r.json();S.clres=(j.results||[]).filter(x=>x.latitude!=null);
+  box.innerHTML=S.clres.length?'<div class="clres">'+S.clres.map((x,i)=>`<button type="button" class="bigopt" data-c="clpick" data-i="${i}">${esc(x.name)}<small style="display:block;font-weight:400;color:#52615a">${esc([x.admin2,x.admin1].filter(Boolean).join(', ')||'Colombia')}</small></button>`).join('')+'</div>':'<div class="cfmsg warn">No se encontró ese municipio. Pruebe escribirlo de otra forma.</div>';
+ }catch(e){box.innerHTML='<div class="cfmsg bad">No se pudo buscar. Revise su internet e intente otra vez.</div>'}
+}
+function climaGuardarLugar(lat,lon,nombre){
+ const f=F();f.clima={lat:Math.round(lat*1000)/1000,lon:Math.round(lon*1000)/1000,nombre,cache:null};S.clchg=false;S.cerr=null;save(true);render(true);
+}
+document.addEventListener('click',e=>{
+ const el=e.target.closest('[data-c="clsearch"],[data-c="clpick"],[data-c="clgeo"],[data-c="clchg"],[data-c="clback"],[data-c="clrefresh"]');if(!el)return;const c=el.dataset.c;
+ if(c==='clsearch')climaBuscar($('clQ').value);
+ else if(c==='clpick'){const x=(S.clres||[])[Number(el.dataset.i)];if(x)climaGuardarLugar(x.latitude,x.longitude,x.name+(x.admin1?', '+x.admin1:''))}
+ else if(c==='clgeo'){if(!navigator.geolocation)return toast('Su celular no deja usar la ubicación',true);
+  toast('Buscando su ubicación…');navigator.geolocation.getCurrentPosition(p=>climaGuardarLugar(p.coords.latitude,p.coords.longitude,'Mi ubicación'),()=>toast('No se pudo obtener la ubicación. Busque su municipio por nombre.',true),{timeout:12000,maximumAge:600000})}
+ else if(c==='clchg'){S.clchg=true;render(true)}
+ else if(c==='clback'){S.clchg=false;render(true)}
+ else if(c==='clrefresh'){S.cload=true;climaPaint();climaFetch(true).then(r=>{S.cload=false;climaPaint();if(r==='ok')toast('✓ Clima actualizado');else toast(S.cerr==='offline'?'No hay internet':'No se pudo actualizar',true)})}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='clQ'){e.preventDefault();climaBuscar(e.target.value)}});
+MENUIC.clima=`<svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><g stroke="${CLO}" stroke-width="2.2"><path d="M30 3v4M42 15h-4M38.5 6.5l-2.8 2.8M21.5 6.5l2.8 2.8" fill="none"/><circle cx="30" cy="15" r="7.5" fill="#ffd23f"/></g><g transform="translate(-3 -2)">${CL_CLOUD}</g><g stroke="${CLO}" stroke-width="1.5" fill="#4aa8e8"><path d="M14 36q-3 5 0 7a3 3 0 0 0 2.6 0q3-2 0-7z"/><path d="M24 38q-3 5 0 7a3 3 0 0 0 2.6 0q3-2 0-7z"/><path d="M34 36q-3 5 0 7a3 3 0 0 0 2.6 0q3-2 0-7z"/></g></svg>`;
+
+/* ================= PROVEEDORES (directorio verificado + los que anote cada usuario) ================= */
+const PV_CATS={abonos:'Abonos y fertilizantes',insumos:'Insumos agrícolas',semillas:'Semillas',herramientas:'Herramientas y equipos',otro:'Otro'};
+function PVL(){const f=F();return Array.isArray(f.prov)?f.prov:(f.prov=[])}
+function provDir(){const d=db.meta.provDir;return d&&Array.isArray(d.lista)?d:null}
+function provAll(){
+ const d=provDir(),dir=(d?d.lista:[]).filter(x=>x&&x.nombre).map(x=>Object.assign({},x,{_local:false,id:'d:'+(x.id||x.nombre)}));
+ return dir.concat(PVL().map(x=>Object.assign({},x,{_local:true,id:'l:'+x.id})));
+}
+function telDig(t){return String(t||'').replace(/\D/g,'')}
+function waNum(t){const d=telDig(t);if(d.length===10&&d[0]==='3')return '57'+d;if(d.length===12&&d.startsWith('573'))return d;return ''}
+function pvFecha(f){if(!f)return '';const [y,m,d]=String(f).slice(0,10).split('-').map(Number);return d&&m?d+' '+MES[m-1].slice(0,3)+' '+y:String(f)}
+function pvBadge(p){return p._local?'<em class="tag cal">Anotado por usted</em>':(p.verificado&&p.verificado.fecha?`<em class="tag reg">Verificado ${pvFecha(p.verificado.fecha)}</em>`:'<em class="tag cal">Sin verificar</em>')}
+function pvTexto(p){return nrm([p.nombre,PV_CATS[p.categoria]||'',p.municipio,p.departamento,p.direccion].concat((p.productos||[]).map(x=>x.nombre)).join(' '))}
+function pvCard(p){
+ const wa=waNum(p.telefono),tel=telDig(p.telefono);
+ return `<div class="pvcard" data-id="${esc(p.id)}"><div class="pvh"><b>${esc(p.nombre)}</b><span class="pvcat">${esc(PV_CATS[p.categoria]||'Otro')}</span></div>
+ <small>${esc([p.municipio,p.departamento].filter(Boolean).join(', ')||'Sin municipio')}${p.direccion?' · '+esc(p.direccion):''}</small><div class="pvb">${pvBadge(p)}</div>
+ <div class="pvbtns">${tel?`<a class="btn sm" href="tel:${tel}">Llamar</a>`:''}${wa?`<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a>`:''}<button type="button" class="btn sec sm" data-c="pvopen" data-id="${esc(p.id)}">Ver ficha</button></div></div>`;
+}
+function pvListHTML(){
+ const q=nrm(S.pvq||''),c=S.pvc||'',all=provAll();
+ if(!all.length)return `<div class="card"><b>El directorio todavía está vacío</b><p class="cfline" style="font-size:16px">Aquí van a aparecer las tiendas de abonos, semillas y herramientas con datos verificados. Mientras tanto, puede anotar los proveedores que usted conoce.</p></div>`;
+ const arr=all.filter(p=>(!c||p.categoria===c)&&(!q||pvTexto(p).includes(q)));
+ return arr.length?arr.map(pvCard).join(''):'<div class="cfhint">No se encontró nada con esa búsqueda.</div>';
+}
+function vProv(){
+ live=provLive;
+ const d=provDir(),nd=d?d.lista.length:0,nv=d?d.lista.filter(x=>x&&x.verificado&&x.verificado.fecha).length:0,nl=PVL().length;
+ return `<div class="cafe"><input class="f" type="search" id="pvQ" placeholder="Buscar proveedor o producto" value="${esc(S.pvq||'')}" autocomplete="off" style="font-size:18px">
+ <div class="pchips" style="margin:10px 0 4px"><button type="button" class="pchip ${!S.pvc?'on':''}" data-c="pvcat" data-v="">Todos</button>${Object.keys(PV_CATS).map(k=>`<button type="button" class="pchip ${S.pvc===k?'on':''}" data-c="pvcat" data-v="${k}">${PV_CATS[k]}</button>`).join('')}</div>
+ <div id="pvList">${pvListHTML()}</div>
+ <button class="btn" data-c="pvadd">+ Agregar un proveedor</button>
+ <p class="note">Directorio OALE: ${nd} ${nd===1?'proveedor':'proveedores'} (${nv} con datos verificados)${d&&d.actualizado?' · actualizado '+pvFecha(d.actualizado):''}. Los suyos: ${nl}.<br>Los precios y horarios solo se muestran cuando fueron confirmados.</p></div>`;
+}
+async function provLive(){
+ if(!navigator.onLine)return;
+ try{const r=await fetch('proveedores.json?'+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();
+  if(!j||!Array.isArray(j.proveedores))return;
+  const nuevo={t:Date.now(),actualizado:j.actualizado||null,lista:j.proveedores};
+  if(JSON.stringify(provDir()&&provDir().lista)!==JSON.stringify(nuevo.lista)||(provDir()&&provDir().actualizado)!==nuevo.actualizado){db.meta.provDir=nuevo;save(true);if(S.tab==='cafe'&&S.sub==='prov'&&$('pvList'))render(true)}
+ }catch(e){}
+}
+function vProvD(){
+ const p=provAll().find(x=>x.id===S.pvid);
+ if(!p)return `<div class="cafe"><div class="cfhint">No se encontró ese proveedor.</div><button class="btn" data-c="pvback">Volver</button></div>`;
+ const wa=waNum(p.telefono),tel=telDig(p.telefono),prods=(p.productos||[]).filter(x=>x&&x.nombre);
+ const prod=prods.length?prods.map(x=>{const ok=x.precio!=null&&x.precio!==''&&x.fecha_precio;return `<div class="kv"><span>${esc(x.nombre)}${x.unidad?'<small style="display:block;color:#52615a">'+esc(x.unidad)+'</small>':''}</span><b>${ok?fmt(Number(x.precio)):'Consulte el precio'}${ok?'<small style="display:block;font-weight:400;color:#52615a;font-size:11px">'+(p._local?'Anotado por usted el ':'Verificado el ')+pvFecha(x.fecha_precio)+'</small>':''}</b></div>`}).join(''):'<p class="note">No hay productos anotados.</p>';
+ return `<div class="cafe"><div class="card"><div class="pvh"><b style="font-size:21px">${esc(p.nombre)}</b></div><span class="pvcat">${esc(PV_CATS[p.categoria]||'Otro')}</span><div class="pvb" style="margin-top:8px">${pvBadge(p)}</div>
+ ${p.verificado&&p.verificado.fuente&&!p._local?`<p class="note">Fuente: ${esc(p.verificado.fuente)}</p>`:''}</div>
+ <div class="pvbtns" style="margin:10px 0">${tel?`<a class="btn" href="tel:${tel}">Llamar</a>`:''}${wa?`<a class="btn" href="https://wa.me/${wa}" target="_blank" rel="noopener">Escribir por WhatsApp</a>`:''}</div>
+ <div class="card"><b>Dónde queda</b><p class="cfline" style="font-size:17px">${esc([p.municipio,p.departamento].filter(Boolean).join(', ')||'Sin municipio')}${p.direccion?'<br>'+esc(p.direccion):''}</p>
+  <b>Teléfono</b><p class="cfline" style="font-size:17px">${p.telefono?esc(p.telefono):'Sin teléfono anotado'}</p>
+  <b>Horario</b><p class="cfline" style="font-size:17px">${p.horario&&p.horario_confirmado?esc(p.horario):'<span style="color:#52615a">Horario sin confirmar</span>'}</p></div>
+ <h2 class="t">Productos</h2><div class="card">${prod}</div>${p.nota?`<div class="card"><b>Nota</b><p class="cfline" style="font-size:16px">${esc(p.nota)}</p></div>`:''}
+ ${p._local?`<button class="btn sec" data-c="pvedit" data-id="${esc(p.id)}">Editar</button><button class="btn dng" data-c="pvdel" data-id="${esc(p.id)}">Borrar este proveedor</button>`:''}</div>`;
+}
+function vProvF(){
+ const e=S.pvid?PVL().find(x=>'l:'+x.id===S.pvid):null,v=e||{},cat=v.categoria||'abonos';
+ const ptxt=(v.productos||[]).map(x=>x.nombre+(x.precio?' - '+x.precio:'')).join('\n');
+ return `<div class="cafe"><div class="card"><label class="l" for="fvN">Nombre del negocio *</label><input class="f" id="fvN" maxlength="80" value="${esc(v.nombre||'')}" autocomplete="off">
+ <label class="l">Tipo de negocio *</label><div class="pchips" id="fvCat">${Object.keys(PV_CATS).map(k=>`<button type="button" class="pchip ${k===cat?'on':''}" data-c="fvcat" data-v="${k}">${PV_CATS[k]}</button>`).join('')}</div>
+ <label class="l" for="fvM">Municipio *</label><input class="f" id="fvM" maxlength="60" value="${esc(v.municipio||'')}" autocomplete="off">
+ <label class="l" for="fvD">Dirección o ubicación</label><input class="f" id="fvD" maxlength="100" value="${esc(v.direccion||'')}" autocomplete="off">
+ <label class="l" for="fvT">Teléfono o celular</label><input class="f" id="fvT" type="tel" inputmode="numeric" maxlength="14" value="${esc(v.telefono||'')}" autocomplete="off">
+ <label class="l" for="fvP">Productos (uno por línea)</label><textarea class="f" id="fvP" rows="4" placeholder="Abono triple 15 - 125000">${esc(ptxt)}</textarea>
+ <p class="note">Si sabe el precio, escríbalo después de un guion. Quedará anotado con la fecha de hoy.</p>
+ <label class="l" for="fvH">Horario</label><input class="f" id="fvH" maxlength="80" value="${esc(v.horario||'')}" placeholder="Ej. lunes a sábado, 7 a. m. a 5 p. m." autocomplete="off">
+ <label class="rgchk2"><input type="checkbox" id="fvHC" ${v.horario_confirmado?'checked':''}> Ya confirmé este horario</label>
+ <label class="l" for="fvN2">Nota</label><input class="f" id="fvN2" maxlength="120" value="${esc(v.nota||'')}" autocomplete="off">
+ <button class="btn" data-c="pvsave">Guardar</button><button class="btn sec" data-c="pvback">Cancelar</button></div></div>`;
+}
+function pvParseProds(txt){
+ return String(txt||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{
+  const m=l.match(/^(.*?)\s*[-–:]\s*\$?\s*([\d.,]+)\s*$/);
+  if(m&&m[1]){const n=Number(m[2].replace(/\./g,'').replace(',','.'));return n>0?{nombre:m[1].trim(),precio:n,unidad:'',fecha_precio:todayStr()}:{nombre:l,precio:null,unidad:'',fecha_precio:null}}
+  return {nombre:l,precio:null,unidad:'',fecha_precio:null}});
+}
+document.addEventListener('click',e=>{
+ const el=e.target.closest('[data-c="pvcat"],[data-c="pvadd"],[data-c="pvopen"],[data-c="pvback"],[data-c="pvedit"],[data-c="pvdel"],[data-c="pvsave"],[data-c="fvcat"]');if(!el)return;const c=el.dataset.c,v=el.dataset.v;
+ if(c==='pvcat'){S.pvc=v;document.querySelectorAll('.pchip[data-c="pvcat"]').forEach(b=>b.classList.toggle('on',b.dataset.v===v));$('pvList').innerHTML=pvListHTML()}
+ else if(c==='pvadd'){S.pvid=null;go('cafe','provf')}
+ else if(c==='pvopen'){S.pvid=el.dataset.id;go('cafe','provd')}
+ else if(c==='pvback'){go('cafe','prov')}
+ else if(c==='pvedit'){S.pvid=el.dataset.id;go('cafe','provf')}
+ else if(c==='pvdel'){if(confirm('¿Borrar este proveedor de su lista?')){const f=F();f.prov=PVL().filter(x=>'l:'+x.id!==el.dataset.id);save(true);toast('Borrado');go('cafe','prov')}}
+ else if(c==='fvcat'){document.querySelectorAll('#fvCat .pchip').forEach(b=>b.classList.toggle('on',b===el))}
+ else if(c==='pvsave'){
+  const nombre=$('fvN').value.trim(),muni=$('fvM').value.trim(),catEl=document.querySelector('#fvCat .pchip.on');
+  if(nombre.length<2)return toast('Escriba el nombre del negocio',true);
+  if(!muni)return toast('Escriba el municipio',true);
+  const reg={nombre,categoria:catEl?catEl.dataset.v:'otro',municipio:muni,direccion:$('fvD').value.trim(),telefono:$('fvT').value.trim(),productos:pvParseProds($('fvP').value),horario:$('fvH').value.trim(),horario_confirmado:$('fvHC').checked&&$('fvH').value.trim()!=='',nota:$('fvN2').value.trim()};
+  const cur_=S.pvid?PVL().find(x=>'l:'+x.id===S.pvid):null;
+  if(cur_)Object.assign(cur_,reg);else PVL().push(Object.assign({id:Date.now()},reg));
+  save(true);toast('✓ Proveedor guardado');S.pvid=null;go('cafe','prov');
+ }
+});
+document.addEventListener('input',e=>{if(e.target.id==='pvQ'){S.pvq=e.target.value;$('pvList').innerHTML=pvListHTML()}});
+MENUIC.prov=`<svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="44.6" rx="16" ry="2" fill="#000" fill-opacity=".14"/><g stroke="#3a2a1e" stroke-width="2.2"><rect x="8" y="22" width="32" height="21" rx="2" fill="#fff3d6"/><path d="M5 22l3-11h32l3 11z" fill="#fff"/><path d="M11 11l-1 11M19 11l-1 11M27 11l1 11M35 11l2 11" fill="none"/><path d="M8 11h6l-1 11H5z M20 11h7l1 11h-9z M33 11h7l3 11h-9z" fill="#e63946" stroke-width="0"/><path d="M5 22l3-11h32l3 11" fill="none"/><rect x="19" y="30" width="10" height="13" rx="1.5" fill="#a8642a"/><rect x="11" y="27" width="5" height="9" rx="1" fill="#7ec8e3"/><rect x="32" y="27" width="5" height="9" rx="1" fill="#7ec8e3"/></g></svg>`;
+
+/* Preparado para un futuro pago único. HOY NO HAY COBROS: aquí iría la verificación con la pasarela de pagos (hecha desde un servidor, nunca solo en el celular). */
+const LICENCIA={modo:'libre'};
+function accesoPermitido(){return true}
+
+/* ===== tarjeta pequeña del clima en el Inicio ===== */
+function homeClimaLive(){
+ const c=CLM();if(!c||c.lat==null||!navigator.onLine)return;
+ if(cacheOk(c.cache)&&Date.now()-c.cache.t<30*60000&&!S.cerr)return;
+ climaFetch(false).then(()=>{const b=$('hClima');if(b&&S.tab==='home'&&!S.sub)b.innerHTML=homeClimaHTML()});
+}
+
+/* ================= CLIMA con cielo animado (estilo app del tiempo del celular) ================= */
+const CL_FLAT="<path d='M12 37h24a8.5 8.5 0 0 0 1.2-16.9A12 12 0 0 0 14 22 7.6 7.6 0 0 0 12 37z' fill='#f3f7fc'/><path d='M12 37h24a8 8 0 0 0 3-.6c-2 2.4-5 3.6-8 3.6H14a8 8 0 0 1-2-3z' fill='#cfd9e6' opacity='.7'/>";
+const CLF={
+ sol:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round"><g stroke="#ffd23f" stroke-width="3.2"><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2" fill="none"/></g><circle cx="24" cy="24" r="10" fill="#ffd23f"/></svg>`,
+ parcial:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round"><g stroke="#ffd23f" stroke-width="3"><path d="M17 3v4M4 15h4M7.5 6l3 3M26.5 6l-3 3" fill="none"/></g><circle cx="17" cy="15" r="8" fill="#ffd23f"/>${CL_FLAT}</svg>`,
+ nube:`<svg class="cli" viewBox="0 0 48 48">${CL_FLAT}</svg>`,
+ niebla:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round"><g stroke="#d3dce6" stroke-width="3.4" fill="none"><path d="M8 16h32M12 24h28M8 32h32M14 40h22"/></g></svg>`,
+ lluvia:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round"><g transform="translate(0 -6)">${CL_FLAT}</g><g stroke="#62b8ff" stroke-width="3"><path d="M16 35l-2 6M25 35l-2 6M34 35l-2 6" fill="none"/></g></svg>`,
+ tormenta:`<svg class="cli" viewBox="0 0 48 48" stroke-linejoin="round"><g transform="translate(0 -6)"><path d="M12 37h24a8.5 8.5 0 0 0 1.2-16.9A12 12 0 0 0 14 22 7.6 7.6 0 0 0 12 37z" fill="#b4c0cd"/></g><path d="M26 28l-6 10h6l-3 8 9-12h-6l4-6z" fill="#ffd23f"/></svg>`,
+ luna:`<svg class="cli" viewBox="0 0 48 48"><path d="M31 6a17 17 0 1 0 11 29A14 14 0 0 1 31 6z" fill="#fff1a8"/><circle cx="36" cy="12" r="1.5" fill="#fff"/><circle cx="41" cy="20" r="1" fill="#fff"/></svg>`,
+ lunanube:`<svg class="cli" viewBox="0 0 48 48"><path d="M24 4a12 12 0 1 0 12 20A10 10 0 0 1 24 4z" fill="#fff1a8" transform="translate(-4 -1)"/>${CL_FLAT}</svg>`,
+ amanecer:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><path d="M10 34a14 14 0 0 1 28 0z" fill="#ffd23f"/><path d="M4 38h40" stroke="#fff" stroke-width="3" fill="none"/><path d="M24 6v11M19 11l5-5 5 5" stroke="#fff" stroke-width="3" fill="none"/></svg>`,
+ atardecer:`<svg class="cli" viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><path d="M10 34a14 14 0 0 1 28 0z" fill="#ffb347"/><path d="M4 38h40" stroke="#fff" stroke-width="3" fill="none"/><path d="M24 17V6M19 12l5 5 5-5" stroke="#fff" stroke-width="3" fill="none"/></svg>`
+};
+function iconFor(code,day){const ic=wmoInfo(code)[1];if(day===0){if(ic==='sol')return 'luna';if(ic==='parcial')return 'lunanube'}return ic}
+function skyTheme(k,stale){
+ if(!k||stale)return 'old';
+ const code=k.cur.code,hr=Number(String(k.cur.time||'').slice(11,13)),day=k.cur.day==null?(hr>=6&&hr<18):k.cur.day!==0;
+ if(code>=95)return 'storm';
+ if((code>=51&&code<=67)||(code>=80&&code<=82))return day?'rain':'rainn';
+ if(code===45||code===48)return 'fog';
+ if(code===3)return day?'cloud':'cloudn';
+ if(code===2)return day?'pcloud':'pcloudn';
+ return day?'sun':'night';
+}
+function skyRand(seed){let x=seed;return()=>{x=(x*16807)%2147483647;return (x-1)/2147483646}}
+function skyFX(th,n){
+ const r=skyRand(7);let h='';
+ const stars=c=>{for(let i=0;i<c;i++)h+=`<i class="st" style="left:${(r()*100).toFixed(1)}%;top:${(r()*85).toFixed(1)}%;animation-delay:${(r()*4).toFixed(1)}s"></i>`};
+ const clouds=(c,dk)=>{for(let i=0;i<c;i++)h+=`<i class="cd${dk?' dk':''}" style="top:${(3+r()*60).toFixed(0)}%;width:${(100+r()*130).toFixed(0)}px;height:${(26+r()*26).toFixed(0)}px;animation-duration:${(42+r()*46).toFixed(0)}s;animation-delay:-${(r()*70).toFixed(0)}s"></i>`};
+ const rain=c=>{for(let i=0;i<c;i++)h+=`<i class="rn" style="left:${(r()*105).toFixed(1)}%;animation-duration:${(.6+r()*.5).toFixed(2)}s;animation-delay:-${(r()*1.3).toFixed(2)}s"></i>`};
+ const k=Math.max(1,Math.round);
+ switch(th){
+  case 'sun':h+='<i class="sunglow"></i>';clouds(Math.max(1,Math.round(2*n)),false);break;
+  case 'pcloud':h+='<i class="sunglow sm"></i>';clouds(Math.max(2,Math.round(4*n)),false);break;
+  case 'cloud':clouds(Math.max(2,Math.round(5*n)),false);break;
+  case 'fog':h+='<i class="fogl"></i><i class="fogl f2"></i>';break;
+  case 'rain':clouds(Math.max(2,Math.round(4*n)),true);rain(Math.round(38*n));break;
+  case 'storm':clouds(Math.max(2,Math.round(4*n)),true);rain(Math.round(46*n));h+='<i class="flash"></i>';break;
+  case 'night':stars(Math.round(50*n));h+='<i class="moon"></i>';break;
+  case 'pcloudn':stars(Math.round(28*n));h+='<i class="moon sm"></i>';clouds(Math.max(2,Math.round(3*n)),true);break;
+  case 'cloudn':stars(Math.round(8*n));clouds(Math.max(2,Math.round(4*n)),true);break;
+  case 'rainn':clouds(Math.max(2,Math.round(3*n)),true);rain(Math.round(36*n));break;
+ }
+ return `<div class="fx">${h}</div>`;
+}
+function hLabel(t){const h=Number(String(t).slice(11,13));return (h%12||12)+' '+(h<12?'a. m.':'p. m.')}
+function hMin(t){const h=Number(String(t).slice(11,13));return (h%12||12)+':'+String(t).slice(14,16)+' '+(h<12?'a. m.':'p. m.')}
+function nowHourStr(){const d=new Date();return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate())+'T'+pad2(d.getHours())}
+function diaCorto(ds){const t=todayStr();if(ds===t)return 'Hoy';if(ds===addD(t,1))return 'Mañana';const [y,m,d]=ds.split('-').map(Number);return ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'][new Date(y,m-1,d).getDay()]+' '+d}
+async function climaFetch(force){
+ const c=CLM();if(!c||c.lat==null)return 'sin lugar';
+ if(!force&&cacheOk(c.cache)&&Date.now()-c.cache.t<30*60000)return 'reciente';
+ if(!navigator.onLine){S.cerr='offline';return 'offline'}
+ if(climaBusy)return 'ocupado';climaBusy=true;
+ const base='https://api.open-meteo.com/v1/forecast?latitude='+c.lat+'&longitude='+c.lon+'&timezone=auto&forecast_days=7';
+ const full=base+'&current=temperature_2m,apparent_temperature,precipitation,weather_code,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,sunrise,sunset';
+ const basic=base+'&current=temperature_2m,precipitation,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max';
+ const get=async u=>{const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),12000);try{const r=await fetch(u,{signal:ctl.signal,cache:'no-store'});if(!r.ok)throw new Error('http '+r.status);return await r.json()}finally{clearTimeout(to)}};
+ try{
+  let j;try{j=await get(full)}catch(e){if(e&&e.name==='AbortError')throw e;j=await get(basic)}
+  if(!j||!j.daily||!j.current||!Array.isArray(j.daily.time))throw new Error('respuesta inesperada');
+  const cu=j.current,d=j.daily,hh=j.hourly;let hourly=null;
+  if(hh&&Array.isArray(hh.time)&&hh.time.length){const t0=String(cu.time||'').slice(0,13);let i0=hh.time.findIndex(t=>t.slice(0,13)>=t0);if(i0<0)i0=0;const sl=a=>(a||[]).slice(i0,i0+30);hourly={time:sl(hh.time),temp:sl(hh.temperature_2m),prob:sl(hh.precipitation_probability),code:sl(hh.weather_code),day:sl(hh.is_day)}}
+  c.cache={t:Date.now(),cur:{time:cu.time,temp:cu.temperature_2m,feel:cu.apparent_temperature,prec:cu.precipitation,code:cu.weather_code,day:cu.is_day},hourly,daily:{time:d.time,code:d.weather_code||[],tmax:d.temperature_2m_max||[],tmin:d.temperature_2m_min||[],psum:d.precipitation_sum||[],pprob:d.precipitation_probability_max||[],sunrise:d.sunrise||[],sunset:d.sunset||[]}};
+  S.cerr=null;save(true);return 'ok';
+ }catch(e){S.cerr=e&&e.name==='AbortError'?'tarda':'error';return 'error'}
+ finally{climaBusy=false}
+}
+function climaResumen(k){
+ const hoy=todayStr(),d=k.daily,i=d.time.indexOf(hoy),out=[];
+ if(i>=0){const pr=d.pprob[i],mm=d.psum[i];
+  if(pr==null)out.push('La probabilidad de lluvia de hoy no está disponible para este lugar.');
+  else{out.push('Probabilidad de lluvia hoy: <b>'+pr+' %</b>'+(mm!=null&&mm>0?' · se esperan unos '+num(mm)+' mm':'')+'.');
+   const h=k.hourly;if(h&&h.prob){const ah=nowHourStr();let best=-1,bi=-1;h.time.forEach((t,j)=>{if(t.slice(0,10)===hoy&&t.slice(0,13)>=ah&&h.prob[j]!=null&&h.prob[j]>best){best=h.prob[j];bi=j}});if(bi>=0&&best>=50)out.push('La lluvia es más probable hacia las '+hLabel(h.time[bi])+'.')}
+   out.push(pr>=60||(mm||0)>=8?'Piense si es buen día para fumigar o abonar.':pr<=25&&(mm||0)<1?'Buen día para trabajar al aire libre.':'Mire el cielo antes de fumigar o abonar.')}}
+ out.push('Es un pronóstico: puede cambiar.');return out.map(x=>x.replace(/\.\.(?!\.)/g,'.'));
+}
+function climaHorasHTML(k,fresh){
+ const h=k.hourly;if(!h||!h.time||!h.time.length)return '';
+ const ah=nowHourStr(),it=[];
+ h.time.forEach((t,j)=>{if(t.slice(0,13)>=ah&&it.length<25)it.push({t,temp:h.temp[j],prob:h.prob[j],code:h.code[j],day:h.day[j]})});
+ if(!it.length)return '';
+ const ev=[];(k.daily.sunrise||[]).forEach(t=>ev.push({t,e:'amanecer',l:'Amanecer'}));(k.daily.sunset||[]).forEach(t=>ev.push({t,e:'atardecer',l:'Atardecer'}));
+ const a=it[0].t,z=it[it.length-1].t,row=[];
+ it.forEach((x,i)=>row.push({t:x.t,html:`<div class="hh"><span>${i===0&&fresh?'Ahora':hLabel(x.t)}</span>${CLF[iconFor(x.code,x.day)]}<em>${x.prob!=null&&x.prob>=20?x.prob+'%':'&nbsp;'}</em><b>${x.temp==null?'–':Math.round(i===0&&fresh&&k.cur.temp!=null?k.cur.temp:x.temp)+'°'}</b></div>`}));
+ ev.filter(e=>e.t.slice(0,13)>=a.slice(0,13)&&e.t.slice(0,13)<=z.slice(0,13)).forEach(e=>row.push({t:e.t,html:`<div class="hh"><span>${hMin(e.t)}</span>${CLF[e.e]}<em>&nbsp;</em><b class="hev">${e.l}</b></div>`}));
+ row.sort((p,q)=>p.t<q.t?-1:p.t>q.t?1:0);
+ return `<div class="glass"><h3>Hora por hora</h3><div class="hscroll">${row.map(x=>x.html).join('')}</div></div>`;
+}
+function climaDiasHTML(k,fresh){
+ const d=k.daily,hoy=todayStr(),idx=[];d.time.forEach((t,i)=>{if(t>=hoy)idx.push(i)});
+ if(!idx.length)return '<div class="glass">Los pronósticos guardados ya pasaron. Conéctese para actualizarlos.</div>';
+ const mn=Math.min(...idx.map(i=>d.tmin[i]).filter(v=>v!=null)),mx=Math.max(...idx.map(i=>d.tmax[i]).filter(v=>v!=null)),span=Math.max(1,mx-mn);
+ return `<div class="glass"><h3>Próximos días</h3>${idx.map(i=>{
+  const lo=d.tmin[i],hi=d.tmax[i],p=d.pprob[i],a=lo==null?0:(lo-mn)/span*100,b=hi==null?100:(hi-mn)/span*100,esHoy=d.time[i]===hoy&&fresh&&k.cur.temp!=null,dot=esHoy?Math.min(b,Math.max(a,(k.cur.temp-mn)/span*100)):null;
+  return `<div class="dr"><b class="dn">${diaCorto(d.time[i])}</b><span class="dic">${CLF[iconFor(d.code[i],1)]}<em>${p!=null&&p>=20?p+'%':'&nbsp;'}</em></span><span class="tl">${lo==null?'–':Math.round(lo)+'°'}</span><span class="rbar"><i style="left:${a.toFixed(1)}%;width:${Math.max(6,b-a).toFixed(1)}%"></i>${dot!=null?`<u style="left:${dot.toFixed(1)}%"></u>`:''}</span><span class="th">${hi==null?'–':Math.round(hi)+'°'}</span></div>`}).join('')}</div>`;
+}
+function climaPageHTML(){
+ const c=CLM(),k=c&&cacheOk(c.cache)?c.cache:null,err=S.cerr,age=k?Date.now()-k.t:Infinity,stale=!!(err||age>=3*3600e3),fresh=!stale;
+ const th=skyTheme(k,stale),nm=String(c.nombre).split(','),place=esc(nm[0].trim()),sub=esc(nm.slice(1).join(',').trim()),hoy=todayStr(),d=k?k.daily:null,i=d?d.time.indexOf(hoy):-1;
+ let stat='';
+ if(S.cload)stat='<div class="skystat">Consultando el clima…</div>';
+ else if(!k)stat=`<div class="glass warn"><b>${err==='offline'?'Sin internet':'No se pudo consultar el clima'}.</b> Todavía no hay datos guardados. Conéctese a internet y toque "Actualizar ahora".</div>`;
+ else if(err)stat=`<div class="glass warn"><b>${err==='offline'?'No hay internet':'No se pudo actualizar'}.</b> Estos datos se consultaron el <b>${fCuando(k.t)}</b> (${haceTxt(age)}). <b>No son los de ahora.</b></div>`;
+ else if(stale)stat=`<div class="glass warn">Estos datos son de ${haceTxt(age).replace('hace ','hace ')}. <b>No son los de ahora.</b></div>`;
+ else stat=`<div class="skystat">Consultado el ${fCuando(k.t)} · ${haceTxt(age)}</div>`;
+ const tmax=i>=0?d.tmax[i]:null,tmin=i>=0?d.tmin[i]:null;
+ const hero=k?`<div class="skyhero${stale?' dim':''}"><div class="skyname">${place}</div>${sub?`<div class="skyplace">${sub}</div>`:''}${stale?'<div class="skylab">Última temperatura guardada</div>':''}<div class="skytemp">${Math.round(k.cur.temp)}°</div><div class="skycond">${stale?'Dato de '+haceTxt(age)+'. No es la temperatura de ahora.':wmoInfo(k.cur.code)[0]}</div>${fresh&&k.cur.feel!=null?`<div class="skysub">Sensación térmica de ${Math.round(k.cur.feel)}°</div>`:''}${tmax!=null&&tmin!=null?`<div class="skysub2">Máxima: ${Math.round(tmax)}° &nbsp;Mínima: ${Math.round(tmin)}°</div>`:''}</div>`
+  :`<div class="skyhero"><div class="skyname">${place}</div>${sub?`<div class="skyplace">${sub}</div>`:''}<div class="skytemp">–</div></div>`;
+ const resumen=k&&age<12*3600e3&&i>=0?`<div class="glass"><h3>Para hoy</h3><p class="skyp">${climaResumen(k).join(' ')}</p></div>`:'';
+ return `<div class="skyw th-${th}">${skyFX(th,1)}<div class="skyc"><button type="button" class="skybtn" data-c="clchg">Cambiar lugar</button>${hero}${stat}${resumen}${k&&age<12*3600e3?climaHorasHTML(k,fresh):''}${k?climaDiasHTML(k,fresh):''}
+ <button type="button" class="skyref" data-c="clrefresh">Actualizar ahora</button>
+ <p class="skynote">Es un pronóstico: puede cambiar. No lo tome como seguro.<br>Datos del clima: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a></p></div></div>`;
+}
+function climaPaint(){if(S.tab==='cafe'&&S.sub==='clima'&&$('clRoot'))$('clRoot').innerHTML=climaPageHTML()}
+function vClima(){
+ const c=CLM();
+ if(!c||c.lat==null||S.clchg){live=null;return `<div class="cafe">${climaPickHTML()}</div>`}
+ live=climaLive;
+ return `<div id="clRoot">${climaPageHTML()}</div>`;
+}
+function climaLive(){
+ const c=CLM();if(!c||c.lat==null)return;
+ if(cacheOk(c.cache)&&Date.now()-c.cache.t<30*60000&&!S.cerr)return;
+ S.cload=true;climaPaint();
+ climaFetch(false).then(()=>{S.cload=false;climaPaint()});
+}
+function homeClimaHTML(){
+ const c=CLM(),go_='data-a="goto" data-tab="cafe" data-sub="clima"';
+ const wrap=(th,inner)=>`<button type="button" class="hsky th-${th}" ${go_}>${skyFX(th,.5)}<span class="hsin">${inner}</span><span class="hchev">›</span></button>`;
+ if(!c||c.lat==null)return wrap('sun',`<span class="hsl"><b class="hsq">¿Va a llover en su finca?</b><small>Toque aquí para escoger su municipio y ver el clima</small></span><span class="hsic">${CLF.parcial}</span>`);
+ const k=cacheOk(c.cache)?c.cache:null,age=k?Date.now()-k.t:Infinity,nom=esc(String(c.nombre).split(',')[0].trim());
+ if(!k)return wrap('old',`<span class="hsl"><small class="hsk">Clima en ${nom}</small><b class="hsq">Toque para consultarlo</b></span><span class="hsic">${CLF.nube}</span>`);
+ if(S.cerr||age>=3*3600e3)return wrap('old',`<span class="hsl"><small class="hsk">Clima en ${nom}</small><b class="hsq">Dato guardado ${haceTxt(age)}</b><small>No es el de ahora. Toque para actualizar.</small></span><span class="hsic">${CLF.nube}</span>`);
+ const th=skyTheme(k,false),txt=wmoInfo(k.cur.code)[0],i=k.daily.time.indexOf(todayStr()),pr=i>=0?k.daily.pprob[i]:null,alto=pr!=null&&pr>=60;
+ return wrap(th,`<span class="hsl"><small class="hsk">Hoy en ${nom}</small><span class="hsrow"><b class="hst">${Math.round(k.cur.temp)}°</b><span class="hsc">${txt}</span></span><span class="hchip${alto?' hi':''}">${pr==null?'Lluvia: no disponible':(alto?'Es probable que llueva hoy · ':'Lluvia hoy: ')+pr+' %'}</span></span><span class="hsic">${CLF[iconFor(k.cur.code,k.cur.day)]}</span>`);
+}
+
 
 render();
 </script>
