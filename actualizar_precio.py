@@ -1,4 +1,5 @@
-"""Lee el precio interno de referencia de la Federación Nacional de Cafeteros y lo guarda en precio.json."""
+"""Lee el precio interno de referencia de la Federación Nacional de Cafeteros y lo guarda en precio.json,
+junto con el historial de los últimos 90 días (para mostrar si el café sube o baja)."""
 import re, json, sys, pathlib, urllib.request
 
 URL = 'https://federaciondecafeteros.org/'
@@ -18,11 +19,23 @@ fecha = m.group(2)
 if not (500000 < carga < 20000000):
     sys.exit('Precio fuera de rango: %s' % carga)
 
-nuevo = {'carga': carga, 'fecha': fecha, 'fuente': 'Federación Nacional de Cafeteros'}
 p = pathlib.Path('precio.json')
 viejo = json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
+
+# historial: se conserva lo que ya estaba y se agrega (o corrige) el precio de esa fecha
+hist = {}
+for x in viejo.get('historial', []):
+    try:
+        hist[str(x[0])] = int(x[1])
+    except Exception:
+        pass
+hist[fecha] = carga
+hist = dict(sorted(hist.items())[-90:])
+
+nuevo = {'carga': carga, 'fecha': fecha, 'fuente': 'Federación Nacional de Cafeteros',
+         'historial': [[f, c] for f, c in hist.items()]}
 if viejo != nuevo:
     p.write_text(json.dumps(nuevo, ensure_ascii=False) + '\n', encoding='utf-8')
-    print('Actualizado:', nuevo)
+    print('Actualizado:', fecha, carga, '| días en el historial:', len(hist))
 else:
-    print('Sin cambios:', nuevo)
+    print('Sin cambios:', fecha, carga)
