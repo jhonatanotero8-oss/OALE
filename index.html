@@ -1012,6 +1012,20 @@ a.btn{display:block;text-align:center;text-decoration:none;box-sizing:border-box
 .dngl2{color:#b32a24}
 .cgbl{margin-top:6px;font-size:13px;color:#52615a}
 #cl[readonly]{background:#fff3c4}
+
+
+/* ===== lavadas ===== */
+.cgb-lav{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.cgb-lp{border:1.5px solid #cfe0d3;background:#f4fbf6;border-radius:12px;padding:6px 12px;min-height:46px;font-weight:800;color:#066a48;font-size:14px;cursor:pointer;font-family:inherit;text-align:center;line-height:1.15}
+.cgb-lp small{display:block;font-weight:600;color:#52615a;font-size:11.5px}
+.cgb-lp.on{background:#0a8f42;border-color:#0a8f42;color:#fff}
+.cgb-lp.on small{color:#e7fbea}
+.cgb-lp.new{border-style:dashed;background:#fff;color:#7a4a00;border-color:#e0cf9f}
+.cgb-sem{margin-top:4px;font-size:13.5px;color:#52615a;font-weight:600}
+
+.cgdest{margin-top:14px}
+.cgdest>span{display:block;font-weight:700;color:#7a4a00;font-size:14px;margin-bottom:6px}
+.cgdl{margin-top:6px;font-size:13px;color:#7a4a00;font-weight:700}
 </style>
 </head>
 <body>
@@ -1032,7 +1046,7 @@ a.btn{display:block;text-align:center;text-decoration:none;box-sizing:border-box
 
 <script>
 /* datos fijos de la app (van primero porque la pantalla de la clave los usa al abrir) */
-const OALE_VERSION='2026.10.43';
+const OALE_VERSION='2026.10.49';
 const IC={leaf:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iL' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#6ee7a8'/><stop offset='1' stop-color='#0a7a50'/></linearGradient></defs><path d='M4 20C4 9 10 4 21 3c0 11-5 17-15 17Z' fill='url(#iL)' stroke='#065a3b' stroke-width='.8'/><path d='M4 20L16 8' stroke='#eafff4' stroke-opacity='.75' stroke-width='1' fill='none'/></svg>`,cam:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><rect x='2' y='6.5' width='20' height='13' rx='3' fill='#3c4852'/><rect x='7' y='4' width='6' height='3.5' rx='1' fill='#3c4852'/><circle cx='12' cy='13' r='4.8' fill='#2a333b' stroke='#cfd6db' stroke-width='1.5'/><circle cx='12' cy='13' r='3' fill='#7fc4e6'/><circle cx='10.8' cy='11.8' r='1.1' fill='#fff' fill-opacity='.8'/><circle cx='19' cy='9' r='1' fill='#f2b134'/></svg>`,cal:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><rect x='3' y='5' width='18' height='16' rx='2.5' fill='#fff' stroke='#aab4ba'/><path d='M3 8.2A3 3 0 016 5h12a3 3 0 013 3.2V10H3Z' fill='#e0463c'/><circle cx='8' cy='4.3' r='1.2' fill='#7d868c'/><circle cx='16' cy='4.3' r='1.2' fill='#7d868c'/><text x='12' y='18.3' font-size='7.5' font-weight='700' text-anchor='middle' fill='#37424a' font-family='Arial'>15</text></svg>`,mag:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><radialGradient id='iM' cx='.35' cy='.3' r='.8'><stop offset='0' stop-color='#e9f7ff'/><stop offset='1' stop-color='#8ac4e8'/></radialGradient></defs><circle cx='10' cy='10' r='6.2' fill='url(#iM)' stroke='#8a6a3a' stroke-width='1.8'/><path d='M14.6 14.6L21 21' stroke='#7a4a28' stroke-width='3' stroke-linecap='round'/><ellipse cx='8' cy='7.8' rx='2' ry='1.2' fill='#fff' fill-opacity='.7'/></svg>`,ok:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iO' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#38d996'/><stop offset='1' stop-color='#0a8a5c'/></linearGradient></defs><circle cx='12' cy='12' r='10' fill='url(#iO)' stroke='#087a52' stroke-width='.8'/><path d='M7 12.5l3.4 3.4L17 9' fill='none' stroke='#fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>`,warn:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iW' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ffd45a'/><stop offset='1' stop-color='#e89a10'/></linearGradient></defs><path d='M12 2.8L22 20.5H2Z' fill='url(#iW)' stroke='#a8740a' stroke-width='1' stroke-linejoin='round'/><path d='M12 9v5.5' stroke='#4a3000' stroke-width='2.2' stroke-linecap='round'/><circle cx='12' cy='17.4' r='1.3' fill='#4a3000'/></svg>`,bad:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iB' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ff6f61'/><stop offset='1' stop-color='#c8312b'/></linearGradient></defs><circle cx='12' cy='12' r='10' fill='url(#iB)' stroke='#8d1511' stroke-width='.8'/><path d='M8 8l8 8M16 8l-8 8' stroke='#fff' stroke-width='2.4' stroke-linecap='round'/></svg>`,drop:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iD' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#8fdcff'/><stop offset='1' stop-color='#2a8fd8'/></linearGradient></defs><path d='M12 2.5C8 8.5 5.5 11.5 5.5 15a6.5 6.5 0 0013 0c0-3.5-2.5-6.5-6.5-12.5Z' fill='url(#iD)' stroke='#2a7fb8' stroke-width='.8'/><ellipse cx='9.5' cy='14' rx='1.4' ry='2.6' fill='#fff' fill-opacity='.6' transform='rotate(18 9.5 14)'/></svg>`,flask:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iF' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7be08a'/><stop offset='1' stop-color='#1c9a4a'/></linearGradient></defs><path d='M9 3h6v6l5 9.5A2.2 2.2 0 0118 21.5H6A2.2 2.2 0 014 18.5L9 9Z' fill='#e8f6ff' stroke='#7f9aa8' stroke-width='1'/><path d='M6.4 15.5h11.2l2 3.6A1.2 1.2 0 0118.5 20.8h-13A1.2 1.2 0 014.4 19Z' fill='url(#iF)'/><circle cx='11' cy='17.6' r='.9' fill='#fff' fill-opacity='.7'/><rect x='8.5' y='2.5' width='7' height='1.6' rx='.8' fill='#9aa7ad'/></svg>`,sprout:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iS' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#76e6a8'/><stop offset='1' stop-color='#0e9a64'/></linearGradient><linearGradient id='iS2' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#bff28a'/><stop offset='1' stop-color='#3fae52'/></linearGradient></defs><path d='M12 21V11' stroke='#2f8a4a' stroke-width='1.8' stroke-linecap='round'/><path d='M12 12C12 7 8 5 3.5 5.5 3.5 10 7 12.5 12 12Z' fill='url(#iS)' stroke='#0a6a45' stroke-width='.6'/><path d='M12 10C12 6 15.5 3.5 20.5 4 20.5 8.5 17 10.5 12 10Z' fill='url(#iS2)' stroke='#0a6a45' stroke-width='.6'/><ellipse cx='12' cy='21.2' rx='6' ry='1.6' fill='#7a5230'/></svg>`,cherry:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><radialGradient id='iC' cx='.35' cy='.3' r='.8'><stop offset='0' stop-color='#ff8f7e'/><stop offset='1' stop-color='#a3201a'/></radialGradient></defs><path d='M9 14C9 8 12 5 17 3M16 15C16 9 15 6 17 3' fill='none' stroke='#5a3a1a' stroke-width='1.2'/><path d='M17 3c2-1.5 4.5-1 5.5.5-1.5 2-4 2-5.5-.5Z' fill='#2fb36b'/><circle cx='8.6' cy='16.5' r='5' fill='url(#iC)'/><circle cx='16' cy='17.5' r='4.6' fill='url(#iC)'/><ellipse cx='7' cy='14.8' rx='1.3' ry='.9' fill='#fff' fill-opacity='.7'/><ellipse cx='14.6' cy='16' rx='1.2' ry='.8' fill='#fff' fill-opacity='.7'/></svg>`,branch:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='ic2'><defs><linearGradient id='iBr' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#76e6a8'/><stop offset='1' stop-color='#0e9a64'/></linearGradient></defs><path d='M2 20C9 15 14 11 22 5' stroke='#7a4a28' stroke-width='2' fill='none' stroke-linecap='round'/><path d='M8 16.5C6 12.5 7.5 9 11 7.5 12.5 11 11.5 14.5 8 16.5Z' fill='url(#iBr)' stroke='#0a6a45' stroke-width='.6'/><path d='M14 11.5c3-.5 6 .8 7 4-3.2.7-6-.7-7-4Z' fill='url(#iBr)' stroke='#0a6a45' stroke-width='.6'/></svg>`};
 const MENUIC={cog:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><path d='M13 24C13 6 35 6 35 24' fill='none' stroke='#3a2a1e' stroke-width='2.4'/><circle cx='14' cy='22' r='5.4' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M11.0 21.2a3.2 3.2 0 0 1 2.7 -2.7' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='24' cy='18' r='5.4' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M21.0 17.2a3.2 3.2 0 0 1 2.7 -2.7' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='34' cy='22' r='5.4' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M31.0 21.2a3.2 3.2 0 0 1 2.7 -2.7' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='19' cy='25' r='5.4' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M16.0 24.2a3.2 3.2 0 0 1 2.7 -2.7' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='29' cy='25' r='5.4' fill='#e63946' stroke='#3a2a1e' stroke-width='2.2'/><path d='M26.0 24.2a3.2 3.2 0 0 1 2.7 -2.7' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><g stroke='#3a2a1e' stroke-width='2.2'><path d='M7 24h34l-4 19H11z' fill='#d9944a'/></g><path d='M10 30h28M11 36h26M17 25l-1 17M24 25v18M31 25l1 17' stroke='#3a2a1e' stroke-opacity='.45' stroke-width='1.3' fill='none'/></svg>`,jor:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(-3 0) scale(1)'><g stroke='#3a2a1e' stroke-width='2.2'><path d='M8 43c0-9 6-13 16-13s16 4 16 13z' fill='#e63946'/><path d='M19 31l5 6 5-6' fill='#fff3d6'/><rect x='20.5' y='25' width='7' height='6' rx='2' fill='#f2b27c'/><ellipse cx='24' cy='20' rx='8.5' ry='9' fill='#f2b27c'/><ellipse cx='24' cy='13' rx='17' ry='4.2' fill='#ffc233'/><path d='M14 12C14 2 34 2 34 12z' fill='#ffd75e'/><path d='M14.2 10.8q9.8 3 19.6 0' fill='none' stroke='#e63946' stroke-width='3'/></g><circle cx='20.5' cy='20.5' r='1.3' fill='#3a2a1e'/><circle cx='27.5' cy='20.5' r='1.3' fill='#3a2a1e'/><path d='M20.5 24q3.5 3 7 0' fill='none' stroke='#3a2a1e' stroke-width='1.8'/></g><g stroke='#3a2a1e' stroke-width='2.2'><circle cx='38' cy='36' r='8' fill='#ffc233'/><circle cx='38' cy='36' r='5.3' fill='none' stroke-width='1.3'/></g><text x='38' y='39.5' font-size='9' font-weight='700' text-anchor='middle' fill='#3a2a1e' font-family='Georgia,serif'>$</text></svg>`,luna:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><circle cx='22' cy='22' r='16' fill='#ffe27a'/><circle cx='15' cy='17' r='3.6' fill='#f3c64a' stroke-width='1.4'/><circle cx='27' cy='14' r='2.4' fill='#f3c64a' stroke-width='1.4'/><circle cx='26' cy='27' r='4.6' fill='#f3c64a' stroke-width='1.4'/><circle cx='14' cy='28' r='2.6' fill='#f3c64a' stroke-width='1.4'/></g><path d='M10 12a15 15 0 0 1 8-6' fill='none' stroke='#fff' stroke-opacity='.8' stroke-width='2.4'/><g stroke='#3a2a1e' stroke-width='2.2'><path d='M38 5l1.6 3.4L43 10l-3.4 1.6L38 15l-1.6-3.4L33 10l3.4-1.6z' fill='#ffd23f' stroke-width='1.6'/></g><g stroke='#3a2a1e' stroke-width='2.2'><path d='M8 46h32' fill='none' stroke-width='3' stroke='#a8642a'/></g><path d='M36 45V34' stroke='#3a2a1e' stroke-width='2.4' fill='none'/><g transform='translate(36 36) rotate(-150)'><path d='M0 0C2.2 -4.6 8.2 -4.6 11 0C8.2 4.6 2.2 4.6 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L9.3 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g transform='translate(36 34) rotate(-30)'><path d='M0 0C2.4 -5 9.0 -5 12 0C9.0 5 2.4 5 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L10.2 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g></svg>`,prob:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(5 41) rotate(-50)'><path d='M0 0C8.0 -15.5 30.0 -15.5 40 0C30.0 15.5 8.0 15.5 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L34.0 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g fill='#ff8a1f' stroke='#3a2a1e' stroke-width='1.2'><circle cx='17' cy='29' r='2.2'/><circle cx='23' cy='23' r='1.9'/><circle cx='27' cy='29' r='2.3'/><circle cx='20' cy='34' r='1.7'/><circle cx='30' cy='21' r='1.7'/></g><g stroke='#3a2a1e' stroke-width='2.2'><circle cx='31' cy='29' r='9.5' fill='#bfe9ff'/><path d='M37.8 35.8L45 43' fill='none' stroke='#a8642a' stroke-width='5'/><path d='M37.8 35.8L45 43' fill='none' stroke='#3a2a1e' stroke-width='1.2'/></g><path d='M26 24a6 6 0 0 1 5-3' fill='none' stroke='#fff' stroke-opacity='.8' stroke-width='2'/></svg>`,conv:`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><path d='M13 43h22l-3-6H16z' fill='#ffc233'/><rect x='22.3' y='11' width='3.4' height='27' fill='#ffc233'/><circle cx='24' cy='8.5' r='3.2' fill='#ffc233'/><path d='M7 14h34' fill='none' stroke-width='3'/><path d='M8 15L4 29M8 15l4.5 14M40 15l-4 14M40 15l4 14' fill='none' stroke-width='1.4'/><path d='M1.5 29h14a7 5.5 0 01-14 0Z' fill='#d9944a'/><path d='M32.5 29h14a7 5.5 0 01-14 0Z' fill='#d9944a'/><rect x='35.5' y='22' width='8' height='7' rx='1.5' fill='#7a8a96'/></g><circle cx='5.5' cy='26.5' r='2.9' fill='#e63946' stroke='#3a2a1e' stroke-width='1.6'/><path d='M3.9 26.1a1.7 1.7 0 0 1 1.4 -1.4' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='9.5' cy='26.8' r='2.9' fill='#e63946' stroke='#3a2a1e' stroke-width='1.6'/><path d='M7.9 26.4a1.7 1.7 0 0 1 1.4 -1.4' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/><circle cx='12.6' cy='27.1' r='2.5' fill='#e63946' stroke='#3a2a1e' stroke-width='1.6'/><path d='M11.2 26.7a1.5 1.5 0 0 1 1.2 -1.2' fill='none' stroke='#fff' stroke-opacity='.85' stroke-width='1.2'/></svg>`};
 const PIC=[`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><path d='M24 12c-1-4 3-6 5-5' fill='none' stroke='#3a2a1e' stroke-width='2.4'/><circle cx='24' cy='28' r='15.5' fill='#e63946' stroke='#3a2a1e' stroke-width='2.4'/><path d='M13 23a12 12 0 0 1 8-8' fill='none' stroke='#fff' stroke-opacity='.8' stroke-width='2.6'/><ellipse cx='24' cy='13.8' rx='4.6' ry='2.4' fill='#3a2a1e'/><ellipse cx='30' cy='33' rx='4.6' ry='6' fill='#262626' stroke='#3a2a1e' stroke-width='1.6' transform='rotate(35 30 33)'/><path d='M26.5 30l-4-3M27 34l-5 .6M28.4 37.4l-4 3M33.4 29.6l3.6-4M34 34l5-.6' stroke='#3a2a1e' stroke-width='1.6' fill='none'/><circle cx='29' cy='31' r='1.2' fill='#fff' fill-opacity='.75'/></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(4 42) rotate(-50)'><path d='M0 0C8.4 -16 31.5 -16 42 0C31.5 16 8.4 16 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L35.7 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g fill='#ff8a1f' stroke='#3a2a1e' stroke-width='1.3'><circle cx='17' cy='30' r='2.5'/><circle cx='23' cy='24' r='2.2'/><circle cx='28' cy='30' r='2.6'/><circle cx='21' cy='35' r='2'/><circle cx='31' cy='22' r='2'/><circle cx='14' cy='36' r='1.8'/></g></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(4 42) rotate(-50)'><path d='M0 0C8.4 -16 31.5 -16 42 0C31.5 16 8.4 16 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L35.7 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g fill='#8a4b24' stroke='#3a2a1e' stroke-width='1.3'><circle cx='17' cy='30' r='3'/><circle cx='25' cy='24' r='2.6'/><circle cx='29' cy='31' r='3.2'/><circle cx='21' cy='36' r='2'/></g><g fill='none' stroke='#f3d9a8' stroke-width='1'><circle cx='17' cy='30' r='4'/><circle cx='29' cy='31' r='4.4'/><circle cx='25' cy='24' r='3.6'/></g></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g transform='translate(4 42) rotate(-50)'><path d='M0 0C8.4 -16 31.5 -16 42 0C31.5 16 8.4 16 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L35.7 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><path d='M13 37q4-7 9-3t9-7q3-3 4-6' fill='none' stroke='#3a2a1e' stroke-width='4.6'/><path d='M13 37q4-7 9-3t9-7q3-3 4-6' fill='none' stroke='#fff3d6' stroke-width='2.6'/></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><path d='M6 7q6 8 4 16t6 15M21 5q-3 10 2 18t-2 15M35 7q5 8 0 16t6 15' fill='none' stroke='#3a2a1e' stroke-width='5'/><path d='M6 7q6 8 4 16t6 15M21 5q-3 10 2 18t-2 15M35 7q5 8 0 16t6 15' fill='none' stroke='#c9803a' stroke-width='2.6'/><g stroke='#3a2a1e' stroke-width='2.2'><ellipse cx='11' cy='20' rx='4' ry='3' fill='#fffdf5' stroke-width='1.6'/><ellipse cx='23' cy='18' rx='3.6' ry='2.8' fill='#fffdf5' stroke-width='1.6'/><ellipse cx='36' cy='22' rx='4.2' ry='3.1' fill='#fffdf5' stroke-width='1.6'/><ellipse cx='17' cy='33' rx='3.4' ry='2.6' fill='#fffdf5' stroke-width='1.6'/><ellipse cx='38' cy='34' rx='3.4' ry='2.6' fill='#fffdf5' stroke-width='1.6'/></g></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><path d='M4 35L36 9l7 6L11 42z' fill='#b5713a'/></g><path d='M9 36l29-23' fill='none' stroke='#fff' stroke-opacity='.8' stroke-width='1.8'/><g stroke='#3a2a1e' stroke-width='2.2'><ellipse cx='15' cy='31' rx='5.4' ry='3.4' transform='rotate(-38 15 31)' fill='#ff8fb8' stroke-width='1.6'/><ellipse cx='27' cy='21' rx='5' ry='3.2' transform='rotate(-38 27 21)' fill='#ff8fb8' stroke-width='1.6'/><ellipse cx='36' cy='14' rx='3.2' ry='2.3' transform='rotate(-38 36 14)' fill='#ff8fb8' stroke-width='1.6'/></g></svg>`,`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' stroke-linejoin='round' stroke-linecap='round'><ellipse cx='24' cy='44.6' rx='15' ry='2' fill='#000' fill-opacity='.14'/><g stroke='#3a2a1e' stroke-width='2.2'><path d='M3 46V26q4-6 10-3t11-3q6-2 11 1t10 3V46z' fill='#b5713a'/></g><g fill='#3a2a1e' fill-opacity='.35'><circle cx='10' cy='35' r='1.8'/><circle cx='20' cy='39' r='1.4'/><circle cx='30' cy='34' r='1.9'/><circle cx='38' cy='41' r='1.5'/><circle cx='26' cy='42' r='1.2'/></g><path d='M24 23V12' stroke='#3a2a1e' stroke-width='2.4' fill='none'/><g transform='translate(24 15) rotate(-155)'><path d='M0 0C2.4 -5 9.0 -5 12 0C9.0 5 2.4 5 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L10.2 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g><g transform='translate(24 13) rotate(-25)'><path d='M0 0C2.6 -5.4 9.8 -5.4 13 0C9.8 5.4 2.6 5.4 0 0Z' fill='#35c25a' stroke='#3a2a1e' stroke-width='2.2'/><path d='M3 0L11.0 0' stroke='#fff' stroke-opacity='.8' stroke-width='1.6' fill='none'/></g></svg>`];
@@ -1400,7 +1414,7 @@ document.addEventListener('click',e=>{
   case 'back2':$('bye').hidden=true;if(db.meta.user&&db.meta.user.pin)loginShow();break;
   case 'print':printList();break;
   case 'wa':{const rows=wkPeople().map(p=>({p,c:calc(p.id)})).filter(x=>x.c.kg>0||x.c.desc>0);const jt=jornSemTxt();if(!rows.length&&!jt){toast('No hay nada para enviar esta semana',true);break}
-   const tx='*OALE · '+farmName()+'*\n'+wkRel(cur)+' ('+wkDias(cur)+')\n\n'+(rows.length?rows.map(x=>x.p.name+': '+num(x.c.kg)+' kg → '+(x.c.net<0?'DEBE '+fmt(-x.c.net):fmt(x.c.net)+(x.c.paid?' ✓':''))).join('\n')+'\n\n*Total a pagar: '+fmt(totals().net)+'*':'')+(jt?(rows.length?'\n\n':'')+jt:'');
+   const tx='*OALE · '+farmName()+'*\n'+wkRel(cur)+' ('+wkDias(cur)+')\n\n'+(rows.length?rows.map(waFila).join('\n')+'\n\n*Total a pagar: '+fmt(totals().net)+'*'+waAdelTxt():'')+(jt?(rows.length?'\n\n':'')+jt:'');
    window.open('https://wa.me/?text='+encodeURIComponent(tx),'_blank');break}
   case 'payall':{const rows=wkPeople().filter(p=>{const c=calc(p.id);return c.net>0&&!c.paid});if(!rows.length){toast('No hay pagos pendientes');break}
    if(confirm('¿Marcar como pagados a los '+rows.length+' cosechadores pendientes de esta semana?')){const w=ensure();rows.forEach(p=>{(w.extra[p.id]||(w.extra[p.id]={})).paid=true});save();render(true)}break}
@@ -1489,8 +1503,8 @@ function rendHTML(m,l,btn){
  const r=l/m*100,g=rendMsg(r);
  return `<div class="res ${g.k}"><span>Rendimiento</span><b>${c2(r)} %</b></div>
  <p class="cfline">De cada 100 kilos de maduro le salen <b>${c2(r)}</b> kilos de lavado.</p>
- <p class="cfline">Pergamino seco aproximado: <b>${c2(l*0.505)} kg</b></p>
- <p class="cfline">Vale aproximadamente <b>${fmt(Math.round(l*0.505*kgSeco()))}</b> al precio de referencia del ${fDia(precioNow().fecha)}.</p>
+ ${S.cgDest==='m'?'<p class="cfline">Lo va a vender mojado: aquí no se calcula pergamino seco. Cuando lo venda, anote la venta en Cuentas.</p>':`<p class="cfline">Pergamino seco aproximado: <b>${c2(l*0.505)} kg</b></p>
+ <p class="cfline">Vale aproximadamente <b>${fmt(Math.round(l*0.505*kgSeco()))}</b> al precio de referencia del ${fDia(precioNow().fecha)}.</p>`}
  <div class="cfmsg ${g.k}">${g.t}</div>`+(btn?'<button class="btn" data-c="saveR">Guardar esta cogida</button>':'');
 }
 
@@ -1513,7 +1527,7 @@ function cogRemind(o){if(cogSuperada(o))return '';
 function vCog(){
  live=()=>{bultosPintar();cogSync(true);cogLive()};const c=CFd(),p=S.pre||{};S.pre=null;
  const st=cogStats(),lotes=[...new Set(c.cog.map(x=>x.lote))],ds=p.f||cogDefaultDay();
- const rows=[...c.cog].sort((a,b)=>a.f<b.f?1:a.f>b.f?-1:b.id-a.id).map(x=>{const r=x.l/x.m*100,k=rendMsg(r).k;return `<div class="cgcard ${k}"><div class="cgt"><b>${fDia(x.f)}</b>${x.lote==='Toda la finca'?'':`<span class="cgl2">${esc(x.lote)}</span>`}<i class="cgp">${c2(r)} %</i></div><div class="cgb2"><span>Maduro <b>${c2(x.m)} kg</b></span><span>Lavado <b>${c2(x.l)} kg</b></span><button class="chip" data-c="cogdel" data-id="${x.id}" aria-label="Borrar">Borrar</button></div>${bultosLinea(x)}</div>`}).join('');
+ const rows=[...c.cog].sort((a,b)=>a.f<b.f?1:a.f>b.f?-1:b.id-a.id).map(x=>{const r=x.l/x.m*100,k=rendMsg(r).k;return `<div class="cgcard ${k}"><div class="cgt"><b>${fDia(x.f)}</b>${(x.lote==='Toda la finca'?'':`<span class="cgl2">${esc(x.lote)}</span>`)+(cogLavadaTxt(x)?`<span class="cgl2">${cogLavadaTxt(x)}</span>`:'')}<i class="cgp">${c2(r)} %</i></div><div class="cgb2"><span>Maduro <b>${c2(x.m)} kg</b></span><span>Lavado <b>${c2(x.l)} kg</b></span><button class="chip" data-c="cogdel" data-id="${x.id}" aria-label="Borrar">Borrar</button></div>${bultosLinea(x)}${destLinea(x)}</div>`}).join('');
  return `<div class="cafe">${bultosCard()}<div class="cgform">
  <div class="cght"><span class="cgi">${MENUIC.cog}</span><div><b>Anotar una cogida</b><small>Vea cuánto rinde su café</small></div></div>
  <label class="cgn"><i>1</i>¿Qué semana cogió?</label>
@@ -1522,7 +1536,7 @@ function vCog(){
  <label class="cgn"><i>2</i>Rendimiento</label>
  <div class="cgw"><label class="cgbx cher" for="cm"><span><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="8" cy="15" r="5.5" fill="#e63946" stroke="#3a2a1e" stroke-width="1.4"/><circle cx="16" cy="14" r="5.5" fill="#e63946" stroke="#3a2a1e" stroke-width="1.4"/><path d="M8 9.5Q10 4 12 3M16 8.5Q14 4 12 3" fill="none" stroke="#3a2a1e" stroke-width="1.4"/></svg>Café maduro</span><input id="cm" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="250"><em>kilos</em></label>
  <label class="cgbx bean" for="cl"><span><svg viewBox="0 0 24 24" width="20" height="20"><ellipse cx="12" cy="12" rx="6.5" ry="9" fill="#d9a566" stroke="#3a2a1e" stroke-width="1.4" transform="rotate(25 12 12)"/><path d="M10 4Q15 12 13 20" fill="none" stroke="#3a2a1e" stroke-width="1.4"/></svg>Pergamino lavado</span><input id="cl" data-c="cog" inputmode="decimal" autocomplete="off" placeholder="100"><em>kilos</em></label></div>
- <div id="cgPuente"></div><div id="cogOut" style="margin-top:14px"></div><button class="btn cgsave" data-c="cogsave">Guardar cogida</button></div>
+ <div id="cgPuente"></div><div id="cgDest">${cgDestHTML()}</div><div id="cogOut" style="margin-top:14px"></div><button class="btn cgsave" data-c="cogsave">Guardar cogida</button></div>
  <h2 class="t">Cómo va la finca</h2>
  ${c.cog.length?`<div class="card"><div class="res ${rendMsg(st.tl/st.tm*100).k}" style="margin-top:0"><span>Promedio de la finca</span><b>${c2(st.tl/st.tm*100)} %</b></div>
  <div class="cfline"><b>¿En qué momento está la cosecha?</b></div>
@@ -1640,9 +1654,9 @@ document.addEventListener('click',e=>{
    if(!f)return toast('Escoja la fecha',true);if(!lote)return toast('Escriba el nombre del lote',true);
    if(!(m>0))return toast('Escriba los kilos de café maduro',true);if(!(l>0))return toast('Escriba los kilos de pergamino lavado',true);
    if(l>m)return toast('Revise los pesos: el lavado no puede pesar más que el maduro',true);
-   cf.cog.push(Object.assign({id:Date.now(),f,lote,m,l},bl.length?{bultos:bl}:{}));bultosArr().length=0;save(true);const sig=cogResto(f)>0?null:cogPend()[0];S.pre=sig?{f:sig.d,lote:''}:{f,lote};render(true);toast('✓ Cogida guardada · '+c2(l/m*100)+' %'+(sig?' · Sigue: '+cogSemNom(sig.k)+' ('+num(sig.r)+' kg)':''));break}
+   cf.cog.push(Object.assign({id:Date.now(),f,lote,m,l},bl.length?{bultos:bl}:{},S.cgDest==='m'?{dest:'m'}:{}));bultosQuitarLavada();save(true);const sig=cogResto(f)>0?null:cogPend()[0];S.pre=sig?{f:sig.d,lote:''}:{f,lote};render(true);toast('✓ Cogida guardada · '+c2(l/m*100)+' %'+(sig?' · Sigue: '+cogSemNom(sig.k)+' ('+num(sig.r)+' kg)':''));break}
   case 'cogdel':if(confirm('¿Borrar esta cogida?')){cf.cog=cf.cog.filter(x=>String(x.id)!==el.dataset.id);save();render(true)}break;
-  case 'cogcsv':{const rows=[['Fecha','Lote','Kilos de maduro','Kilos de lavado','Rendimiento (%)','Bultos (kg)']];[...cf.cog].sort((a,b)=>a.f<b.f?-1:1).forEach(x=>rows.push([x.f,x.lote,c2(x.m),c2(x.l),c2(x.l/x.m*100),Array.isArray(x.bultos)?x.bultos.join(' | '):'']));
+  case 'cogcsv':{const rows=[['Fecha','Lote','Kilos de maduro','Kilos de lavado','Rendimiento (%)','Bultos (kg)','Destino']];[...cf.cog].sort((a,b)=>a.f<b.f?-1:1).forEach(x=>rows.push([x.f,x.lote,c2(x.m),c2(x.l),c2(x.l/x.m*100),Array.isArray(x.bultos)?x.bultos.join(' | '):'',x.dest==='m'?'Vendido mojado':'Para secar']));
    download(new Blob(['\ufeff'+rows.map(r=>r.map(z=>'"'+String(z).replace(/"/g,'""')+'"').join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}),'oale-cogidas-'+stamp()+'.csv');toast('✓ Archivo descargado');break}
   case 'etapa':cf.etapa=v==='plena'?'plena':'otra';save(true);render(true);break;
   case 'reg':cf.region=v;save(true);render(true);break;
@@ -2094,6 +2108,9 @@ function infMes(y,m){
  (CFd().cog||[]).filter(c=>c.f&&c.f.startsWith(pref)).forEach(c=>R.cogs.push(c));
  R.hist.sort((a,b)=>a.f<b.f?-1:a.f>b.f?1:0);R.abonos=[...new Set(R.abonos)].sort();
  R.cogM=R.cogs.reduce((a,c)=>a+c.m,0);R.cogL=R.cogs.reduce((a,c)=>a+c.l,0);
+ R.adel=0;R.adelN=0;R.adelPers={};
+ Object.keys(db.weeks||{}).forEach(k=>{try{const w=db.weeks[k];if(!w||!w.extra||typeof w.extra!=='object')return;Object.keys(w.extra).forEach(pid=>{adelOf(w,pid).forEach(a=>{const v=Number(a.v)||0;if(v<=0)return;const f=(typeof a.f==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(a.f))?a.f:dayDate(k,0).toISOString().slice(0,10);if(f.startsWith(pref)){R.adel+=v;R.adelN++;R.adelPers[pid]=(R.adelPers[pid]||0)+v}})})}catch(e){}});
+ R.adel=Math.round(R.adel);{const h=new Date();R.esMesActual=(y===h.getFullYear()&&m===h.getMonth());R.debe=R.esMesActual?debenHoy():{n:0,t:0}}
  R.gastosTot=R.gastoIns+R.jorCosto+R.pagoCos;R.balance=R.ventas-R.gastosTot;
  const av=[];
  if(!R.kg)av.push('No hay kilos de cosecha registrados en este mes.');
@@ -2117,7 +2134,7 @@ function mvFormHTML(){
  <div class="rdate"><button type="button" class="rdb" data-c="mdprev" aria-label="Día anterior">‹</button><label class="rdlbl"><b id="mdText">${dayLong(ds)}</b><small>Toque aquí para otra fecha</small><input type="date" id="mDate" value="${ds}"></label><button type="button" class="rdb" data-c="mdnext" aria-label="Día siguiente">›</button></div>
  <label class="cgn">${num_()}${k==='venta'?'¿Qué vendió?':k==='gasto'?'¿En qué gastó?':'¿Qué labor hizo?'}</label><div class="pchips">${cats.map(x=>`<button type="button" class="pchip ${x===c?'on':''}" data-c="mcat" data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
  ${k!=='labor'?`<label class="cgn" for="mAmt">${num_()}${k==='venta'?'¿Cuánto le pagaron?':'¿Cuánto gastó?'}</label><input class="f big mamt" id="mAmt" inputmode="numeric" autocomplete="off" placeholder="$ 0">`:''}
- ${k==='venta'?`<label class="cgn" for="mKg">${num_()}¿Cuántos kilos vendió? <span class="opt">(si quiere)</span></label><input class="f big mamt" id="mKg" inputmode="decimal" autocomplete="off" placeholder="Ej. 125">`:''}
+ ${k==='venta'?`<label class="cgn" for="mKg">${num_()}¿Cuántos kilos vendió? <span class="opt">(si quiere)</span></label><input class="f big mamt" id="mKg" inputmode="decimal" autocomplete="off" placeholder="Ej. 125" value="${S.mkg?esc(String(S.mkg).replace('.',',')):''}">`:''}
  <label class="cgn" for="mNote">${num_()}Una nota <span class="opt">(si quiere)</span></label><input class="f" id="mNote" autocomplete="off" maxlength="80" placeholder="Ej. lote La Loma">
  <button class="btn cgsave" data-c="msave">Guardar</button><button class="btn sec" data-c="mclose">Cancelar</button></div>`;
 }
@@ -2133,9 +2150,12 @@ function vInfMes(){
  const kinds=[['venta','Vendí café'],['gasto','Gasté en la finca'],['labor','Hice una labor']];
  const lista=R.movs.length&&S.ml?`<div style="margin-top:8px">${[...R.movs].sort((a,b)=>a.f<b.f?1:-1).map(x=>`<div class="jrow2"><span><b>${fDiaC(x.f)}</b> · ${MV_NOM[x.tipo]}<small>${esc(x.cat)}${x.nota?' · '+esc(x.nota):''}</small></span><em>${x.tipo==='labor'?'':fmt(x.monto)}</em><button class="chip" data-c="mdel" data-id="${x.id}">Borrar</button></div>`).join('')}</div>`:'';
  const verLink=R.movs.length?`<button type="button" class="link noprint" style="margin-top:6px" data-c="mlist">${S.ml?'Ocultar':'Ver'} lo anotado este mes (${R.movs.length})</button>${lista}`:'';
+ const adelSec=(R.adel>0||R.debe.t>0)?`<h2 class="t">Adelantos a cosechadores</h2><div class="card">
+ ${R.adel>0?`<div class="kv"><span>Adelantos que dio este mes<br><small class="sub">Se descuentan del pago de cosecha de cada persona; no se suman aparte</small></span><b>${fmt(R.adel)}</b></div>${Object.keys(R.adelPers).sort((a,b)=>R.adelPers[b]-R.adelPers[a]).map(pid=>{const p=person(pid);return `<div class="kv"><span>${p?esc(p.name):'—'}</span><b>${fmt(R.adelPers[pid])}</b></div>`}).join('')}`:'<p class="note" style="margin:0">Este mes no dio adelantos.</p>'}
+ ${R.debe.t>0?`<div class="kv" style="border-top:2px solid #f2b134;margin-top:6px"><span><b style="color:#b32a24">Hoy le deben</b><br><small class="sub">${R.debe.n} ${R.debe.n===1?'persona':'personas'} con adelantos que sus kilos no alcanzaron a cubrir</small></span><b style="color:#b32a24">${fmt(R.debe.t)}</b></div>`:''}</div>`:'';
  const cuentas=`<div class="card cuentas"><div class="cu-t">Cuentas de ${MES[im.m]}</div>
  <div class="cu-r"><div class="cu-l"><b>Vendí café</b><small>${R.ventas?'ventas que anotó':'todavía no anotó ventas'}</small></div><b class="cu-v ok">${fmt(R.ventas)}</b><button type="button" class="cu-b noprint" data-c="mopen" data-v="venta">＋ Anotar venta</button></div>
- <div class="cu-r"><div class="cu-l"><b>Gasté</b><small>abonos, jornales y pago de cosecha</small></div><b class="cu-v">${fmt(R.gastosTot)}</b><button type="button" class="cu-b g noprint" data-c="mopen" data-v="gasto">＋ Anotar gasto</button></div>
+ <div class="cu-r"><div class="cu-l"><b>Gasté</b><small>abonos, jornales y pago de cosecha${R.adel?' · dio '+fmt(R.adel)+' en adelantos':''}</small></div><b class="cu-v">${fmt(R.gastosTot)}</b><button type="button" class="cu-b g noprint" data-c="mopen" data-v="gasto">＋ Anotar gasto</button></div>
  <div class="cu-r cu-tot ${R.balance>=0?'ok':'bad'}"><div class="cu-l"><b>Me quedó</b><small>${R.ventas?'lo que vendí menos lo que gasté':'faltan ventas por anotar'}</small></div><b class="cu-v">${R.balance<0?'− ':''}${fmt(Math.abs(R.balance))}</b></div></div>`;
  const cosechaMes=`<div class="mcards">${card('Kilos recogidos',num(R.kg)+' kg',R.dias+(R.dias===1?' día':' días')+' de cosecha')}${card('Jornales',jdText(R.jorN),fmt(R.jorCosto))}</div>`;
  return `${filtro}
@@ -2153,7 +2173,7 @@ function vInfMes(){
   ${filas.map(f=>`<div class="kv fil"><span>${esc(f[0])}<em class="tag ${f[2]==='Anotado'?'reg':'cal'}">${f[2]==='Anotado'?'Anotado':'Calculado'}</em></span><b style="color:${f[1]>=0&&f[3]?'#066a48':'#22302a'}">${f[1]<0?'− ':''}${fmt(Math.abs(f[1]))}</b></div>`).join('')}
   <div class="kv tot"><span>Total vendido</span><b>${fmt(R.ventas)}</b></div><div class="kv tot"><span>Total gastado</span><b>${fmt(R.gastosTot)}</b></div><div class="kv tot"><span>Me quedó</span><b style="color:${R.balance>=0?'#066a48':'#b32a24'}">${R.balance<0?'− ':''}${fmt(Math.abs(R.balance))}</b></div>
   <p class="note">Anotado = lo que usted escribió. Calculado = lo sacó la app de sus kilos y su pago por kilo.</p></div>
- <h2 class="t">Labores y actividades</h2><div class="card"><button type="button" class="link noprint" data-c="mopen" data-v="labor" style="margin-bottom:8px">＋ Anotar una labor</button>
+ ${adelSec}<h2 class="t">Labores y actividades</h2><div class="card"><button type="button" class="link noprint" data-c="mopen" data-v="labor" style="margin-bottom:8px">＋ Anotar una labor</button>
   ${R.abonos.length?`<div class="cfline"><b>Abonado:</b> ${R.abonos.map(fDiaC).join(', ')}</div>`:'<div class="cfline" style="color:#52615a">Sin fechas de abonado anotadas este mes.</div>'}
   ${R.hist.length?R.hist.map(h=>`<div class="hrow"><b>${fDiaC(h.f)}</b><em>${h.t}</em><span>${esc(h.d)}</span></div>`).join(''):'<p class="note">Todavía no hay labores anotadas este mes.</p>'}</div>
  <div class="noprint" style="margin-top:6px"><button class="btn" data-c="infpdf">Descargar las cuentas en PDF</button><button class="btn sec" data-c="infprint">Imprimir</button></div>`;
@@ -2162,8 +2182,8 @@ document.addEventListener('click',e=>{
  const el=e.target.closest('[data-c="impr"],[data-c="imnx"],[data-c="mopen"],[data-c="mclose"],[data-c="msave"],[data-c="mdel"],[data-c="mcat"],[data-c="mdprev"],[data-c="mdnext"],[data-c="infpdf"],[data-c="infprint"],[data-c="mlist"]');if(!el)return;const c=el.dataset.c,v=el.dataset.v;
  const im=S.im||(S.im={y:new Date().getFullYear(),m:new Date().getMonth()});
  if(c==='impr'||c==='imnx'){im.m+=c==='impr'?-1:1;if(im.m<0){im.m=11;im.y--}if(im.m>11){im.m=0;im.y++}render(true)}
- else if(c==='mopen'){S.mk=v;S.mc=null;S.md=todayStr();render(true);setTimeout(()=>{const f=document.querySelector('.mform');f&&f.scrollIntoView({behavior:'smooth',block:'start'})},60)}
- else if(c==='mclose'){S.mk=null;render(true)}
+ else if(c==='mopen'){S.mk=v;S.mc=null;S.mkg=null;S.md=todayStr();render(true);setTimeout(()=>{const f=document.querySelector('.mform');f&&f.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+ else if(c==='mclose'){S.mk=null;S.mkg=null;render(true)}
  else if(c==='mcat'){S.mc=v;document.querySelectorAll('.mform .pchip').forEach(b=>b.classList.toggle('on',b.dataset.v===v))}
  else if(c==='mdprev'||c==='mdnext'){const i=$('mDate'),n=addD(i.value||todayStr(),c==='mdprev'?-1:1);i.value=n;S.md=n;$('mdText').textContent=dayLong(n)}
  else if(c==='mdel'){if(confirm('¿Borrar este registro?')){const f=F();f.movs=MOVS().filter(x=>String(x.id)!==el.dataset.id);save(true);render(true);toast('✓ Borrado')}}
@@ -2172,7 +2192,7 @@ document.addEventListener('click',e=>{
   if(!ds)return toast('Escoja el día',true);
   if(k!=='labor'&&!(monto>0))return toast('Escriba el valor',true);
   MOVS().push({id:Date.now(),f:ds,tipo:k,cat,monto,kg:kg>0?kg:0,nota});
-  const d=new Date(ds+'T12:00:00');im.y=d.getFullYear();im.m=d.getMonth();S.mk=null;save(true);render(true);toast('✓ Anotado');
+  const d=new Date(ds+'T12:00:00');im.y=d.getFullYear();im.m=d.getMonth();S.mk=null;S.mkg=null;save(true);render(true);toast('✓ Anotado');
  }
  else if(c==='mlist'){S.ml=!S.ml;render(true)}
  else if(c==='infprint')window.print();
@@ -2257,6 +2277,10 @@ function infPDF(R){
  P.line(L,P.y+2,RT,P.y+2,'#cfd8d2',0.6);P.y+=8;
  KV('Total vendido',fmt(R.ventas),{b:true});KV('Total gastado',fmt(R.gastosTot),{b:true});KV('Me quedó',(R.balance<0?'- ':'')+fmt(Math.abs(R.balance)),{b:true,col:bal?GD:'#b32a24'});
  P.text(L,P.y+10,'Anotado = lo que usted escribió. Calculado = lo sacó la app de sus kilos y de su pago por kilo.',8,{c:MUT});P.y+=24;
+ if(R.adel>0||R.debe.t>0){H('Adelantos a cosechadores');
+  if(R.adel>0){KV('Adelantos que dio este mes',fmt(R.adel),{tag:'se descuentan del pago de cada persona',b:true});Object.keys(R.adelPers).sort((a,b)=>R.adelPers[b]-R.adelPers[a]).forEach(pid=>{const p=person(pid);KV('   '+(p?p.name:'-'),fmt(R.adelPers[pid]))})}
+  if(R.debe.t>0)KV('Hoy le deben ('+R.debe.n+(R.debe.n===1?' persona':' personas')+')',fmt(R.debe.t),{b:true,col:'#b32a24'});
+  P.y+=6}
  // labores
  H('Labores y actividades');
  if(R.abonos.length){P.wrap('Abonado: '+R.abonos.map(fDiaC).join(', '),10,CW,true).forEach(l=>{P.ensure(15);P.text(L,P.y+11,l,10,{b:true,c:INK});P.y+=14});P.y+=4}
@@ -2854,23 +2878,30 @@ function debtAlertHTML(){const L=deudores();if(!L.length)return '';return `<div 
 /* ===== Mi cosecha de café: se suma sola la cosecha de todos los cosechadores ===== */
 /* día con el que queda anotada la cogida de una semana: el último día de esa semana con kilos; si no hay, el último día de la semana que ya pasó (o hoy) */
 function cogFechaSem(key){const hoy=todayStr();try{for(let ix=6;ix>=0;ix--){const dd=dayDate(key,ix).toISOString().slice(0,10);if(dd<=hoy&&db.people.some(p=>kgDay(p.id,dd)>0))return dd}}catch(e){}const dom=dayDate(key,6).toISOString().slice(0,10);return dom<hoy?dom:hoy}
-function cogSemMover(dir){const cf=$('cf');if(!cf)return;const key=dateInfo(cf.value||todayStr()).key,nk=dateInfo(new Date(dayDate(key,0).getTime()+dir*7*86400000).toISOString().slice(0,10)).key;if(dir>0&&nk>dateInfo(todayStr()).key)return;cf.value=cogFechaSem(nk);$('cfText').textContent=wkRel(nk);$('cfSub').textContent='Del '+wkDias(nk);const cm=$('cm'),cl=$('cl');if(cm){cm.dataset.auto='1'}if(cl&&cl.dataset.bultos!=='1'){cl.value=''}S.cgbAll=false;bultosPintar();cogSync(true)}
+function cogSemMover(dir){const cf=$('cf');if(!cf)return;const key=dateInfo(cf.value||todayStr()).key,nk=dateInfo(new Date(dayDate(key,0).getTime()+dir*7*86400000).toISOString().slice(0,10)).key;if(dir>0&&nk>dateInfo(todayStr()).key)return;cf.value=cogFechaSem(nk);$('cfText').textContent=wkRel(nk);$('cfSub').textContent='Del '+wkDias(nk);const cm=$('cm'),cl=$('cl');if(cm){cm.dataset.auto='1'}if(cl&&cl.dataset.bultos!=='1'){cl.value=''}S.cgbAll=false;S.cgbSel=0;bultosPintar();cogSync(true)}
 function cogKgDia(ds){try{return Math.round(totals(dateInfo(ds).key).kg*100)/100}catch(e){return 0}}
+function cogKgSem(ds){try{return Math.round(totals(dateInfo(ds).key).kg*100)/100}catch(e){return 0}}
 function cogYaAnotado(ds){const key=dateInfo(ds).key;return CFd().cog.filter(x=>x&&typeof x.f==='string'&&dateInfo(x.f).key===key).reduce((a,x)=>a+(Number(x.m)||0),0)}
 function cogResto(ds){return Math.max(0,Math.round((cogKgDia(ds)-cogYaAnotado(ds))*100)/100)}
 /* nombre de la semana para frases: "esta semana", "la semana pasada" o "la semana del 28 sep al 4 oct" */
 function cogSemNom(key){const n=Math.round((dayDate(key,0).getTime()-dayDate(isoKey(new Date()),0).getTime())/(7*86400000));return n===0?'esta semana':n===-1?'la semana pasada':'la semana del '+wkCorto(key)}
 function cogPuenteHTML(ds){
  const t=cogKgDia(ds);if(t<=0)return '';
- const key=dateInfo(ds).key,nom=cogSemNom(key),n=Math.round((dayDate(key,0).getTime()-dayDate(isoKey(new Date()),0).getTime())/(7*86400000)),ya=cogYaAnotado(ds),rest=cogResto(ds),cm=$('cm');
+ const key=dateInfo(ds).key,nom=cogSemNom(key),n=Math.round((dayDate(key,0).getTime()-dayDate(isoKey(new Date()),0).getTime())/(7*86400000)),ya=cogYaAnotado(ds),rest=cogResto(ds),cm=$('cm'),nl=bultosLav().length;
  if(rest<=0)return `<small class="cgnota">✓ Todo lo de ${nom} ya está anotado (${num(t)} kg).</small>`;
- const igual=cm&&Math.abs(pnum(cm.value)-rest)<0.005,base=ya>0?'Faltan por anotar '+num(rest)+' kg de los '+num(t)+' kg de '+nom+'.':'Kilos totales de '+nom+(n===0||n===-1?' ('+wkCorto(key)+')':'')+': '+num(t)+' kg.';
- return `<small class="cgnota">${igual&&ya===0?'✓ ':''}${base}${igual?'':' <button type="button" class="link" data-c="cogsumar">Usar '+num(rest)+' kg</button>'}</small>`;
+ const pre=nl>1?'Hay '+nl+' lavadas esta semana: escriba cuánto café maduro entró en la lavada '+(bultosSel()+1)+'. ':'';
+ const igual=cm&&Math.abs(pnum(cm.value)-rest)<0.005;
+ const base=pre+(ya>0?'Faltan por anotar '+num(rest)+' kg de los '+num(t)+' kg de '+nom+'.':'Kilos totales de '+nom+(n===0||n===-1?' ('+wkCorto(key)+')':'')+': '+num(t)+' kg.');
+ return `<small class="cgnota">${igual&&ya===0&&nl<=1?'✓ ':''}${base}${igual?'':' <button type="button" class="link" data-c="cogsumar">Usar '+num(rest)+' kg</button>'}</small>`;
 }
 /* semanas (las últimas 5) que todavía tienen kilos de cosechadores sin pasar a una cogida; d = día sugerido, k = semana, r = kilos que faltan */
-function cogPend(){const out=[],hoy=todayStr();for(let i=0;i<5;i++){const d0=addD(hoy,-7*i),key=dateInfo(d0).key,r=cogResto(d0);if(r<=0)continue;out.push({d:cogFechaSem(key),k:key,r})}return out}
+function cogPend(){const out=[],hoy=todayStr();for(let i=0;i<5;i++){const key=dateInfo(addD(hoy,-7*i)).key,fd=cogFechaSem(key),r=cogResto(fd);if(r<=0)continue;out.push({d:fd,k:key,r})}return out}
 /* la pantalla se abre en la última semana que tenga kilos por anotar (si no hay, en hoy) */
-function cogDefaultDay(){const L=cogPend();return L.length?L[0].d:todayStr()}
+function cogDefaultDay(){
+ try{const c=CFd(),ks=new Set(),hay=l=>Array.isArray(l)?l.some(hay):Number(l)>0;
+  [c.bultosL,c.bultosW].forEach(o=>{if(o&&typeof o==='object'&&!Array.isArray(o))Object.keys(o).forEach(k=>{if(hay(o[k]))ks.add(k)})});
+  const L=[...ks].filter(k=>/^\d{4}-W\d{2}$/.test(k)).sort();if(L.length)return cogFechaSem(L[L.length-1])}catch(e){}
+ const L=cogPend();return L.length?L[0].d:todayStr()}
 function cogSync(auto){
  const cf=$('cf'),box=$('cgPuente');if(!cf||!box||!cf.value)return;
  const ds=cf.value,cm=$('cm'),rest=cogResto(ds);
@@ -2889,27 +2920,43 @@ document.addEventListener('click',e=>{
 document.addEventListener('change',e=>{if(e.target.id==='cf'&&$('cgPuente'))cogSync(true)});
 
 
-/* ===== Bultos de pergamino lavado: una casilla, el total y los últimos pesos; quedan guardados hasta guardar la cogida ===== */
+/* ===== Bultos de pergamino lavado: una casilla, el total y los últimos pesos. La semana puede tener varias lavadas; todo queda guardado hasta guardar la cogida ===== */
 function bultosKey(){const cf=$('cf');try{return dateInfo((cf&&cf.value)||todayStr()).key}catch(e){return isoKey(new Date())}}
-function bultosArr(){
+/* lavadas de la semana que se ve: cada lavada es una lista de pesos */
+function bultosLav(){
  const c=CFd(),k=bultosKey();
- if(!c.bultosW||typeof c.bultosW!=='object'||Array.isArray(c.bultosW))c.bultosW={};
- if(Array.isArray(c.bultosB)&&c.bultosB.length){c.bultosW[k]=(Array.isArray(c.bultosW[k])?c.bultosW[k]:[]).concat(c.bultosB)}
+ if(!c.bultosL||typeof c.bultosL!=='object'||Array.isArray(c.bultosL))c.bultosL={};
+ if(c.bultosW&&typeof c.bultosW==='object'&&!Array.isArray(c.bultosW)){Object.keys(c.bultosW).forEach(w=>{const a=c.bultosW[w];if(Array.isArray(a)&&a.length){if(!Array.isArray(c.bultosL[w]))c.bultosL[w]=[];c.bultosL[w].push(a)}})}
+ if('bultosW' in c)delete c.bultosW;
+ if(Array.isArray(c.bultosB)&&c.bultosB.length){if(!Array.isArray(c.bultosL[k]))c.bultosL[k]=[];c.bultosL[k].push(c.bultosB)}
  if('bultosB' in c)delete c.bultosB;
- if(!Array.isArray(c.bultosW[k]))c.bultosW[k]=[];
- c.bultosW[k]=c.bultosW[k].map(Number).filter(n=>n>0);return c.bultosW[k];
+ let L=c.bultosL[k];if(!Array.isArray(L)){L=[];c.bultosL[k]=L}
+ /* si quedó una lista suelta de pesos, pasa a ser una lavada */
+ if(L.some(x=>!Array.isArray(x))){const sueltos=L.filter(x=>!Array.isArray(x)),listas=L.filter(Array.isArray);L.length=0;if(sueltos.length)L.push(sueltos);listas.forEach(l=>L.push(l))}
+ /* se limpian los pesos en su sitio (así siempre se trabaja sobre la lista real, no sobre una copia) */
+ L.forEach(l=>{for(let i=l.length-1;i>=0;i--){const n=Number(l[i]);if(n>0)l[i]=n;else l.splice(i,1)}});
+ if(!L.length)L.push([]);
+ return L;
 }
+function bultosSel(L){L=L||bultosLav();let i=Number(S.cgbSel)||0;if(i<0||i>=L.length)i=L.length-1;if(i<0)i=0;S.cgbSel=i;return i}
+function bultosArr(){const L=bultosLav();return L[bultosSel(L)]}
 function bultosVals(){return bultosArr().slice()}
+/* al guardar la cogida se quita esa lavada (si era la única, solo se vacía) */
+function bultosQuitarLavada(){const L=bultosLav(),i=bultosSel(L);if(L.length>1){L.splice(i,1);S.cgbSel=Math.min(i,L.length-1)}else L[0].length=0}
+function cogLavadaTxt(x){try{const k=dateInfo(x.f).key,mis=CFd().cog.filter(y=>y&&typeof y.f==='string'&&dateInfo(y.f).key===k).sort((a,b)=>(a.id||0)-(b.id||0));return mis.length>1?'Lavada '+(mis.indexOf(x)+1):''}catch(e){return ''}}
 function bultosLinea(x){const b=Array.isArray(x.bultos)?x.bultos.filter(n=>Number(n)>0):[];return b.length?`<div class="cgbl">${b.length} ${b.length===1?'bulto':'bultos'}: ${b.map(n=>num(n)).join(' · ')} kg</div>`:''}
 function bultosCard(){return `<div class="card cgb2c noprint" id="cgBultos"><div class="cgb-h"><b>Bultos de pergamino lavado</b><small>Pese cada bulto antes del secadero y anótelo aquí. Quedan guardados hasta que guarde la cogida.</small></div>
+ <div class="cgb-lav" id="cgbLav"></div>
  <div class="cgb-add"><input id="cgbIn" class="f" type="text" inputmode="decimal" autocomplete="off" enterkeyhint="done" placeholder="Peso del bulto en kg" aria-label="Peso del bulto en kilos"><button type="button" class="cgb-plus" data-c="bultoadd" aria-label="Agregar el bulto">＋</button></div>
  <div class="cgb-res" id="cgbRes"></div><div class="cgb-chips" id="cgbChips"></div><div class="cgb-act" id="cgbAct"></div></div>`}
 function bultosPintar(){
  const res=$('cgbRes');if(!res)return;
- const a=bultosArr(),sum=Math.round(a.reduce((x,n)=>x+n,0)*100)/100,todos=!!S.cgbAll||a.length<=8,ini=todos?0:a.length-8;
- res.innerHTML=a.length?`<b>${a.length} ${a.length===1?'bulto':'bultos'}</b> · ${num(sum)} kg`:'<span class="mut">Todavía no hay bultos anotados.</span>';
+ const L=bultosLav(),sel=bultosSel(L),a=L[sel],sum=Math.round(a.reduce((x,n)=>x+n,0)*100)/100,todos=!!S.cgbAll||a.length<=8,ini=todos?0:a.length-8;
+ const tot=L.reduce((x,l)=>x+l.reduce((y,n)=>y+n,0),0),nt=L.reduce((x,l)=>x+l.length,0);
+ $('cgbLav').innerHTML=L.length>1?L.map((l,i)=>`<button type="button" class="cgb-lp${i===sel?' on':''}" data-c="lavsel" data-i="${i}">Lavada ${i+1}<small>${l.length} ${l.length===1?'bulto':'bultos'}</small></button>`).join('')+'<button type="button" class="cgb-lp new" data-c="lavnew">＋ Otra lavada</button>':'';
+ res.innerHTML=(a.length?`${L.length>1?'<span class="mut">Lavada '+(sel+1)+' · </span>':''}<b>${a.length} ${a.length===1?'bulto':'bultos'}</b> · ${num(sum)} kg`:`<span class="mut">${L.length>1?'Lavada '+(sel+1)+': todavía':'Todavía'} no hay bultos anotados.</span>`)+(L.length>1?`<div class="cgb-sem">Toda la semana: ${nt} ${nt===1?'bulto':'bultos'} · ${num(Math.round(tot*100)/100)} kg en ${L.length} lavadas</div>`:'');
  $('cgbChips').innerHTML=a.slice(ini).map((n,k)=>`<button type="button" class="cgb-chip" data-c="bultodel" data-i="${ini+k}" aria-label="Quitar el bulto ${ini+k+1} de ${num(n)} kilos">${num(n)}<i>✕</i></button>`).join('');
- $('cgbAct').innerHTML=a.length?`<button type="button" class="link" data-c="bultoundo">↶ Deshacer el último</button>${a.length>8?`<button type="button" class="link" data-c="bultoall">${S.cgbAll?'Ver menos':'Ver todos ('+a.length+')'}</button>`:''}<button type="button" class="link dngl2" data-c="bultoclear">Borrar todos</button>`:'';
+ $('cgbAct').innerHTML=(a.length?`<button type="button" class="link" data-c="bultoundo">↶ Deshacer el último</button>${a.length>8?`<button type="button" class="link" data-c="bultoall">${S.cgbAll?'Ver menos':'Ver todos ('+a.length+')'}</button>`:''}`:'')+(L.length===1?'<button type="button" class="link" data-c="lavnew">＋ Otra lavada</button>':'')+((a.length||L.length>1)?`<button type="button" class="link dngl2" data-c="bultoclear">${L.length>1?'Quitar esta lavada':'Borrar todos'}</button>`:'');
  const cl=$('cl');
  if(cl){if(a.length){cl.value=sum>0?String(sum).replace('.',','):'';cl.readOnly=true;cl.dataset.bultos='1'}else{if(cl.dataset.bultos==='1')cl.value='';cl.readOnly=false;cl.dataset.bultos=''}cogLive()}
 }
@@ -2920,15 +2967,56 @@ function bultosAgregar(){
  bultosArr().push(v);save(true);inp.value='';bultosPintar();inp.focus();
 }
 document.addEventListener('click',e=>{
- const el=e.target.closest('[data-c="bultoadd"],[data-c="bultodel"],[data-c="bultoundo"],[data-c="bultoall"],[data-c="bultoclear"]');if(!el||!$('cgBultos'))return;
- const a=bultosArr(),c=el.dataset.c;
+ const el=e.target.closest('[data-c="bultoadd"],[data-c="bultodel"],[data-c="bultoundo"],[data-c="bultoall"],[data-c="bultoclear"],[data-c="lavsel"],[data-c="lavnew"]');if(!el||!$('cgBultos'))return;
+ const L=bultosLav(),c=el.dataset.c,a=L[bultosSel(L)];
  if(c==='bultoadd'){bultosAgregar();return}
  if(c==='bultodel'){const i=Number(el.dataset.i);if(a[i]!=null&&confirm('¿Quitar el bulto de '+num(a[i])+' kg?')){a.splice(i,1);save(true);bultosPintar()}return}
  if(c==='bultoundo'){a.pop();save(true);bultosPintar();return}
  if(c==='bultoall'){S.cgbAll=!S.cgbAll;bultosPintar();return}
- if(c==='bultoclear'&&confirm('¿Borrar los '+a.length+' bultos anotados?')){a.length=0;save(true);bultosPintar()}
+ if(c==='lavsel'){S.cgbSel=Number(el.dataset.i);S.cgbAll=false;bultosPintar();const i=$('cgbIn');if(i)i.focus();return}
+ if(c==='lavnew'){const last=L[L.length-1];if(last.length){L.push([])}S.cgbSel=L.length-1;S.cgbAll=false;save(true);bultosPintar();const i=$('cgbIn');if(i)i.focus();return}
+ if(c==='bultoclear'){
+  if(L.length>1){{const si=bultosSel(L);if(confirm('¿Quitar la lavada '+(si+1)+(a.length?' y sus '+a.length+' bultos':'')+'?')){L.splice(si,1);S.cgbSel=Math.max(0,si-1);save(true);bultosPintar()}}}
+  else if(confirm('¿Borrar los '+a.length+' bultos anotados?')){a.length=0;save(true);bultosPintar()}
+ }
 });
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='cgbIn'){e.preventDefault();bultosAgregar()}});
+
+
+
+
+/* ===== ¿Qué se hace con el café lavado? Secarlo o venderlo mojado ===== */
+function cgDestHTML(){const m=S.cgDest==='m';return `<div class="cgdest"><span>¿Qué va a hacer con este café?</span><div class="pchips"><button type="button" class="pchip ${m?'':'on'}" data-c="cgdest" data-v="s">Secarlo</button><button type="button" class="pchip ${m?'on':''}" data-c="cgdest" data-v="m">Venderlo mojado</button></div></div>`}
+function destLinea(x){return x&&x.dest==='m'?`<div class="cgdl">Para vender mojado · <button type="button" class="link" data-c="cogventa" data-id="${x.id}">＋ Anotar la venta</button></div>`:''}
+document.addEventListener('click',e=>{
+ const d=e.target.closest('[data-c="cgdest"]');
+ if(d&&$('cgDest')){S.cgDest=d.dataset.v==='m'?'m':'s';$('cgDest').innerHTML=cgDestHTML();cogLive();return}
+ const v=e.target.closest('[data-c="cogventa"]');if(!v)return;
+ const x=CFd().cog.find(y=>y&&String(y.id)===v.dataset.id);if(!x)return;
+ const o={tab:S.tab,sub:S.sub,pid:S.pid},n=new Date();
+ S.rtab='mes';S.im={y:n.getFullYear(),m:n.getMonth()};S.mk='venta';S.mc='Café mojado';S.mkg=x.l;S.md=todayStr();
+ go('rep');S.from=o;
+ setTimeout(()=>{const f=document.querySelector('.mform');f&&f.scrollIntoView({behavior:'smooth',block:'start'})},80);
+});
+
+
+/* cosechadores que le deben hoy (para las cuentas del mes actual) */
+function debenHoy(){const k=isoKey(new Date());let n=0,t=0;try{db.people.forEach(p=>{const d=deudaSemana(p.id,k)+deudaPrevia(p.id,k);if(d>0){n++;t+=d}})}catch(e){}return {n,t}}
+
+
+/* ===== Resumen por WhatsApp: con los adelantos ===== */
+function waFila(x){
+ const c=x.c,n=adelOf(W(),x.p.id).filter(a=>Number(a.v)>0).length;
+ let t=x.p.name+': '+num(c.kg)+' kg';
+ if(c.desc>0)t+=' · valor '+fmt(c.gross)+' − adelantos '+fmt(c.desc)+(n>1?' ('+n+')':'');
+ return t+' → '+(c.net<0?'DEBE '+fmt(-c.net):fmt(c.net)+(c.paid?' ✓':''));
+}
+function waAdelTxt(){
+ let s='';const t=totals();
+ if(t.desc>0)s+='\n*Adelantos descontados: '+fmt(t.desc)+'*';
+ try{const d=deudores(),tot=d.reduce((a,x)=>a+x.sem+x.prev,0);if(tot>0)s+='\n*Deben a la finca: '+fmt(tot)+' ('+d.length+(d.length===1?' persona':' personas')+')*'}catch(e){}
+ return s;
+}
 
 render();
 </script>
